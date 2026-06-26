@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Writing — Elliot Gross</title>
+  <meta name="description" content="Writing by Elliot Gross.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..500;1,6..72,200..500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --paper:  #FBFAF6;
+      --ink:    #20211F;
+      --muted:  #6F6C66;
+      --rule:   #E5E1D8;
+      --accent: #3E5A6E;
+
+      --measure: 34rem;
+      --pad: clamp(1.5rem, 5vw, 3rem);
+    }
+
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Newsreader", Georgia, "Times New Roman", serif;
+      font-optical-sizing: auto;
+      font-weight: 400;
+      line-height: 1.6;
+      font-size: 1.125rem;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    .page {
+      min-height: 100vh;
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      max-width: calc(var(--measure) + var(--pad) * 2);
+      margin: 0 auto;
+      padding: clamp(4rem, 14vh, 9rem) var(--pad) 2.5rem;
+    }
+
+    /* back link to home */
+    .back {
+      font-size: 0.82rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      margin: 0 0 2.4rem;
+      display: inline-block;
+    }
+    .back:hover { color: var(--accent); }
+    .back:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+      border-radius: 1px;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 6vw, 3rem);
+      font-weight: 300;
+      letter-spacing: -0.015em;
+      line-height: 1.05;
+      margin: 0 0 0.8rem;
+    }
+    h1 em { font-style: italic; font-weight: 300; }
+
+    .lede {
+      color: var(--muted);
+      font-weight: 300;
+      font-size: 1.2rem;
+      margin: 0 0 3rem;
+      max-width: 28rem;
+    }
+
+    /* list of pieces */
+    .pieces { margin: 0; }
+
+    .piece {
+      padding: 1.6rem 0;
+      border-top: 1px solid var(--rule);
+    }
+    .piece:last-child { border-bottom: 1px solid var(--rule); }
+
+    .piece-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+    }
+    .piece-title {
+      font-size: 1.35rem;
+      font-weight: 400;
+      margin: 0;
+    }
+    .piece-title a {
+      color: var(--ink);
+      text-decoration: none;
+      position: relative;
+    }
+    .piece-title a::after {
+      content: "";
+      position: absolute;
+      left: 0; right: 100%;
+      bottom: -2px;
+      height: 1px;
+      background: var(--accent);
+      transition: right 0.28s ease;
+    }
+    .piece-title a:hover { color: var(--accent); }
+    .piece-title a:hover::after { right: 0; }
+    .piece-title a:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+      border-radius: 1px;
+    }
+
+    .piece-meta {
+      flex-shrink: 0;
+      font-size: 0.9rem;
+      font-variant-numeric: tabular-nums;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    .piece-note {
+      color: var(--muted);
+      font-size: 1rem;
+      margin: 0.5rem 0 0;
+    }
+
+    footer {
+      margin-top: auto;
+      padding-top: 4rem;
+      font-size: 0.82rem;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(0.6rem);
+      animation: rise 0.7s cubic-bezier(0.2, 0.65, 0.3, 1) forwards;
+    }
+    .reveal:nth-child(1) { animation-delay: 0.05s; }
+    .reveal:nth-child(2) { animation-delay: 0.16s; }
+    .reveal:nth-child(3) { animation-delay: 0.27s; }
+    .reveal:nth-child(4) { animation-delay: 0.38s; }
+
+    @keyframes rise { to { opacity: 1; transform: none; } }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { animation: none; opacity: 1; transform: none; }
+      .piece-title a::after { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+
+    <a class="back reveal" href="index.html">&larr; Elliot Gross</a>
+
+    <h1 class="reveal">Writing</h1>
+
+    <!-- EDIT: one line introducing your writing, or delete this -->
+    <p class="lede reveal">Fiction, and the occasional essay.</p>
+
+    <!-- EDIT: one .piece block per work. Duplicate a block to add more, delete to remove.
+         Set the href to wherever the piece lives (a PDF, a Google Doc, another page).
+         If something isn't published yet, you can drop the <a> and just leave the title text. -->
+    <div class="pieces reveal">
+
+      <article class="piece">
+        <div class="piece-head">
+          <h2 class="piece-title"><a href="#">The Bureaucrat and the Hedonist</a></h2>
+          <span class="piece-meta">2026</span>
+        </div>
+        <p class="piece-note">Short fiction. A placeholder description goes here — a line about what it is.</p>
+      </article>
+
+      <article class="piece">
+        <div class="piece-head">
+          <h2 class="piece-title"><a href="#">Untitled</a></h2>
+          <span class="piece-meta">2026</span>
+        </div>
+        <p class="piece-note">Replace or delete this entry.</p>
+      </article>
+
+    </div>
+
+    <footer>
+      &copy; <span id="year"></span> Elliot Gross
+    </footer>
+
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
