@@ -3,9 +3,192 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Elliot</title>
+
+  <!-- EDIT: page title shows in the browser tab and search results -->
+  <title>Elliot Gross</title>
+
+  <!-- EDIT: one-sentence description for search engines / link previews -->
+  <meta name="description" content="Elliot Gross — writer and organizer based in New York.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..500;1,6..72,200..500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --paper:  #FBFAF6;
+      --ink:    #20211F;
+      --muted:  #6F6C66;
+      --rule:   #E5E1D8;
+      --accent: #3E5A6E;
+
+      --measure: 34rem;
+      --pad: clamp(1.5rem, 5vw, 3rem);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { -webkit-text-size-adjust: 100%; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Newsreader", Georgia, "Times New Roman", serif;
+      font-optical-sizing: auto;
+      font-weight: 400;
+      line-height: 1.6;
+      font-size: 1.125rem;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    .page {
+      min-height: 100vh;
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      max-width: calc(var(--measure) + var(--pad) * 2);
+      margin: 0 auto;
+      padding: clamp(4rem, 14vh, 9rem) var(--pad) 2.5rem;
+    }
+
+    /* quiet eyebrow above the name */
+    .eyebrow {
+      font-size: 0.82rem;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 1.6rem;
+    }
+
+    .name {
+      font-size: clamp(2.9rem, 9vw, 4.6rem);
+      font-weight: 300;
+      line-height: 1.02;
+      letter-spacing: -0.015em;
+      margin: 0;
+    }
+    /* the one italic word is the page's signature note */
+    .name em {
+      font-style: italic;
+      font-weight: 300;
+    }
+
+    .tagline {
+      font-size: clamp(1.2rem, 3.5vw, 1.5rem);
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.35;
+      margin: 1.4rem 0 0;
+      max-width: 28rem;
+    }
+
+    .bio {
+      margin: 2.8rem 0 0;
+    }
+    .bio p { margin: 0 0 1.1rem; }
+    .bio p:last-child { margin-bottom: 0; }
+
+    /* links */
+    .links {
+      margin: 3.2rem 0 0;
+      padding: 1.8rem 0 0;
+      border-top: 1px solid var(--rule);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem 1.8rem;
+      list-style: none;
+    }
+    .links li { margin: 0; }
+    .links a {
+      color: var(--ink);
+      text-decoration: none;
+      position: relative;
+      padding-bottom: 2px;
+    }
+    .links a::after {
+      content: "";
+      position: absolute;
+      left: 0; right: 100%;
+      bottom: 0;
+      height: 1px;
+      background: var(--accent);
+      transition: right 0.28s ease;
+    }
+    .links a:hover { color: var(--accent); }
+    .links a:hover::after { right: 0; }
+    .links a:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+      border-radius: 1px;
+    }
+
+    footer {
+      margin-top: auto;
+      padding-top: 4rem;
+      font-size: 0.82rem;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+    }
+
+    /* gentle entrance */
+    .reveal {
+      opacity: 0;
+      transform: translateY(0.6rem);
+      animation: rise 0.7s cubic-bezier(0.2, 0.65, 0.3, 1) forwards;
+    }
+    .reveal:nth-child(1) { animation-delay: 0.05s; }
+    .reveal:nth-child(2) { animation-delay: 0.16s; }
+    .reveal:nth-child(3) { animation-delay: 0.27s; }
+    .reveal:nth-child(4) { animation-delay: 0.38s; }
+
+    @keyframes rise {
+      to { opacity: 1; transform: none; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { animation: none; opacity: 1; transform: none; }
+      .links a::after { transition: none; }
+    }
+  </style>
 </head>
 <body>
-  <h1>Hello.</h1>
+  <main class="page">
+
+    <!-- EDIT: a small label above your name — your city, your work, or delete this line -->
+    <p class="eyebrow reveal">New York</p>
+
+    <!-- EDIT: your name. The <em> wraps the one word set in italic — move it or remove it -->
+    <h1 class="name reveal">Elliot <em>Gross</em></h1>
+
+    <!-- EDIT: one line that says what you do, in your own voice -->
+    <p class="tagline reveal">Writer and organizer. Mostly interested in how arguments actually change what people do.</p>
+
+    <!-- EDIT: a short paragraph or two. Keep it brief — a personal site rewards restraint -->
+    <div class="bio reveal">
+      <p>This is the placeholder bio. Replace it with a couple of sentences about what you're working on, what you think about, or what you'd want a stranger landing here to know.</p>
+    </div>
+
+    <!-- EDIT: your links. Fill in the href for each, delete any you don't want, add your own -->
+    <ul class="links reveal">
+      <li><a href="mailto:you@elliotgross.com">Email</a></li>
+      <li><a href="https://github.com/ewot325">GitHub</a></li>
+      <li><a href="#">Writing</a></li>
+      <li><a href="#">LinkedIn</a></li>
+    </ul>
+
+    <footer>
+      <!-- EDIT: or delete the footer entirely -->
+      &copy; <span id="year"></span> Elliot Gross
+    </footer>
+
+  </main>
+
+  <script>
+    // auto-updates the footer year so you never have to touch it
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
