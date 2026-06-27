@@ -8,7 +8,7 @@
   <title>Elliot Gross</title>
 
   <!-- EDIT: one-sentence description for search engines / link previews -->
-  <meta name="description" content="Elliot Gross — writer and organizer based in New York.">
+  <meta name="description" content="Elliot Gross — campaigns, writing, AI safety, and philosophy in NYC.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -51,6 +51,14 @@
       max-width: calc(var(--measure) + var(--pad) * 2);
       margin: 0 auto;
       padding: clamp(4rem, 14vh, 9rem) var(--pad) 2.5rem;
+    }
+
+    /* portrait */
+    .portrait {
+      display: block;
+      width: clamp(180px, 42vw, 232px);
+      height: auto;
+      margin: 0 0 2.4rem;
     }
 
     /* quiet eyebrow above the name */
@@ -140,9 +148,11 @@
       animation: rise 0.7s cubic-bezier(0.2, 0.65, 0.3, 1) forwards;
     }
     .reveal:nth-child(1) { animation-delay: 0.05s; }
-    .reveal:nth-child(2) { animation-delay: 0.16s; }
-    .reveal:nth-child(3) { animation-delay: 0.27s; }
-    .reveal:nth-child(4) { animation-delay: 0.38s; }
+    .reveal:nth-child(2) { animation-delay: 0.14s; }
+    .reveal:nth-child(3) { animation-delay: 0.23s; }
+    .reveal:nth-child(4) { animation-delay: 0.32s; }
+    .reveal:nth-child(5) { animation-delay: 0.41s; }
+    .reveal:nth-child(6) { animation-delay: 0.50s; }
 
     @keyframes rise {
       to { opacity: 1; transform: none; }
@@ -157,6 +167,9 @@
 <body>
   <main class="page">
 
+    <!-- EDIT: swap portrait.jpg for any other image; update the alt text to describe it -->
+    <img class="portrait reveal" src="portrait.jpg" alt="Elliot Gross standing on a rocky coastline" width="768" height="1024">
+
     <!-- EDIT: a small label above your name — your city, your work, or delete this line -->
     <p class="eyebrow reveal">New York</p>
 
@@ -164,7 +177,7 @@
     <h1 class="name reveal">Elliot <em>Gross</em></h1>
 
     <!-- EDIT: one line that says what you do, in your own voice -->
-    <p class="tagline reveal">Organizer, writer, and philosophy graduate in New York.</p>
+    <p class="tagline reveal">Campaigns, writing, AI safety, and philosophy in NYC.</p>
 
     <!-- EDIT: a short paragraph or two. Keep it brief — a personal site rewards restraint -->
     <div class="bio reveal">
@@ -181,15 +194,11 @@
     </ul>
 
     <footer>
-      <!-- EDIT: or delete the footer entirely -->
-      &copy; <span id="year"></span> Elliot Gross
+      <!-- EDIT: make this yours, or delete the whole footer block -->
+      Made by hand in New York.
     </footer>
 
   </main>
 
-  <script>
-    // auto-updates the footer year so you never have to touch it
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
