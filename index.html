@@ -48,17 +48,30 @@
       min-height: 100svh;
       display: flex;
       flex-direction: column;
-      max-width: calc(var(--measure) + var(--pad) * 2);
+      max-width: calc(52rem + var(--pad) * 2);
       margin: 0 auto;
       padding: clamp(4rem, 14vh, 9rem) var(--pad) 2.5rem;
     }
 
-    /* portrait */
+    /* photo beside text on wider screens, stacked on phones */
+    .content {
+      display: flex;
+      align-items: flex-start;
+      gap: clamp(1.8rem, 4vw, 3.2rem);
+    }
+
+    .portrait-col { flex: 0 0 auto; }
+
     .portrait {
       display: block;
-      width: clamp(180px, 42vw, 232px);
+      width: clamp(170px, 24vw, 240px);
       height: auto;
-      margin: 0 0 2.4rem;
+    }
+
+    .text-col {
+      flex: 1 1 0;
+      min-width: 0;
+      max-width: var(--measure);
     }
 
     /* quiet eyebrow above the name */
@@ -72,7 +85,7 @@
     }
 
     .name {
-      font-size: clamp(2.9rem, 9vw, 4.6rem);
+      font-size: clamp(2.7rem, 8vw, 4.4rem);
       font-weight: 300;
       line-height: 1.02;
       letter-spacing: -0.015em;
@@ -141,18 +154,24 @@
       color: var(--muted);
     }
 
+    /* stack on narrow screens */
+    @media (max-width: 620px) {
+      .content { flex-direction: column; }
+      .portrait { width: clamp(180px, 52vw, 220px); margin-bottom: 0.6rem; }
+    }
+
     /* gentle entrance */
     .reveal {
       opacity: 0;
       transform: translateY(0.6rem);
       animation: rise 0.7s cubic-bezier(0.2, 0.65, 0.3, 1) forwards;
     }
-    .reveal:nth-child(1) { animation-delay: 0.05s; }
-    .reveal:nth-child(2) { animation-delay: 0.14s; }
-    .reveal:nth-child(3) { animation-delay: 0.23s; }
-    .reveal:nth-child(4) { animation-delay: 0.32s; }
-    .reveal:nth-child(5) { animation-delay: 0.41s; }
-    .reveal:nth-child(6) { animation-delay: 0.50s; }
+    .portrait.reveal { animation-delay: 0.05s; }
+    .text-col .reveal:nth-child(1) { animation-delay: 0.14s; }
+    .text-col .reveal:nth-child(2) { animation-delay: 0.23s; }
+    .text-col .reveal:nth-child(3) { animation-delay: 0.32s; }
+    .text-col .reveal:nth-child(4) { animation-delay: 0.41s; }
+    .text-col .reveal:nth-child(5) { animation-delay: 0.50s; }
 
     @keyframes rise {
       to { opacity: 1; transform: none; }
@@ -167,31 +186,39 @@
 <body>
   <main class="page">
 
-    <!-- EDIT: swap portrait.jpg for any other image; update the alt text to describe it -->
-    <img class="portrait reveal" src="portrait.jpg" alt="Elliot Gross standing on a rocky coastline" width="768" height="1024">
+    <div class="content">
 
-    <!-- EDIT: a small label above your name — your city, your work, or delete this line -->
-    <p class="eyebrow reveal">New York</p>
+      <div class="text-col">
+        <!-- EDIT: a small label above your name — your city, your work, or delete this line -->
+        <p class="eyebrow reveal">New York</p>
 
-    <!-- EDIT: your name. The <em> wraps the one word set in italic — move it or remove it -->
-    <h1 class="name reveal">Elliot <em>Gross</em></h1>
+        <!-- EDIT: your name. The <em> wraps the one word set in italic — move it or remove it -->
+        <h1 class="name reveal">Elliot <em>Gross</em></h1>
 
-    <!-- EDIT: one line that says what you do, in your own voice -->
-    <p class="tagline reveal">Campaigns, writing, AI safety, and philosophy in NYC.</p>
+        <!-- EDIT: one line that says what you do, in your own voice -->
+        <p class="tagline reveal">Campaigns, writing, AI safety, and philosophy in NYC.</p>
 
-    <!-- EDIT: a short paragraph or two. Keep it brief — a personal site rewards restraint -->
-    <div class="bio reveal">
-      <p>I direct field operations and a 200-person fellowship program for a congressional campaign in Manhattan, and I assist Professor Michael Doyle's research at Columbia Law School. I studied philosophy at Columbia, mostly logic and the philosophy of language.</p>
-      <p>Before this I interned at the Queens County District Attorney's office, fought wildfires with the U.S. Forest Service in Montana, and farmed in Ecuador. I spend my time on effective altruism, animal welfare, AI policy, and fiction, and I lead trips for the Columbia Hiking Club.</p>
+        <!-- EDIT: a short paragraph or two. Keep it brief — a personal site rewards restraint -->
+        <div class="bio reveal">
+          <p>I direct field operations and a 200-person fellowship program for a congressional campaign in Manhattan, and I assist Professor Michael Doyle's research at Columbia Law School. I studied philosophy at Columbia, mostly logic and the philosophy of language.</p>
+          <p>Before this I interned at the Queens County District Attorney's office, fought wildfires with the U.S. Forest Service in Montana, and farmed in Ecuador. I spend my time on effective altruism, animal welfare, AI policy, and fiction, and I lead trips for the Columbia Hiking Club.</p>
+        </div>
+
+        <!-- EDIT: your links. Fill in the href for each, delete any you don't want, add your own -->
+        <ul class="links reveal">
+          <li><a href="mailto:eng2123@columbia.edu">Email</a></li>
+          <li><a href="https://github.com/ewot325">GitHub</a></li>
+          <li><a href="writing.html">Writing</a></li>
+          <li><a href="https://www.linkedin.com/in/elliot-gross/">LinkedIn</a></li>
+        </ul>
+      </div>
+
+      <div class="portrait-col">
+        <!-- EDIT: swap portrait.jpg for any other image; update the alt text to describe it -->
+        <img class="portrait reveal" src="portrait.jpg" alt="Elliot Gross standing on a rocky coastline" width="768" height="1024">
+      </div>
+
     </div>
-
-    <!-- EDIT: your links. Fill in the href for each, delete any you don't want, add your own -->
-    <ul class="links reveal">
-      <li><a href="mailto:eng2123@columbia.edu">Email</a></li>
-      <li><a href="https://github.com/ewot325">GitHub</a></li>
-      <li><a href="writing.html">Writing</a></li>
-      <li><a href="https://www.linkedin.com/in/elliot-gross/">LinkedIn</a></li>
-    </ul>
 
     <footer>
       <!-- EDIT: make this yours, or delete the whole footer block -->
