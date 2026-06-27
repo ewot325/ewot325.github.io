@@ -48,7 +48,7 @@
       min-height: 100svh;
       display: flex;
       flex-direction: column;
-      max-width: calc(52rem + var(--pad) * 2);
+      max-width: calc(54rem + var(--pad) * 2);
       margin: 0 auto;
       padding: clamp(4rem, 14vh, 9rem) var(--pad) 2.5rem;
     }
@@ -56,15 +56,16 @@
     /* photo beside text on wider screens, stacked on phones */
     .content {
       display: flex;
-      align-items: flex-start;
+      align-items: center;
       gap: clamp(1.8rem, 4vw, 3.2rem);
+      margin-top: auto;
     }
 
     .portrait-col { flex: 0 0 auto; }
 
     .portrait {
       display: block;
-      width: clamp(170px, 24vw, 240px);
+      width: clamp(230px, 32vw, 350px);
       height: auto;
     }
 
@@ -156,8 +157,8 @@
 
     /* stack on narrow screens */
     @media (max-width: 620px) {
-      .content { flex-direction: column; }
-      .portrait { width: clamp(180px, 52vw, 220px); margin-bottom: 0.6rem; }
+      .content { flex-direction: column; align-items: stretch; margin-top: 0; }
+      .portrait { width: clamp(200px, 60vw, 280px); margin-bottom: 0.6rem; }
     }
 
     /* gentle entrance */
@@ -189,19 +190,13 @@
     <div class="content">
 
       <div class="text-col">
-        <!-- EDIT: a small label above your name — your city, your work, or delete this line -->
-        <p class="eyebrow reveal">New York</p>
+        <!-- EDIT: your name -->
+        <h1 class="name reveal">Elliot Gross</h1>
 
-        <!-- EDIT: your name. The <em> wraps the one word set in italic — move it or remove it -->
-        <h1 class="name reveal">Elliot <em>Gross</em></h1>
-
-        <!-- EDIT: one line that says what you do, in your own voice -->
-        <p class="tagline reveal">Campaigns, writing, AI safety, and philosophy in NYC.</p>
-
-        <!-- EDIT: a short paragraph or two. Keep it brief — a personal site rewards restraint -->
+        <!-- EDIT: your bio -->
         <div class="bio reveal">
-          <p>I direct field operations and a 200-person fellowship program for a congressional campaign in Manhattan, and I assist Professor Michael Doyle's research at Columbia Law School. I studied philosophy at Columbia, mostly logic and the philosophy of language.</p>
-          <p>Before this I interned at the Queens County District Attorney's office, fought wildfires with the U.S. Forest Service in Montana, and farmed in Ecuador. I spend my time on effective altruism, animal welfare, AI policy, and fiction, and I lead trips for the Columbia Hiking Club.</p>
+          <p>I work on political campaigns and also sometimes write short fiction. My passions include AI safety, animal welfare, progressive politics, philosophy, literary fiction, bluegrass music, backpacking, mountain biking, eating (not cooking), the New York Knicks basketball team, and long walks on short beaches.</p>
+          <p>Please send me an email and talk to me about any of the things on this list, or any of the things not on this list that you are still ontologically committed to.</p>
         </div>
 
         <!-- EDIT: your links. Fill in the href for each, delete any you don't want, add your own -->
@@ -221,11 +216,15 @@
     </div>
 
     <footer>
-      <!-- EDIT: make this yours, or delete the whole footer block -->
-      Made by hand in New York.
+      <!-- EDIT: or delete the footer entirely -->
+      &copy; <span id="year"></span> Elliot Gross
     </footer>
 
   </main>
 
+  <script>
+    // auto-updates the footer year so you never have to touch it
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>

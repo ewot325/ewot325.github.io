@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- EDIT: the piece's title, then " — Elliot Gross" -->
+  <title>The Bureaucrat and the Hedonist — Elliot Gross</title>
+  <meta name="description" content="A short story by Elliot Gross.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..500;1,6..72,200..500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --paper:  #FBFAF6;
+      --ink:    #20211F;
+      --muted:  #6F6C66;
+      --rule:   #E5E1D8;
+      --accent: #3E5A6E;
+
+      --measure: 33rem;
+      --pad: clamp(1.5rem, 5vw, 3rem);
+    }
+
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Newsreader", Georgia, "Times New Roman", serif;
+      font-optical-sizing: auto;
+      line-height: 1.7;
+      font-size: 1.18rem;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    .page {
+      min-height: 100vh;
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      max-width: calc(var(--measure) + var(--pad) * 2);
+      margin: 0 auto;
+      padding: clamp(3.5rem, 12vh, 7rem) var(--pad) 2.5rem;
+    }
+
+    .back {
+      font-size: 0.82rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      margin: 0 0 3rem;
+      display: inline-block;
+    }
+    .back:hover { color: var(--accent); }
+    .back:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 1px; }
+
+    .title {
+      font-size: clamp(2rem, 5.5vw, 2.9rem);
+      font-weight: 300;
+      letter-spacing: -0.015em;
+      line-height: 1.08;
+      margin: 0 0 0.6rem;
+    }
+    .meta {
+      color: var(--muted);
+      font-style: italic;
+      font-size: 1rem;
+      margin: 0 0 3rem;
+    }
+
+    /* the prose itself */
+    .prose p {
+      margin: 0 0 1.4rem;
+    }
+    /* traditional book style: no space between paragraphs, indent instead.
+       To use it, delete the rule above and uncomment the two below.
+    .prose p { margin: 0; }
+    .prose p + p { text-indent: 1.6em; }
+    */
+    .prose p:first-of-type { margin-top: 0; }
+
+    /* scene break — put <hr> between sections for a centered divider */
+    .prose hr {
+      border: 0;
+      text-align: center;
+      margin: 2.4rem 0;
+    }
+    .prose hr::before {
+      content: "\00A7";
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    /* optional section heading for essays */
+    .prose h2 {
+      font-weight: 400;
+      font-size: 1.5rem;
+      margin: 2.6rem 0 0.8rem;
+    }
+
+    .prose em { font-style: italic; }
+    .prose a { color: var(--accent); }
+
+    footer {
+      margin-top: auto;
+      padding-top: 4rem;
+      font-size: 0.82rem;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(0.6rem);
+      animation: rise 0.7s cubic-bezier(0.2, 0.65, 0.3, 1) forwards;
+    }
+    .reveal:nth-child(1) { animation-delay: 0.05s; }
+    .reveal:nth-child(2) { animation-delay: 0.16s; }
+    .reveal:nth-child(3) { animation-delay: 0.27s; }
+    .reveal:nth-child(4) { animation-delay: 0.38s; }
+
+    @keyframes rise { to { opacity: 1; transform: none; } }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { animation: none; opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+
+    <a class="back reveal" href="writing.html">&larr; Writing</a>
+
+    <!-- EDIT: the title of this piece -->
+    <h1 class="title reveal">The Bureaucrat and the Hedonist</h1>
+
+    <!-- EDIT: date, where it appeared, or a one-line note. Delete if you don't want it -->
+    <p class="meta reveal">Short fiction · 2026</p>
+
+    <!-- EDIT: paste your piece here. One <p>...</p> per paragraph.
+         For a scene break, drop an <hr> on its own line between paragraphs. -->
+    <article class="prose reveal">
+      <p>Replace this with your first paragraph. Each paragraph of your story goes inside its own paragraph tag, like this one.</p>
+
+      <p>The second paragraph follows the same way. Keep going — paste the whole piece, wrapping each paragraph in its own tag.</p>
+
+      <hr>
+
+      <p>The line above is a scene break. Use it wherever your story shifts scene or time.</p>
+    </article>
+
+    <footer>
+      Made by hand in New York.
+    </footer>
+
+  </main>
+
+</body>
+</html>
