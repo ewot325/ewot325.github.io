@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>No Self, No Problem? — Elliot Gross</title>
+  <meta name="description" content="An essay by Elliot Gross.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..500;1,6..72,200..500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --paper:  #FBFAF6;
+      --ink:    #20211F;
+      --muted:  #6F6C66;
+      --rule:   #E5E1D8;
+      --accent: #3E5A6E;
+
+      --measure: 33rem;
+      --pad: clamp(1.5rem, 5vw, 3rem);
+    }
+
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Newsreader", Georgia, "Times New Roman", serif;
+      font-optical-sizing: auto;
+      line-height: 1.7;
+      font-size: 1.18rem;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    .page {
+      min-height: 100vh;
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      max-width: calc(var(--measure) + var(--pad) * 2);
+      margin: 0 auto;
+      padding: clamp(3.5rem, 12vh, 7rem) var(--pad) 2.5rem;
+    }
+
+    .back {
+      font-size: 0.82rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      margin: 0 0 3rem;
+      display: inline-block;
+    }
+    .back:hover { color: var(--accent); }
+    .back:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 1px; }
+
+    .title {
+      font-size: clamp(2rem, 5.5vw, 2.9rem);
+      font-weight: 300;
+      letter-spacing: -0.015em;
+      line-height: 1.08;
+      margin: 0 0 0.6rem;
+    }
+    .meta {
+      color: var(--muted);
+      font-style: italic;
+      font-size: 1rem;
+      margin: 0 0 3rem;
+    }
+
+    .prose p { margin: 0 0 1.4rem; text-align: justify; hyphens: auto; }
+
+    .prose .section {
+      font-size: 1.4rem;
+      font-weight: 400;
+      font-style: italic;
+      letter-spacing: -0.01em;
+      margin: 2.8rem 0 1.2rem;
+    }
+    .prose .section:first-child { margin-top: 0; }
+    .prose .refs-head { margin-top: 3.2rem; }
+
+    /* epigraph */
+    .prose .epigraph {
+      margin: 0 0 2.4rem;
+      padding-left: 1.2rem;
+      border-left: 2px solid var(--rule);
+      color: var(--muted);
+      font-style: italic;
+      font-size: 1.06rem;
+    }
+
+    /* figures */
+    .prose .fig { margin: 2rem 0; text-align: center; }
+    .prose .fig img {
+      max-width: 100%;
+      height: auto;
+      border: 1px solid var(--rule);
+      background: #fff;
+    }
+
+    /* footnote references */
+    .prose sup.fn { font-size: 0.7em; line-height: 0; }
+    .prose sup.fn a { color: var(--accent); text-decoration: none; padding: 0 0.05em; }
+
+    /* notes + bibliography */
+    .prose .ref, .prose .notes li {
+      font-size: 0.98rem;
+      line-height: 1.5;
+      text-align: left;
+    }
+    .prose .ref {
+      padding-left: 1.6rem;
+      text-indent: -1.6rem;
+      margin: 0 0 0.8rem;
+    }
+    .prose .notes { margin: 0; padding: 0 0 0 1.6rem; }
+    .prose .notes li { margin: 0 0 0.8rem; padding-left: 0.3rem; }
+    .prose .notes li::marker { color: var(--muted); }
+    .prose .fn-back { display: none; }
+
+    .prose em { font-style: italic; }
+    .prose strong { font-weight: 600; }
+    .prose a { color: var(--accent); word-break: break-word; }
+
+    footer {
+      margin-top: auto;
+      padding-top: 4rem;
+      font-size: 0.82rem;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(0.6rem);
+      animation: rise 0.7s cubic-bezier(0.2, 0.65, 0.3, 1) forwards;
+    }
+    .reveal:nth-child(1) { animation-delay: 0.05s; }
+    .reveal:nth-child(2) { animation-delay: 0.16s; }
+    .reveal:nth-child(3) { animation-delay: 0.27s; }
+    .reveal:nth-child(4) { animation-delay: 0.38s; }
+
+    @keyframes rise { to { opacity: 1; transform: none; } }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { animation: none; opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+
+    <a class="back reveal" href="writing.html">&larr; Writing</a>
+
+    <h1 class="title reveal">No Self, No Problem?</h1>
+
+    <p class="meta reveal">Moral responsibility without an agent in Vasubandhu’s Treatise on the Negation of the Person. &middot; Dec 2025</p>
+
+    <article class="prose reveal">
+
+      <h2 class="section">Introduction</h2>
+      <p>Needless to say, the issue of free will has plagued Western philosophers for centuries, posing debilitating issues for various metaphysical accounts. This is especially in the face of concerns about determinism, which magnify doubts about the coherence of moral responsibility. One might find that the Buddhist ideology is fertile ground for this debate, an opportunity that could be exploited by the libertarian perspective. This paper will examine the clash between the two schools. I will begin by reconstructing Vasubandhu&rsquo;s account of the self, autonomy, and karma, before articulating the libertarian critique on the grounds of both diachronic and synchronic fairness. Finally, I will formulate a Vasubandhu-style Buddhist response. In sum, I will show Vasubandhu&rsquo;s reconception of karma as a therapeutic soteriological mechanism, concerned not with apportioning desert but with redirecting the continuum towards liberation, offers a coherent compatibilist alternative to agent-causal libertarian conceptions of an unmoved mover.</p>
+      <p>Vasubandhu&rsquo;s Account of the Self, Autonomy, and Karma</p>
+      <p>In the <em>Treatise on the Negation of the Person </em>(<em>Pudgala-prati&#7779;edha-prakara&#7751;a</em>), Vasubandhu lays out a systematic Buddhist rejection of any substantial, persisting self. He accomplishes this by responding to the incursions of a hostile interlocutor, who seeks vulnerabilities in various aspects of Vasubandhu&rsquo;s philosophy. These arguments are essential groundwork for building the Buddhist perspective so that it may be attacked by, and ultimately respond to, Libertarian critiques. Vasubandhu&#39;s metaphysical picture begins with a fundamental claim: the designation &ldquo;self&rdquo; applies to the bundle-continuum alone, and nothing above or below this. He unilaterally rejects any notion of a &ldquo;person&rdquo; as a discrete, independently existing substance. Rather, he posits that we exist as conceptual constructions imposed upon a causally connected series of constituents, the five <em>skandhas</em>: physical form, sensation, conceptualization, motivation, and consciousness. The person is nothing over and above the aggregation of these five elements.</p>
+      <p>Central to his ontology is the distinction between what is substantial, i.e. a discrete entity, and what is conceptually constructed, i.e. a mere representational overlay on the substantial. Accordingly, the person is a conceptually constructed designation applied to the bundles, which are further comprised of the discrete, basic constituents of reality: regular principles (<em>dharmas</em>), which arise and cease in momentary succession. Diachronic identity is therefore explained by the continuum, a causally connected series in which each mental event gives rise to the next. Distinct mental events belong to the same person by being directly tied through cause and effect, as opposed to inhering in a common substrate.</p>
+      <p>To these beliefs, his opponent objects in 7.2: any activity requires a subject, as in &ldquo;Devadatta goes,&rdquo; which refers to Devadatta as the one who goes. Consciousness is likewise an activity, so &ldquo;he who cognizes must be.&rdquo; Vasubandhu responds by dismissing this as mere confusion regarding the conventional person; &ldquo;going&rdquo; is simply the continuum&#39;s &ldquo;coming-into-being-elsewhere.&rdquo; When pressed about what consciousness does, Vasubandhu explains that agentive language expresses causal relationships, not substantial agency, like &ldquo;the bell cries.&rdquo;</p>
+      <p>Later on in 7.6, Vasubandhu&rsquo;s opponent objects again, this time asking, who is &ldquo;the doer of these deeds&rdquo; and &ldquo;the enjoyer of their fruit?&rdquo; Naturally, everything that is done needs someone to do it, right? However, when pressed, the opponent defines &ldquo;doer&rdquo; as autonomous, to which Vasubandhu explicitly states that nothing has autonomy, as everything comes into existence from its dependent conditions. He continues by redefining doer causally: &ldquo;That which is the dominant cause of something is called its doer.&rdquo; He traces action&#39;s causal chain, with each stage arising dependently from prior conditions: &ldquo;from recollection there is interest; from interest consideration; from consideration willful effort; from willful effort vital energy; and from that, action.&rdquo; As for the enjoyment of the fruit of action, Vasubandhu explains that the &ldquo;enjoyer&rdquo; of karmic fruit is simply the continuum in which the relevant experiences arise, not a substantial self that possesses those experiences.</p>
+      <p>This is immediately followed by 7.7, where the opponent gets to the root of the Buddhist account of karma and rebirth. They ask how it is possible that, without a true self, karmic fruits can arise later on from exhausted deeds, the doubt being that if there is no persisting self, and the action that catalyzed the karma has ceased to exist, then what would connect the action to the karmic fruition? Vasubandhu retorts by rejecting that fruit arises from exhausted deeds, arguing that it instead comes &ldquo;from the distinctive feature of the transformation of that continuum, like seed and fruit.&rdquo; He continues the seed metaphor by pointing out that a fruit does not blossom a seed immediately; it happens mediately, through the potency of the seed that develops. In terms of karma, the &ldquo;transformation&rdquo; is the fact that the continuum constantly arises with each cycle, every bundle differing from the one before it. &ldquo;Distinctive feature&rdquo; signifies the potency generated by the original deed that eventually ripens into its result. This is to say, the action itself does not persist, but it leaves a mark on the continuum that is carried forward through successive transformations until the right conditions allow it to bear karmic fruit.</p>
+
+      <h2 class="section">The Libertarian Critique</h2>
+      <p>The libertarian would almost certainly take umbrage to Vasubandhu&rsquo;s account of autonomy and karma on many fronts. Agent-causal libertarians believe that genuine moral responsibility requires a substantial, persisting self, capable of originating action independently of prior causal conditions. This view is indeterministic: free actions are initiated by agents themselves, rather than being inevitable products of prior events. As Roderick Chisholm argues in &ldquo;Human Freedom and the Self,&rdquo; &ldquo;each of us, when we act, is a prime mover unmoved. In doing what we do, we cause certain events to happen, and nothing&mdash;or no one&mdash;causes us to cause those events to happen.&rdquo; Fellow libertarian Timothy O&#39;Connor adds that agent causation is a distinct type of causal production in which substances themselves, not merely events occurring within them, serve as the irreducible causes of their free decisions (&quot;Agent Causation,&quot; 1995). The agent must possess genuine autonomy, often defined as the capacity to have done otherwise under identical previous conditions.</p>
+      <p>This conception of free will is in strong contradiction to Vasubandhu&rsquo;s account. A libertarian would argue that &ldquo;fair&rdquo; attribution of moral responsibility requires two key elements relevant to the Buddhist view: that (1) the agent originates their action, undetermined by prior causes, and (2) that the agent who performs the action is the numerically same one who receives praise or blame for it. They would believe that Vasubandhu satisfies neither condition. In his view, every mental event, and hence action, arises dependently from prior conditions: &ldquo;from recollection there is interest; from interest consideration; from consideration willful effort.&rdquo; This means that it is metaphysically impossible for any moment in the causal chain to have played out otherwise. Nothing in Vasubandhu&#39;s ontology initiates action other than the deterministic flow of dharmas; therefore, there exists no internal uncaused mover, and hence no subject of moral desert.</p>
+      <p>Furthermore, this implies that every action is the inevitable consequence of prior conditions stretching as far back as possible, meaning that for any given action, the agent never possessed the genuine ability to do otherwise. When an agent carries out an action, they are necessarily predetermined to do so by factors entirely outside their control. To assign moral responsibility, this (by claiming that the continuum deserves the suffering of negative karmic fruit) would be punishment for an unavoidable outcome, like punishing the river for flowing. By the libertarian code, this constitutes a basic violation of fairness: one should not be held accountable for what they were causally obligated to do. While it is true that the continuum still functions as the dominant cause of the action, the libertarian will insist that this is not sufficient for moral ownership. In fact, Vasubandhu&rsquo;s own analogy can be invoked here. As stated in 7.2, he claims that agentive statements about actions can be reduced to causal relationships, such as &ldquo;the bell cries.&rdquo; However, we would not assign moral blame to a bell for ringing, because, despite being the dominant cause, it had no choice otherwise; it was subject to the whims of the human bell-ringer. If a bell ringing is no different from human agency in terms of causal relations, why would it make sense to assign moral responsibility to actions from a continuum? In the libertarian view, this is covered by the capacity for self-origination, but without it, karmic retribution appears to merely be the indiscriminate redistribution of suffering according to causal laws indifferent to desert.</p>
+      <p>And, even if the libertarian granted that causally determined actions could somehow merit moral appraisal, a second problem remains: the diachronic unfairness of karmic inheritance. Under agent-causal libertarianism, the persistence of a substantial self across time is what makes it coherent to hold someone accountable for past deeds, as we want to stipulate that the agent who acted wrongly is the same one who suffers consequences later. Vasubandhu, however, denies any such persisting substratum. His continuum is a casually connected series of numerically distinct momentary dharmas, each arising and ceasing in succession, so the bundle that performs an action is, on his own terms, literally not the same bundle that later bears its karmic fruit. The two are merely in causal relation. For example, the exact dharmas that compelled me to rob a bank are causally related to, but unequivocally distinct from, the dharmas that receive the karmic fruit of that action. Taken to an absurd degree, there&rsquo;s nothing in the Buddhist framework that prohibits my mental continuum, 1,000 years down the line&mdash;after many reincarnation cycles and completely unrecognizable to the origin&mdash;from finally being the bundle that bears the karmic fruit of my robbing the bank. To a libertarian, this constitutes a fundamental violation of fairness: moral desert cannot transfer across numerically distinct subjects merely because of their causal relation. This would be like punishing a son for his mother&rsquo;s transgressions. Just because they are causally related does not mean that they share responsibility, as they have distinct causal origination systems. As for &ldquo;the distinctive feature of the transformation,&rdquo; this does not preserve the system that originated the action; it simply connects different bundles. Even setting aside the absence of agentive freedom, Vasubandhu&#39;s account fails to provide the diachronic self that libertarian fair moral responsibility requires.</p>
+
+      <h2 class="section">Vasubandhu&rsquo;s Response</h2>
+      <p>In response to these critiques, Vasubandhu would likely begin by immediately counter-attacking the libertarian conception of self, arguing that the posited agent-causal entity is metaphysically incoherent. The libertarians create an unconditioned agent positioned outside of the deterministic flow of dharmas, capable of initiating action independently. Yet, this violates the fundamental principle that all effects must have causes, as it would require the agent to be embedded within the causal order, thereby removing its unconditioned status. A substance completely expunged from the causal order would lack the connective tissue necessary to produce any effect within it. Unconditioned implies unconnected, and unconnected is causally impotent. Even granting the coherence of an unconditioned yet causally efficacious self, Vasubandhu would object on the basis of causal overdetermination. Vasubandhu can account for all aspects of an action, from its inception to perpetration, using his elements of the causal chain of 7.6. At no point in his phenomenology does an unconditioned self appear, as we experience only the unfolding of causally connected mental events. Because the bundles already provide the necessary and sufficient conditions needed to explain an action, positing an additional agent-cause provides no theoretical value. The libertarian self is rendered ontologically superfluous, violating parsimony.</p>
+      <p>Vasubandhu could continue by levying a similar counterattack on the libertarian critique of the diachronic identity of the continuum. He might argue that the libertarians&#39; demand for numerical identity across time actually makes moral responsibility impossible on their own terms. The libertarian commitment to a persisting, unchanging self that is necessary to underlie moral responsibility over time would actually subvert any possibility of moral rehabilitation. If the self is truly unchanging, it would not be able to learn, develop, or be transformed by the karmic repercussions of its actions. Under this conception, a <em>persisting self</em> would be unfair, as it would be rendered a prisoner, constantly behaving in the same manner and being karmically punished for it, but without any mechanism for altering its behavior. If the libertarian wants to ensure fairness in their framework, they should abandon their quest for a persisting agent and, consequently, their diachronic identity criterion for fairness. The inability to change does not pose a problem for the Buddhist account, however, because the bundles constantly phasing in and out of existence allow for fundamental change at each iteration.</p>
+      <p>With this in mind, Vasubandhu would also still endeavor to defend the fairness of his views, not just attack those of the libertarian. Karin Meyers touches on some of these issues in her work &ldquo;Free Persons, Empty Selves: Freedom and Agency in Light of the Two Truths,&rdquo; where she addresses adjacent issues in defending the Buddhist perspective. At one point, she discusses the role of cetan&#257;, the mental factor of volition that the Buddha identified as the essence of karma. One might attempt to defend Vasubandhu against libertarian critiques by appealing to this dharma, suggesting that it could serve as a locus of indeterministic freedom, satisfying the ostensible need for an internal originating power. However, Meyers argues that this interpretive approach misunderstands both cetan&#257; and the Vasubandhu/Buddhist project. Cetan&#257; is present in every mental state, including during sleep, and is not necessarily conscious, deliberate, or voluntary. It is merely the impetus of the mind toward a goal, an element that distinguishes action from accident. Moreso, treating cetan&#257; as a power that a continuum could wield just reinserts agents into the dharmic level of explanation; it does not explain freedom in terms of dharmas. Thus, an attempt to satisfy libertarian requirements by locating an uncaused mover within Buddhist phenomenology fails on its own terms because it forsakes the reductive framework that makes Vasubandhu&#39;s account coherent in the first place.</p>
+      <p>Despite this, Vasubandhu would likely remain unperturbed by this failure to meet libertarian standards, for he and the Buddhists operate within an entirely different evaluative framework. The libertarian assumes that the primary function of karma is to apportion moral desert fairly, ensuring that agents receive what they deserve for freely perpetrated actions. But, as Meyers discusses, the fundamental concern of karma is not moral but soteriological&mdash;how to attain liberation from suffering, attainable through the realization of nonself. The Buddhist presupposes that the continuum can choose to cultivate good qualities and abandon bad ones, but this freedom is not contra-causal autonomy as the libertarian espouses; it is the capacity for the continuum to respond to good influences, i.e., the capacity to be shaped by factors like mindfulness and faith in ways that progressively weaken deleterious self-perception. On this understanding, karma is not a system of cosmic justice according to desert; it&rsquo;s a therapeutic mechanism aimed at guiding the continuum toward the realization of nonself.</p>
+      <p>This soteriological reorientation allows Vasubandhu to redefine what fairness means in a Buddhist no-self context. The libertarian insists that fairness requires punishing the numerically same uncaused agent who performed the action. But if there is no such agent, this stipulation becomes incoherent. In fact, Vasubandhu would argue that his alternative is maximally fair because it targets the causal mechanisms that actually produced the action. When negative karmic fruit finally manifests in a continuum, it modifies the underlying dharmic configuration that generated the original bad deed. Contrary to the libertarian view, it functionally corrects the causal stream by altering the dharma that disposed the continuum toward the harmful action with the ultimate purpose of redirecting it towards liberation. And, the bundle that receives the corrective measure is meaningfully connected to both the past and future bundles, ensuring the long-lasting, meaningful effects. Naturally, this applies to karmic rewards as well, which encourage actions that bring the continuum closer to salvation.</p>
+      <p>This reconception of karmic fairness aligns with Meyers&#39; broader conclusion regarding freedom in Buddhist philosophy. She argues that from the impersonal, ultimate perspective, there is no free will because there are no persons to enjoy it, only the flow of dharmas. But from the personal, conventional perspective, there is, in fact, free will of the type the Buddhist view necessitates: the freedom to choose the path of liberation over continued delusion and the freedom to cultivate self-control over the body, speech, and mind. These personal freedoms are predicated on the reality of the dharmic processes. <em>Genuine fairness</em> consists of the association of karmic fruit to the appropriate dharmas, leading to a greater purpose, not in a metaphysically indeterminate world which matches desert to selves.</p>
+
+      <h2 class="section">Conclusion</h2>
+      <p>I have shown that Vasubandhu&#39;s Buddhist account of moral responsibility, while vulnerable to a libertarian critique, is also able to respond without sacrificing any facets of its fundamental ontology. The agent-causal libertarian objects to Vasubandhu&rsquo;s views on two accounts: his dharma-based, causally deterministic view is incompatible with genuinely fair moral responsibility, and the numerically distinct bundles that comprise the continuum cannot fairly inherit karmic consequences. However, Vasubandhu would respond to these forays by counterattacking the libertarian conception of the self as an unmoved mover, showing that it is both metaphysically incoherent and explanatorily superfluous, as well as the fact that a persisting agent-self would undermine the possibility of moral transformation. Fundamentally, though, Vasubandhu operates within an entirely different evaluative framework. In contrast with the libertarian position that says his karma should be a just system designed to apportion desert, he relies on a karma that manifests as a therapeutic mechanism, targeting the causal dharmic construction responsible for such action and redirecting them towards the soteriological goal of nonself realization.</p>
+      <p>Whether one finds the libertarian critiques compelling or Vasubandhu&rsquo;s attendant responses more compelling is subject to one&#39;s metaphysical commitments. One might find the libertarian objections insurmountable if they are committed to the pre-philosophical notion of uncaused free will, or they value retributive justice over other higher ends. Additionally, some might be unsatisfied with Vasubandhu&rsquo;s response insofar as it mostly redefines the terms of freedom and fairness in the face of causal determinism, rather than addressing them head-on. One would not be hard pressed to push the impracticality of Vasubandhu&rsquo;s view as a framework for maintaining civil society, especially in democracies that put a high price on &ldquo;fair&rdquo; criminal justice systems. In contrast, one might be sympathetic to Vasubandhu&rsquo;s response if they take concerns about causal determinism seriously, as he provides a method for maintaining some semblance of responsibility over one&rsquo;s actions and a therapeutic notion of karma that avoids concerns about the coherence of moral responsibility. <hr style="page-break-before:always;display:none;"></p>
+
+      <h2 class="section refs-head">Bibliography</h2>
+      <p class="ref">Chisholm, Roderick. &quot;Human Freedom and the Self.&quot; <em>The Lindley Lecture</em>, University of Kansas, 1964.</p>
+      <p class="ref">Meyers, Karin. &ldquo;Free Persons, Empty Selves: Freedom and Agency in Light of the Two Truths Get.&rdquo; <em>Free Will, Agency, and Selfhood in Indian Philosophy</em>, Oxford University Press, New York, 2014, pp. 42&ndash;67.</p>
+      <p class="ref">O&#39;Connor, Timothy and Christopher Franklin. &quot;Free Will.&quot; <em>Stanford Encyclopedia of Philosophy</em>, edited by Edward N. Zalta and Uri Nodelman, Spring 2024 ed., Metaphysics Research Lab, Stanford University, 2024, https://plato.stanford.edu/entries/incompatibilism-theories/.</p>
+      <p class="ref">Vasubandhu, and Matthew Kapstein. &ldquo;Treatise on the Negation of the Person.&rdquo; <em>Reason&rsquo;s Traces: Identity and Interpretation in Indian and Tibetan Buddhist Thought</em>, Wisdom Publications, 2001, pp. 347&ndash;375.</p>
+    </article>
+
+    <footer>
+      &copy; <span id="year"></span> Elliot Gross
+    </footer>
+
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

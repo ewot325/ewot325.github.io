@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>“There’s Nothing Here. Except Coal.” — Elliot Gross</title>
+  <meta name="description" content="An essay by Elliot Gross.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..500;1,6..72,200..500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --paper:  #FBFAF6;
+      --ink:    #20211F;
+      --muted:  #6F6C66;
+      --rule:   #E5E1D8;
+      --accent: #3E5A6E;
+
+      --measure: 33rem;
+      --pad: clamp(1.5rem, 5vw, 3rem);
+    }
+
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Newsreader", Georgia, "Times New Roman", serif;
+      font-optical-sizing: auto;
+      line-height: 1.7;
+      font-size: 1.18rem;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    .page {
+      min-height: 100vh;
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      max-width: calc(var(--measure) + var(--pad) * 2);
+      margin: 0 auto;
+      padding: clamp(3.5rem, 12vh, 7rem) var(--pad) 2.5rem;
+    }
+
+    .back {
+      font-size: 0.82rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      margin: 0 0 3rem;
+      display: inline-block;
+    }
+    .back:hover { color: var(--accent); }
+    .back:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 1px; }
+
+    .title {
+      font-size: clamp(2rem, 5.5vw, 2.9rem);
+      font-weight: 300;
+      letter-spacing: -0.015em;
+      line-height: 1.08;
+      margin: 0 0 0.6rem;
+    }
+    .meta {
+      color: var(--muted);
+      font-style: italic;
+      font-size: 1rem;
+      margin: 0 0 3rem;
+    }
+
+    .prose p { margin: 0 0 1.4rem; text-align: justify; hyphens: auto; }
+
+    .prose .section {
+      font-size: 1.4rem;
+      font-weight: 400;
+      font-style: italic;
+      letter-spacing: -0.01em;
+      margin: 2.8rem 0 1.2rem;
+    }
+    .prose .section:first-child { margin-top: 0; }
+    .prose .refs-head { margin-top: 3.2rem; }
+
+    /* epigraph */
+    .prose .epigraph {
+      margin: 0 0 2.4rem;
+      padding-left: 1.2rem;
+      border-left: 2px solid var(--rule);
+      color: var(--muted);
+      font-style: italic;
+      font-size: 1.06rem;
+    }
+
+    /* figures */
+    .prose .fig { margin: 2rem 0; text-align: center; }
+    .prose .fig img {
+      max-width: 100%;
+      height: auto;
+      border: 1px solid var(--rule);
+      background: #fff;
+    }
+
+    /* footnote references */
+    .prose sup.fn { font-size: 0.7em; line-height: 0; }
+    .prose sup.fn a { color: var(--accent); text-decoration: none; padding: 0 0.05em; }
+
+    /* notes + bibliography */
+    .prose .ref, .prose .notes li {
+      font-size: 0.98rem;
+      line-height: 1.5;
+      text-align: left;
+    }
+    .prose .ref {
+      padding-left: 1.6rem;
+      text-indent: -1.6rem;
+      margin: 0 0 0.8rem;
+    }
+    .prose .notes { margin: 0; padding: 0 0 0 1.6rem; }
+    .prose .notes li { margin: 0 0 0.8rem; padding-left: 0.3rem; }
+    .prose .notes li::marker { color: var(--muted); }
+    .prose .fn-back { display: none; }
+
+    .prose em { font-style: italic; }
+    .prose strong { font-weight: 600; }
+    .prose a { color: var(--accent); word-break: break-word; }
+
+    footer {
+      margin-top: auto;
+      padding-top: 4rem;
+      font-size: 0.82rem;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(0.6rem);
+      animation: rise 0.7s cubic-bezier(0.2, 0.65, 0.3, 1) forwards;
+    }
+    .reveal:nth-child(1) { animation-delay: 0.05s; }
+    .reveal:nth-child(2) { animation-delay: 0.16s; }
+    .reveal:nth-child(3) { animation-delay: 0.27s; }
+    .reveal:nth-child(4) { animation-delay: 0.38s; }
+
+    @keyframes rise { to { opacity: 1; transform: none; } }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { animation: none; opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+
+    <a class="back reveal" href="writing.html">&larr; Writing</a>
+
+    <h1 class="title reveal">“There’s Nothing Here. Except Coal.”</h1>
+
+    <p class="meta reveal">Harlan County’s reliance on the mining industry. &middot; Apr 2023</p>
+
+    <article class="prose reveal">
+      <blockquote class="epigraph">&ldquo;My daddy was a miner / And I&#39;m a miner&#39;s son / And I&#39;ll stick with the union / &#39;Til every battle&#39;s won.&rdquo; These lyrics from Florence Reece&rsquo;s famous protest song &ldquo;Which Side Are You On?&rdquo; embody the confluence between coal mining identity and the anti-establishment movement in the Harlan County Mine War of 1931-1939. The Harlan County War was a deadly struggle that pitted Kentucky&rsquo;s Harlan County coal miners against the coal operators&#39; association (Labor Notes). The war was ignited by strikes in protest to a 10% decrease in the miners&rsquo; wages on top of already destitute conditions (Hevener 6). In the midst of the Great Depression, miners were suffering from low wages (paid as little as 80 cents per day), unemployment (more than &#8531; of miners were unemployed), high murder rate (the highest in the country), high rates of black lung (a malignant pneumoconiosis contracted in the mines), and generally poor standard of living (Soodalter).</blockquote>
+      <p>While the aftermath of the Harlan County War of 1931 resulted in the unionization of the county&rsquo;s mines and greater regulation of mine companies by the government, this result did not seem to greatly improve the condition of the miners (Gross 11). The abuse from the mine companies continued through the remainder of the 20th century and into the 21st century, with Harlan miners striking again in 1973, when Duke Power Company failed to meet union demands, and, most recently, in 2019, when the Blackjewel coal company abruptly shut down and refused to pay miners their wages for previous months of work. In response to Blackjewel, the miners and their families blocked the shipment of coal by camping on the train tracks, a show of defiance indicative of their increasingly failing conditions (Soodalter; Sainato). Down from its peak of 75,300 in the coal heyday, Harlan&rsquo;s population is now less than 27,000 (Ailshie 8). It ranks among the highest in the nation in terms of poverty rate and unemployment, and lowest in the nation in terms of life expectancy (Sainato; Knigge). Today, if you were to drive along Highway 119 through Harlan, you would see the beautiful and verdant hills blemished by abandoned factories and stripped-down mountaintops, evidence of the coal industry&rsquo;s exploitation&mdash;and subsequent lack of economic opportunity and low quality of life left in its wake.</p>
+      <p>However, despite Harlan&rsquo;s long, storied, and detrimental relationship with the coal industry, it continues to support and advocate for its presence in the community. Support for coal is easily quantifiable through support of political candidates. In the 2016 presidential election, Harlan residents overwhelmingly voted for Donald Trump (96.5%), as well as historically pro-coal advocates Mitch McConnell for U.S. Senator (89%) and Harold Rogers for U.S. Representative in 2020 (82.6%) (State Board of Elections). From the inception of his campaign, Trump was a staunch advocate for the reinvestment in coal energy, tweeting before the election: &ldquo;Obama&rsquo;s war on coal is killing American jobs&hellip;&rdquo; and continued post-election with Tweets such as: &ldquo;U.S. COAL PRODUCTION / Up 7.8% past year. / Down 31.5% last 10 years. / #EndingWarOnCoal&rdquo; (@realDonaldTrump). Additionally, Trump could repeatedly be heard at his rallies in the Appalachian region promising to bring back coal, such as during his rally in Charleston in 2016, where he vowed to &ldquo;put miners back to work&rdquo; while wearing a Friends of Coal hard hat (Srinivasan).</p>
+      <p>Friends of Coal (FoC), a lobbying and advocacy group, also has widespread backing in Harlan. This is evident without even having to ask&mdash;the FoC logo and slogan are plastered on bumper stickers, license plates, lawn signs, and posters. In discussion with Harlan residents, they express sentiment in accordance with these outward virtue signals. Take Elis Maggard, a poster boy for the pro-coal movement. A small-business owner, &ldquo;Maggard has assembled a small shrine of mining memorabilia&mdash;an old hard hat, miners&rsquo; aid boxes and preserved lumps of coal neatly arranged on a shelf,&rdquo; as well as having his business card stamped with the FoC logo (Srinivasan).</p>
+      <p>How can modern Harlan residents continue to support the coal industry even after its unabashed exploitation of their ancestors and current infractions? The coal institution single-handedly caused the death, suffering, and near-destitute conditions of thousands of Harlanians, so why do they staunchly advocate for its return? These pressing questions define their economic and social landscape. While the people of Harlan are not a monolith and have diverse experiences and sentiments regarding coal, this is a prevalent tension that impacts all members of the community and pervades nearly every facet of life. Two interlocking explanations lie in the deliberate economic exploitation and sociocultural manipulation by the coal institution. By elucidating historical factors and how they impact individuals today, we can better understand exploitative relationships between companies and their communities, how these companies leverage identity to perpetuate their power, and the real impact on affected individuals.</p>
+      <p>A natural question in the discussion of coal&rsquo;s grip on Harlan is how the institution rose to power in the first place. Situated in the Appalachian mountain range, Harlan County was originally a provincial farming town prior to the introduction of a railroad track in 1910, which ushered in an era of unparalleled growth due to coal. The economy boomed&mdash;coal profits were up as much as 119,000%&mdash;but, from the inception, this was not enjoyed equally among the residents (Hevener 1-10). This was primarily due to a legal tool called the &ldquo;broad form deed,&rdquo; which allowed coal companies to buy the mining rights underneath a resident&rsquo;s land without having to buy the land itself. This rendered arable land useless by leeching the enriching minerals from below, all at a greatly discounted price and at little benefit to the original owner (Srinivasan). No longer with the ability to utilize their land for agriculture or other purposes, former farmers were pushed to the mine companies for employment. Just as soon as it had begun, the ideas of riches and modernization promised to the residents with the arrival of coal had been mutilated into an immediate dependence on the coal companies for financial survival, thus beginning the ruthless cycle of economic reliance that continues into the modern day.</p>
+      <p>With the farmers now forced to work for the mine companies, the ability of the companies to influence the economic landscape of the previously agricultural and sparse area grew greatly. At its peak, these companies represented the vast majority of the economic means in Harlan: 16,795 residents were employed as miners, over 70% of the county&rsquo;s male population (Ailshie 3, 12). The companies leveraged this fact, and due to their outsize influence, were able to create what were known as company towns. Company towns were built and maintained by the coal operators, with their own law enforcement and no elected officials. This meant miners and their families lived in houses owned by the coal company, sent their children to schools run by the coal company, and even used company-issued currency at the company-owned general store&mdash;usually the only store for miles (Jackson). This absolute control was ripe for abuse, resulting in extremely poor living conditions. This also meant the residents did not have the social capital or monetary means to create enterprises of their own, prohibiting their ability to create their <em>own</em> economic future and opportunities. Because of this, when the coal industry began its downturn, the financial stability of Harlan residents fell with it.</p>
+      <p>Despite Donald Trump&rsquo;s promises, today, coal mining in America is at its lowest point since 1978. While there are many reasons for the decline, a decrease in natural gas costs, social movement in favor of green energy, and greater government regulation have made coal an increasingly less viable energy source, causing many experts to view the end of coal as inevitable (Davis). Following national trends, coal operations in Harlan have plummeted, with the number of residents employed as miners decreasing by 95% to 452 (Ailshie 6). With the death of the company town, Harlan residents were left with no non-coal infrastructure and no economic horizons.</p>
+      <p>While residents have tried to evolve, attempts seem futile at best. Local entrepreneurs have opened coal museums, outdoor experiences in the nearby mountains, and other various small businesses, but invasive chains such as Dollar General and Subway dominate the economic landscape and stifle native growth (Potts). It does not help that, all factors aside, coal mining is still the best employment opportunity in the area. Cody Hall, a Harlan County native, speaks about his experience in the Harlan job market. &ldquo;There&rsquo;s nothing here. There&rsquo;s nothing. Except coal.&rdquo; He describes falling into work as a miner, the same as his grandfather. Despite wanting to be a pharmacist, he was laid off, and, after he struggled to find employment elsewhere, his last resort was the mine. Despite its minimal presence, the coal companies are still finding ways to lure workers away from employers with more growth potential, entrenching their position. Residents do not just <em>feel</em> like they rely on coal; they <em>do </em>rely on coal&mdash;when Cody&rsquo;s mother had a stroke, he could no longer work his long shifts at the mine and is now being forced to leave the county (Srinivasan).</p>
+      <p>Cody&rsquo;s experience is not uncommon: many young people are choosing to leave in search of greater opportunities elsewhere (newspaper printer Jay Nolan recalls when U-Haul was the fastest growing business in town because of the sheer volume of people escaping). The lack of broadband internet access, quality education, and in-demand natural resources makes Harlan a difficult sell when it comes to outside funding (Porter). Because of these factors, brain-drain and the flight of those with the ability and motivation to advocate for greater outside investment pose a significant challenge to a new economic future. This leaves residents little hope of organic industry developing in the area, meaning a return to coal is the only option for a return to prosperity.</p>
+      <p>The coal companies created this cycle of breed dependence that leaves a disproportionate population of Harlan residents poor, unhealthy, and without future prospects&mdash;compelling them to advocate for the revitalization of coal. It is the only option they have, and, while government grants and programs promise modernization and new industrial frontiers, the actual quality of life for people like Cody continues to degenerate. But, there still seems to be gaps in this explanation. What keeps Harlan residents tied to the area of Harlan itself? Harlan&rsquo;s advocacy for coal presents itself as more than just pure necessity; there is an obvious element of pride in the industry that harmed them and the rest of the country in the form of global warming. The answer could lie in the coal institution&rsquo;s compelled fabrication of a sociocultural identity predicated on coal.</p>
+      <p>From the second it arrived, coal was a shared experience for Harlan residents. From getting their land wrung out, to their shovel&rsquo;s first scoop in the dirt, to coming together at vigils for those who have died in mining tragedies, the people have been united, on their own volition or not, around coal. When someone&rsquo;s entire life revolves around one specific element, in this case, coal, it permeates their entire livelihood. Academic Arthur Rose uses Elmore Leonard&rsquo;s 2001 novella, &ldquo;Fire in the Hole,&rdquo; to illustrate a concept which he calls &ldquo;toxic nostalgia.&rdquo; In the novella, set in Harlan, one character kills another, and, when questioned as to whether or not he feels remorse, he responds with a cryptic &ldquo;Boyd [the other character] and I dug coal together&hellip;[when] you work a deep mine with a man you look out for each other&rdquo; (Rose). This interpersonal dynamic illustrates Rose&rsquo;s concept of toxic nostalgia: regardless of how you feel towards another person, the traumatic experience of coal unites you on an elevated level. That being said, while this explains how an entire community came to identify itself with coal, it neglects to explain why this toxic nostalgia has somehow morphed into a <em>fond</em> nostalgia in the present day.</p>
+      <p>One of the main culprits for this transmutation is glorification. The glorification of coal mining is prevalent in nearly all forms of media and takes different approaches. The main ways in which the public outside of coal communities learns about the industry are through either news articles (which tend to paint a fatalistic perception of Appalachian communities and neglect to address underlying causes and solutions, a phenomenon colloquially known as &ldquo;poverty porn&rdquo;) or heavily fantasized, fictional representations of life in these communities, which are compelling and easily digestible for common audiences. Examples of this include Graham Yost&rsquo;s hit crime drama <em>Justified</em>, which portrays Harlan County as a lawless, antiquated land with gun-slinging miner characters, as well as Tony Bill&rsquo;s television movie <em>Harlan County War</em>, which showcases a fictionalized and drama-filled account of the historical Harlan County War. While residents in the community are well aware that these exaggerated representations do not accurately display their home, as Harlan County school administrator James Greene put it, &ldquo;I just kind of feel like we&#39;re special&hellip;I think we should just enjoy the fact that Harlan County has a reputation&rdquo; (Estep). Despite the insidious undertones, many Harlan residents embrace coal and coal&rsquo;s infamous reputation in Harlan as a factor that gains them recognition and differentiation both inside and outside of their region, as well as a stronger sense of personal and community identity. If coal is to leave, that would mean this source of perverted pride would leave with it.</p>
+      <p>Coal representations are not exclusive to big-budget, out-of-town productions. Its presentation inside the community also fosters this sense of identity. Countless songs, novels, and folklore originating from the region tell the story of working in the mines, and, while these forms of media can vary in their connotations of the industry, the underlying effect is an undeniable formation of collective identity formed around coal. These forms of media date as far back as the beginning of mining and have been created and distributed up to the modern day, where they still find massive success, a primary example of which is the music of Tyler Childers. Childers has billions of listens on his songs focusing on coal, including his 2017 single &ldquo;Nose to the Grindstone,&rdquo; which laments his father&#39;s injury as a coal miner and subsequent struggles with substance abuse and poverty, along with his 2011 song &ldquo;Coal&rdquo; off his <em>Bottles and Bibles</em> record, which sheds light on the coal industry&rsquo;s all-consuming nature in Appalachian towns. Despite their criticisms, these songs, in effect, perpetuate the phenomenon in which people feel strongly connected to their historical associations. &ldquo;My grandpa&rsquo;s grandpa died in the mines,&rdquo; or &ldquo;I come from a five-generation mining family&rdquo; are common explanations for why residents support continued mining (Lowenstein). This heritage passed down through generations obliges modern-day Harlanians to support what their ancestors worked so hard, often to a point of death, to perpetuate. Because this is what their families have done for decades, their identity is inextricable from coal.</p>
+      <p>That being said, this internal sense of coal identity is not cultivated without a fair share of outside influence, primarily from the coal lobby. Friends of Coal is an organization founded by the Kentucky Coal Association, a trade group, with the intention of &ldquo;astroturfing,&rdquo; or political and social lobbying by corporations masquerading as grass-roots support (Greer-Pitt). FoC spends hundreds of thousands of dollars every year to spread the influence of the coal industry in Appalachian towns (IRS). Some of their programs include a nine-week &ldquo;Coal in the Classroom&rdquo; education program for elementary schoolers (designed to &ldquo;educate children about the history and importance of coal&rdquo;), an annual $48,000 scholarship to a University of Kentucky engineering student who specializes in mining technology, and various other sponsored community activities (Srinivasan). 97% of FoC&rsquo;s revenue comes from the sale of their license plates, which can be seen flagging cars and trucks across Kentucky and West Virginia, along with their omnipresent logo on other miscellaneous merchandise (IRS). Not only does the FoC organization strengthen existing economic dependence in the form of scholarships, but they also fortify the sense of coal identity by indoctrinating children with industry propaganda from before they can even read or write. With children growing up believing that coal is integral to not only their world but America as a whole, how can they not advocate for its revival?</p>
+      <p>And, it&#39;s not just the institution that has something to gain from the continuing presence of coal; it&#39;s also the mass media conglomerates that produce and benefit from the aforementioned songs, movies, and other media. Companies such as Fox and Warner Media produce and sell the movies and shows based in Harlan; companies such as Spotify and other social media (Facebook, Twitter, etc.) generate income from the stories of survivors and victims of the coal complex. These companies not only play an integral role in the dissemination of coal glorification and identity but also have a financial stake in the perpetuation of coal culture in Harlan and similar areas.</p>
+      <p>While economic factors provide compelling evidence for why Harlan residents support coal despite its wrongs, the explanation would not be complete without the supplemental sociocultural evidence. The decades-long economic dependence has fostered an ingrained identity shared among residents, all revolving around coal. This ancestral identity compels current Harlanians to support coal in an effort to continue in tradition and return Harlan to what has been glamorized as its glory days&mdash;all to the final benefit of the coal institution and other invested industries.</p>
+      <p>This abusive relationship was started and sustained by the coal companies. Their ruthless actions went unchecked and unregulated, allowing them to control people&rsquo;s lives to an inordinate level through the creation of an economic dependence and fostering of such through coercive cultural adaptation. This relationship has resulted in vastly disparate conditions for the abuser and victim. Coal has extracted billions of tons of coal to the tune of hundreds of billions of dollars in profit, whereas Harlan residents today enjoy one of the highest poverty rates in the country, not to mention the resulting death and despair along the way (Britton-Purdy; O&rsquo;Malley; Porter). And, the coal cycle shows no signs of relenting anytime soon, all but ensuring the continued struggle for the people of Harlan. Because, at the end of the day, the people, humans like Cody Hall and Ellis Maggard, are the ones who face the real consequences of coal.<hr style="page-break-before:always;display:none;"></p>
+
+      <h2 class="section refs-head">Works Cited</h2>
+      <p class="ref">Davis, Rebecca J. &ldquo;3 Reasons US Coal Power Is Disappearing &ndash; and a Supreme Court Ruling Won&#39;t Save It.&rdquo; <em>The Conversation</em>, The Bill &amp; Melinda Gates Foundation, 26 July 2022, https://theconversation.com/3-reasons-us-coal-power-is-disappearing-and-a-supreme-court-ruling-wont-save-it-187254.</p>
+      <p class="ref">Ailshie, Karli B. &ldquo;Harlan County, Kentucky in a Post-Coal America: A Case Study.&rdquo; <em>Tennessee Research and Creative Exchange</em>, University of Tennessee, Knoxville, May 2022, https://trace.tennessee.edu/cgi/viewcontent.cgi?article=3485&amp;context=utk_chanhonoproj.</p>
+      <p class="ref">Britton-Purdy, Jedediah. &ldquo;The Violent Remaking of Appalachia.&rdquo; <em>The Atlantic</em>, Atlantic Media Company, 21 Mar. 2016, https://www.theatlantic.com/technology/archive/2016/03/the-violent-remaking-of-appalachia/474603/.</p>
+      <p class="ref">Childers, Tyler. &ldquo;Coal.&rdquo; <em>Bottles and Bibles</em>, Hickman Holler Records, 2011. <em>Spotify</em>, https://open.spotify.com/track/3Fq4shhJdENQhwlLk9qoDx</p>
+      <p class="ref">Childers, Tyler. &ldquo;Nose to the Grindstone.&rdquo; <em>OurVinyl Sessions - Tyler Childers</em>, OurVinyl Records, 2017. <em>Spotify</em>, https://open.spotify.com/track/4a2uqVlpRChHj32EjJLu7G</p>
+      <p class="ref">&ldquo;Election Results.&rdquo; <em>State Board of Elections</em>, Commonwealth of Kentucky, https://elect.ky.gov/results/Pages/default.aspx.</p>
+      <p class="ref">Estep, Bill. &ldquo;&#39;Justified&#39; Might Exaggerate, But Many in Harlan Like the TV Show.&rdquo; <em>Lexgo</em>, Lexington Herald-Leader, 12 Nov. 2015, https://www.kentucky.com/entertainment/tv-movies/article44150238.html.</p>
+      <p class="ref">&ldquo;Friends of Coal.&rdquo; <em>Return of Organization Exempt From Income Tax</em>, United States Internal Revenue Service, 2019, https://apps.irs.gov/pub/epostcard/cor/262720454_201912_990O_2021060718271942.pdf.</p>
+      <p class="ref">Greer-Pitt, Susan. &ldquo;Friends of Coal.&rdquo; <em>Sociological Stew</em>, Blogspot, 30 Sept. 2009, http://suesstew.blogspot.com/2009/09/friends-of-coal.html.</p>
+      <p class="ref">Gross, Elliot. <em>Bloody Harlan</em>. International Baccalaureate Extended Essay, 2022.</p>
+      <p class="ref">Hevener, John W. <em>Which Side Are You On?: The Harlan County Coal Miners, 1931-39</em>. University of Illinois Press, 2002.</p>
+      <p class="ref">Howard, Alan. &ldquo;Bloody Harlan.&rdquo; <em>Kentucky Coal Mining Diva Aunt Molly Jackson</em>, American Studies at University of Virginia, 1 Sept. 2009, http://xroads.virginia.edu/~MA05/luckey/amj/harlan.htm.</p>
+      <p class="ref">Knigge, Michael. &ldquo;Poverty Is Winning in Reality-Based Eastern Kentucky.&rdquo; <em>DW</em>, Deutsche Welle, 16 Sept. 2018, https://www.dw.com/en/poverty-is-winning-the-war-in-reality-based-eastern-kentucky/a-45311970.</p>
+      <p class="ref">Lowenstein, Jeff K. &quot;Voices of Harlan County, U.S.A.&quot; <em>In These Times</em>, vol. 40, no. 6, 06, 2016, pp. 26-29,4. <em>ProQuest</em>, http://ezproxy.cul.columbia.edu/login?url=https://www.proquest.com/magazines/voices-harlan-county-u-s/docview/1789812847/se-2.</p>
+      <p class="ref">O&#39;Malley, Matty. &ldquo;Coal Mining in the US.&rdquo; <em>US Industry (NAICS) Report 21211</em>, IBIS World, Apr. 2023, https://my.ibisworld.com/us/en/industry/21211/about.</p>
+      <p class="ref">Porter, Eduardo. &ldquo;Where Government Is a Dirty Word, but Its Checks Pay the Bills.&rdquo; <em>New York Times</em>, The New York Times, 21 Dec. 2018, https://www.nytimes.com/2018/12/21/business/economy/harlan-county-republican-welfare.html.</p>
+      <p class="ref">Potts, Monica. &ldquo;What Happens After the Mines Close? In Eastern Kentucky, Former Coal Mining Towns Are Plotting How to Reinvent Themselves.&rdquo; <em>Sierra</em>, Jan. 2019, pp. 1&ndash;8. <em>EBSCOhost</em>, search.ebscohost.com/login.aspx?direct=true&amp;AuthType=ip&amp;db=a9h&amp;AN=133745860&amp;site=ehost-live&amp;scope=site.</p>
+      <p class="ref">Rose, Arthur. &quot;Mining Memories with Donald Trump in the Anthropocene.&quot; <em>Modern Fiction Studies</em>, vol. 64, no. 4, 2018, pp. 701-722. <em>ProQuest</em>, http://ezproxy.cul.columbia.edu/login?url=https://www.proquest.com/scholarly-journals/mining-memories-with-donald-trump-anthropocene/docview/2157676667/se-2, doi:https://doi.org/10.1353/mfs.2018.0050.</p>
+      <p class="ref">Sainato, Michael. &ldquo;Laid Off and Owed Pay: The Kentucky Miners Blocking Coal Trains.&rdquo; <em>The Guardian</em>, The Guardian, 18 Sept. 2019, https://www.theguardian.com/us-news/2019/sep/17/harlan-county-coalmine-train-protest.</p>
+      <p class="ref">Silverman, Peter. <em>Harlan County War</em>. Paramount Pictures Home Entertainment, 2000.</p>
+      <p class="ref">Soodalter, Ron. &ldquo;The Price of Coal, Part II.&rdquo; <em>Kentucky Monthly</em>, Kentucky Monthly, 31 Oct. 2016, http://www.kentuckymonthly.com/culture/history/the-price-of-coal_1/.</p>
+      <p class="ref">Srinivasan, Prianka. &ldquo;Appalachia&rsquo;s Fickle Friend.&rdquo; <em>Jacobin</em>, Jacobin, 5 Dec. 2017, https://jacobin.com/2017/12/appalachia-friends-of-coal-mining-industry-jobs-environmental-just-transition.</p>
+      <p class="ref">Trump, Donald [@realDonaldTrump]. &ldquo;Obama&rsquo;s war on coal is killing American jobs, making us more energy dependent on our enemies &amp; creating a great business disadvantage.&rdquo; <em>Twitter</em>, 3 June 2014, https://twitter.com/realdonaldtrump/status/473895061747695616</p>
+      <p class="ref">Trump, Donald [@realDonaldTrump]. &ldquo;U.S. COAL PRODUCTION / Up 7.8% past year. / Down 31.5% last 10 years. / #EndingWarOnCoal&rdquo; <em>Twitter</em>, 1 November 2017, https://twitter.com/realDonaldTrump/status/925913030159937537?ref_src=twsrc%5Etfw</p>
+      <p class="ref">Winslow, Cal. &ldquo;A Brief History of Harlan County, USA.&rdquo; <em>Labor Notes</em>, Labor Notes, 14 Aug. 2019, https://labornotes.org/blogs/2019/08/brief-history-harlan-county-usa.</p>
+      <p class="ref">Yost, Graham. <em>Justified</em>. FX, 2010.</p>
+    </article>
+
+    <footer>
+      &copy; <span id="year"></span> Elliot Gross
+    </footer>
+
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

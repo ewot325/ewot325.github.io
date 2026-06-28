@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>A Two-Fold Approach to Folds — Elliot Gross</title>
+  <meta name="description" content="An essay on the metaphysics of folds by Elliot Gross.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..500;1,6..72,200..500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --paper:  #FBFAF6;
+      --ink:    #20211F;
+      --muted:  #6F6C66;
+      --rule:   #E5E1D8;
+      --accent: #3E5A6E;
+
+      --measure: 33rem;
+      --pad: clamp(1.5rem, 5vw, 3rem);
+    }
+
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Newsreader", Georgia, "Times New Roman", serif;
+      font-optical-sizing: auto;
+      line-height: 1.7;
+      font-size: 1.18rem;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    .page {
+      min-height: 100vh;
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      max-width: calc(var(--measure) + var(--pad) * 2);
+      margin: 0 auto;
+      padding: clamp(3.5rem, 12vh, 7rem) var(--pad) 2.5rem;
+    }
+
+    .back {
+      font-size: 0.82rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      margin: 0 0 3rem;
+      display: inline-block;
+    }
+    .back:hover { color: var(--accent); }
+    .back:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 1px; }
+
+    .title {
+      font-size: clamp(2rem, 5.5vw, 2.9rem);
+      font-weight: 300;
+      letter-spacing: -0.015em;
+      line-height: 1.08;
+      margin: 0 0 0.6rem;
+    }
+    .meta {
+      color: var(--muted);
+      font-style: italic;
+      font-size: 1rem;
+      margin: 0 0 3rem;
+    }
+
+    /* the prose itself */
+    .prose p {
+      margin: 0 0 1.4rem;
+      text-align: justify;
+      hyphens: auto;
+    }
+
+    /* section headings */
+    .prose .section {
+      font-size: 1.4rem;
+      font-weight: 400;
+      font-style: italic;
+      letter-spacing: -0.01em;
+      margin: 2.8rem 0 1.2rem;
+    }
+    .prose .section:first-child { margin-top: 0; }
+
+    .prose .refs-head { margin-top: 3.2rem; }
+
+    /* bibliography entries — hanging indent, smaller */
+    .prose .ref {
+      font-size: 0.98rem;
+      line-height: 1.5;
+      padding-left: 1.6rem;
+      text-indent: -1.6rem;
+      text-align: left;
+      margin: 0 0 0.8rem;
+      color: var(--ink);
+    }
+
+    .prose em { font-style: italic; }
+    .prose strong { font-weight: 600; }
+    .prose a { color: var(--accent); word-break: break-word; }
+
+    footer {
+      margin-top: auto;
+      padding-top: 4rem;
+      font-size: 0.82rem;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(0.6rem);
+      animation: rise 0.7s cubic-bezier(0.2, 0.65, 0.3, 1) forwards;
+    }
+    .reveal:nth-child(1) { animation-delay: 0.05s; }
+    .reveal:nth-child(2) { animation-delay: 0.16s; }
+    .reveal:nth-child(3) { animation-delay: 0.27s; }
+    .reveal:nth-child(4) { animation-delay: 0.38s; }
+
+    @keyframes rise { to { opacity: 1; transform: none; } }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { animation: none; opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+
+    <a class="back reveal" href="writing.html">&larr; Writing</a>
+
+    <h1 class="title reveal">A Two-Fold Approach to Folds</h1>
+
+    <p class="meta reveal">Towards an ontology of folds as minor entities &middot; December 2025</p>
+
+    <article class="prose reveal">
+
+      <h2 class="section">Introduction</h2>
+      <p>Fold this paper in half. (Apologies in advance to the online reader.) Now unfold it. (Just enough so you can read what I have to say.) Do you have one thing or two? Obviously, you have this piece of paper, but do you also have a fold? Now, keeping the original fold, fold it once more on a perpendicular side. Do you have two folds or three? If we could exchange folds for goods and services, would you be twice as rich, or thrice? What is the optimal way to fold the paper to maximize your number of fold-wealth? Do you really have more than one fold at all? Regardless, if you fold a paper enough times, you get origami, which I would certainly pay top dollar for.</p>
+      <p>Paper isn&rsquo;t the only thing that can fold&mdash;people can, too. If you&rsquo;re dealt a two of spades and an eight of hearts, you fold your cards back so you can see them, then you fold them back to the dealer as an admission of defeat. Folds are the creators of life: we are all made of protein folds, which are conceived the moment you fold a love letter to your <em>beau</em>. But they are also vengeful, bringing things out of existence, like wanting to die from embarrassment when you fold under pressure at your clarinet recital. You&rsquo;re not a real New Yorker if you don&rsquo;t fold your pizza, but as far as I&rsquo;m aware, folding pizza <em>dough</em> isn&rsquo;t a prerequisite for Italian citizenship. In fact, it was front-page news when the President of the United States&mdash;a self-proclaimed New Yorker&mdash;ate his pizza with a fork and a knife. Albeit the story was below the fold. Folds were an important part of our reading evolution; we used to peruse flat parchment, then we evolved to books and newspapers, then flip phones, and now laptops. Does the laptop fold cease to exist when you open it? Enough of this silly talk, it&rsquo;s time to fold our arms and put those brain folds to work.</p>
+      <p>Given the sheer ubiquity of folds in our daily lives, the lack of metaphysical inquiry into their existence and nature is rather astonishing. In my brief survey of fold literature, I came up empty-handed (other than a few side mentions), with the exception of Gilles Deleuze&#39;s concept in <em>The Fold: Leibniz and the Baroque</em>, which, in addition to not being the rigorous ontological account I was searching for, was over my head regardless. This is especially remarkable due to folds <em>prima facie</em> sharing many of the features that make other minor entities philosophically interesting. Folds, like holes, are parasitic entities. They rely on their hosts to exist: a fold in a napkin relies on the napkin to exist, not vice versa. But unlike holes, folds are not absences. When we point to a hole, we are pointing at negative matter, where there is <em>not</em> something, but folds are genuinely present material. Akin to boundaries, folds mark distinct regions of their host&rsquo;s material existence and seem intimately connected to the surfaces of objects. Yet, folds are not two-dimensional; in fact, as we will see, they are intrinsically not so, but in a problematic way. Similar to shadows, folds can be created and made to disappear with relative ease, but, at the same time, folds do not depend on the interplay of light and darkness, and the relationship with their hosts is far more concrete. This is to say, folds exhibit distinctive characteristics that resist easy assimilation to the more familiar cases, meriting their own independent treatment rather than reduction to one of the more familiar categories.</p>
+      <p>The literature on these other minor entities has set the groundwork for starting an ontological account of folds, but the task has been seemingly neglected until now. I will attempt to remedy this situation by making baby steps towards a more encompassing account of folds and their place in our ontology. I will begin by articulating a set of desiderata that an optimally satisfactory account of folds would meet, drawing on the criteria that have proven useful in evaluating theories of other minor entities, as well as the unique metaphysical issues that folds present. With these standards in mind, I will then evaluate two candidate accounts of the ontological status of folds: eliminativist and dependent, concrete particulars, the latter of which I will explore under the category of disturbances. These accounts were chosen intentionally with an element of caprice. By no means am I implying that these are the <em>only </em>two accounts that could address the issue of folds; rather, they are what I have found to be the most disparate (that is, covering the gamut of metaphysical commitment diversity) and established, being as they have been a stalwart feature in the literature of other, adjacent minor entities.</p>
+      <p>Within both accounts, I will elucidate how this approach situates folds in our greater ontology, then discuss the benefits and limitations of such, in terms of the established qualifications. Through this process, I will demonstrate that classifying folds as either of the proposed options exposes some critical issues regarding our conception of both the identity criteria and folds themselves. Yet, I propose that treating folds as disturbances best accommodates the distinctive features of folds while avoiding the more serious objections facing competing accounts.</p>
+
+      <h2 class="section">Desiderata</h2>
+      <p>Naturally, the task of accounting for folds comes with a number of formidable (some more than others) roadblocks. While one may maintain that there are no paradigm objects that give way to facile characterization, the nature of minor entities entails more arduous metaphysical work than is typical. There are a certain number of attributes that are integral in how we speak about and interact with folds on a regular basis, yet these can sometimes resist certain accounts by virtue of their metaphysical commitments. A coherent and completely satisfying account of folds would reckon with all of these attributes; however, we live in a literally and metaphysically messy world, and sacrifices will have to be made.</p>
+      <p>The first criterion is that a good theory should preserve the notion that folds are <em>parasitic entities</em>. Folds, like holes, shadows, and most other lesser things, we want to say are ontologically dependent on their hosts, as we see in the napkin example above. A basic expectation of any account is that it is able to explain this asymmetric dependence relation. However, the difficulty lies in specifying the exact nature of this relationship: is it merely causal, or is it perhaps something stronger, such as constitutive? When I fold the paper, the fold seemingly inherits the material composition of the paper itself, yet many perspectives would claim that the fold is an entity distinct from its host. When stipulating the parasitic relationship held by the fold, an account must clarify whether they are genuinely separate entities that depend on their hosts, or whether they are merely aspects or modifications of their hosts.</p>
+      <p><em>Localizability</em>: we like to be able to point at something and say, &ldquo;That crease right there, yup, it&rsquo;s a fold.&rdquo; When we say things like this, we usually imply that a fold occupies a determinate spatial region. However, setting the boundaries of where a fold begins and ends is difficult to formalize in practice. Consider my pleated pants (which my mom tells me are &ldquo;out of style&rdquo;). Does the pleat (fold) occupy just the sharp line of the crease, or does it extend to the curved regions on either side? A theory will provide principled criteria for demarcating fold boundaries, a challenge that intensifies when we consider that folds seem to involve both a two-dimensional, linear component (the crease line) and a three-dimensional region (the doubled-over material).</p>
+      <p><em>Individuation</em>: another important criterion is the ability to explain how we count folds and distinguish one from another. As in the example from the introduction, if I fold a paper once on one side and again on the perpendicular side, do I have two or three folds? I only completed the action of folding twice, but there appear to be three distinct folds. Or, maybe they are all only one fold, as single entities can have multiple, disconnected parts (see: bikini, or the letter &lsquo;i&rsquo;). Moreover, we want to be able to compare the number of folds to the number of other entities: if I have three pieces of paper, each page folded twice, I should be able to say whether I have more pieces of paper than I do folds. The difficulty here lies in finding an account that can distinguish what makes a fold numerically distinct from its neighbors, and whether folds can be counted at all in the first place.</p>
+      <p><em>Persistence over time</em>: perhaps one of the &ldquo;persistent&rdquo; metaphysical problems in history. Unfortunately, this paper will not offer a solution, but it will try on different theories for fit in the context of folds. What makes the wrinkle in my shirt right now the same as it was when I put it on this morning? If I unfold and refold a paper along the same crease, is it the same fold or a numerically distinct one? No theory will respond to these questions completely satisfactorily, but some mesh with our fold-notions better than others.</p>
+      <p><em>Persistence through change</em>: this criterion comes in tandem with the prior. We would love to talk about folds as though they survive change in location (both internal and external to their host) and material, but to what degree they do so is indeterminate. When I throw my paper airplane across the room, its folds fly with it (or do they?). When I push a ripple in the carpet from one end to the other, it sure seems like the same fold is present on both ends. But what if I were to replace each individual thread in the carpet, one by one (think <em>The Fold of Theseus</em>)? Is this still the same fold? A good account here will provide some grounds for a fold-identity condition through change.</p>
+      <p><em>Topological distinctness</em>: perhaps the most defining feature of a fold is its unique topographical makeup. Of course, a necessary feature of the fold is that it is the joint at which an object overlaps itself. But the two ends needn&rsquo;t be directly in contact with one another, and at the same time, they shouldn&rsquo;t be too far apart. They seem to require some requisite angle that falls in a Goldilocks zone. And, we tolerate some curvature in our creases, but one would not typically consider a sinuous river a &ldquo;fold.&rdquo; This point also gives rise to questions about the necessary dimensions in all three directions (questions which may or may not be chalked up to our narrow-minded bias towards the type of folds we encounter frequently in our daily lives). Also, an interesting, higher-level topographical issue arrives in the form of surfaces: folding seems to require taking a lower-dimensional surface and manipulating it through higher-dimensional space. This in itself is not problematic, but what if we were to attempt to fold a two-dimensional plane on its own? They cannot, strictly speaking, be folded, since folding involves the doubling of matter, and zero doubled remains zero. While some might object by rejecting the existence of two-dimensional surfaces in reality or by claiming that there are some entities that merely cannot be folded, an account should attempt to reify these claims by means of modifying its spatial or other cause-initial condition for folds.</p>
+      <p><em>Causal power</em>: folds appear to have genuine causal efficacy. The folds in a paper airplane determine its aerodynamic properties, and the folds in a protein define its biological function. If folds are to earn their place in our ontology, we require an explanation of how they exert causal influence: are their powers to influence the world outside of them an intrinsic property of the folds themselves, or of their material hosts?</p>
+      <p><em>Coming and ceasing to exist</em>: folds can be created and destroyed with remarkable ease (think about how many times you have ironed that dress shirt in your closet). We have topographical conditions, but at what point in the folding/unfolding process does the fold begin/cease to exist? Are folds necessarily reliant on some external entity beyond their hosts to bring them into existence? Consider a pre-fabricated metal piece that was never physically creased, but was created in a mold that we would consider achieving the topographical conditions for being a fold. Do we really want to consider this a paradigmatic entity, and if not, how do we stipulate the creation factor of foldedness?</p>
+      <p><em>Parsimony</em>: last, but certainly not least, is classic simplicity. All accounts of folds must also be evaluated against the general methodological constraint of ontological parsimony. We should generally try to avoid accounts that stipulate an infinite, or near-infinite, number of members into our ontological community. On the flip side, we also want an account that maintains many, or at least some, of our folk intuitions about folds, given we interact and speak about them nontrivially in our everyday lives. While most theories should not be discredited on the basis of parsimony alone, it can certainly be a deciding factor between two strong options, as well as a strong indicator of an account&rsquo;s explicatory power, as we should strive to maximize it when possible.</p>
+      <p>Not all of these desiderata carry equal weight. The criteria concerning parasitism, individuation, and geometry strike me as most fundamental, since they concern the basic ontological status and identity conditions of folds. An account that fails on these fronts cannot succeed regardless of how well it handles the others. Meanwhile, the persistence conditions and localizability criteria, while important, are especially more flexible than the rest&mdash;we might accept some revisionism about folk intuitions here if an account proves theoretically elegant and particularly strong in the other aspects.</p>
+
+      <h2 class="section">Eliminativism</h2>
+      <p>In the face of such complex and multifaceted issues, an attractive approach is to simply deny the existence of folds altogether, the method employed by the aptly named eliminativists. In this context, they hold that apparent reference to folds in ordinary discourse does not actually commit us to the existence of folds as genuine entities in our ontology. They would claim that talk about folds can be systematically paraphrased into statements about the properties of material objects, without remainder, i.e., when we say &quot;there is a fold in the napkin,&quot; we are not quantifying over some entity called a fold; we are merely attributing a property, that of being folded, to the napkin itself, the only &ldquo;real&rdquo; entity. David and Stephanie Lewis deal with this account in their canonical dialogue on holes, in which hole-talk is synonymous with shape predicates rather than existential quantification over immaterial entities (Lewis and Lewis). Applied to folds, they would maintain that &ldquo;is folded&rdquo; exhausts the semantic content of any fold discussion, and by claiming that a napkin is folded, you are making a claim about the napkin&rsquo;s geometrical configuration, not some additional entity parasitic upon it.</p>
+      <p><em>Prima facie</em>, the benefits of this account are tantalizingly considerable. Primarily, we can completely disregard some of the more intractable metaphysical debates from our list of desiderata. Chronic issues such as localizability dissolve entirely: there is no fact of the matter about where a fold begins and ends, because there are no folds to begin with. Parasitism goes more or less in the same direction; it is trivially true that a predicate is reliant on the thing that it qualifies over. Questions about persistence through time and change are passed up the chain to the host object, which does not quite absolve the fold of these questions entirely, but removes them from concern in the context of a fold theory. How these are ultimately resolved is subject to the other commitments of the individual&rsquo;s unified metaphysical theory. Topographical distinctness does not seem to pose an issue for this position either, as any of the specific surface and angle prerequisites one might posit for foldness can be reduced to other qualities about the host object. So, when a napkin is folded, we are just predicating distinct features of the host&rsquo;s topographical makeup and mereological parts.</p>
+      <p>On the other hand, Lewis and Lewis bring light to a concerning objection to this strategy. In their paper, the objector presses the eliminativist on their ability to count and compare. If holes truly do not exist, what do we mean when we say that there is an equal number of holes in the cheese as there are crackers? While there are attempts to handle such questions by introducing compound predicates (&ldquo;triply-perforated&rdquo; to compare to three crackers), this results in an infinite number of primitive predicates to capture all possible configurations and cross-categorical comparisons. This objection applies with equal gravitas to folds. If I fold a paper four times, how am I to say that there are as many folds as there are Beatles? As such, an eliminativist approach to folds is certainly not in the spirit of our desire for ontological parsimony and struggles to reflect the ordinary way we count and compare folds in casual language.</p>
+      <p>And, beyond the compound-predication issue, eliminativism falls short in the causal efficacy criterion. The folds that comprise an origami crane do not just modify how we talk about the original material; they also change its physical properties, cause a child joy, affect its material value, etc. Predicates as we conceive of them do not figure into causal configurations&mdash;under the eliminativist account, saying &ldquo;the fold in the paper crane caught my cookie crumbs&rdquo; comes out to mean &ldquo;because the paper is folded, it caught the crumbs,&rdquo; reducing the effect to a quality of the host object. This surely does not align with our instincts about folds, as we usually like to speak and believe as though the fold itself was the cause of the crumbs being caught, rather than just a property of the paper.</p>
+      <p>Thus, as we can see, while eliminativism offers an attractively austere metaphysics and dissolves some of the more pressing issues, its inability to accommodate our folk notions of comparability and causal efficacy serves as a concerning area of worry. Yet, while concerning, they do not merit a complete discarding of the view. Many eliminativists would argue that their view preserves the integral functions of folds while only sacrificing a few folk intuitions, a trade-off that is inevitable in the cut-throat marketplace of metaphysical theories. Alas, albeit promising, eliminativism leaves something to be desired.</p>
+
+      <h2 class="section">A Disturbing Theory of Folds</h2>
+      <p>The shortcomings of eliminativism could motivate the ontologist to deviate towards a more &ldquo;real&rdquo; perspective. Perhaps holes are not mere predicates on material hosts, but genuine concrete particulars in their own standing. Concrete particulars are instances of entities that exist in spacetime, possess causal power, and can be counted/compared. The question then becomes, exactly what type of particular might a fold be?</p>
+      <p>A promising account rises from the dust in the form of Toomas Karmo&rsquo;s &ldquo;Disturbance&rdquo; theory (1977). Karmo defines a disturbance as &quot;an object or entity found in some other object,&rdquo; but clarifies that this is not &ldquo;in&rdquo; in the sense of a cake being &ldquo;in&rdquo; an oven, rather, it is &ldquo;in the sense in which a knot may be in a rope, a wrinkle in a carpet, a hole in a perennial border, or a bulge in a cylinder.&rdquo; Karmo draws a distinction between objects that are spatially contained within their hosts as discrete occupants, as opposed to existing <em>through</em> or <em>by means of</em> their hosts in a more intimate fashion. The host of the parasitic minor entity, in this case, Karmo refers to as the &ldquo;medium,&rdquo; the total consignment of matter in which the disturbance, in some sense, inheres. A central facet of his view is the migration criterion, which states that a method for determining whether &quot;object <em>X</em> is &lsquo;in&rsquo; an object <em>Y</em>,&rdquo; is to ask whether it would be possible for <em>X </em> to migrate through <em>Y</em>. &ldquo;A knot is a disturbance because it may slip along the rope in which it is tied, and a hole is a disturbance because it can be pictured as moving around the flowerbed in which it was dug,&rdquo; and so on and so forth.</p>
+      <p>There is no reason to believe that folds could not be appended to this list of disturbances that Karmo has already given. The fit seems natural in many respects. Immediately, the parasitic notion of folds is accounted for, as disturbance theory would claim that a fold is in its host material, capturing our intuition that a fold depends asymmetrically on its host for existence. Most folds also seemingly pass the migration test. We can easily imagine the crease of a napkin moving, as though a little mouse was running underneath it. One might claim that this does not hold up as well when talking about more immutable hosts, such as rock folds in a mountain, but while we are unlikely to see undulating rock strata anytime soon, it is still possible for one to <em>imagine</em> these folds migrating, as a matter of metaphysical possibility. In any such cases, the fold is genuinely distinct from its host, just as Karmo states a stream is distinct from its water.</p>
+      <p>Treating folds as disturbances has plenty of benefits in terms of our established desiderata. Contrary to eliminativism, disturbance theory treats folds as concrete particulars, a category that possesses genuine causal efficacy, allowing us to continue saying that the fold is what caught the crumbs, not some property of the host napkin. Similarly adverse to eliminativism is disturbance theory&rsquo;s ability to enable individuation, counting, and comparison, due to folds&rsquo; status as entities. We can quantify over material objects, meaning we can coherently say the number of folds that exist, and compare that number to others, i.e., there are more folds in a book than there are Beatles in outer space (zero). We can also talk meaningfully about the material, size, shape, and any other attributive predicates.</p>
+      <p>This conception of folds also helps us answer difficult questions about persistence through change. Because a fold would not be identical to any particular spatiotemporal region of the host (say, any specific threads of a cloth), and instead a configuration-pattern, <em>Theseus&rsquo;s Fold</em> and any other identity questions about movement through a surface or change of material do not present us with issues. Even if every single thread has been replaced or there is no overlap between the spatiotemporal region at <em>t</em>1 and <em>t</em>2, as long as there has been a continuous disturbance in the host material, the fold persists.</p>
+      <p>Nevertheless, the disturbance account holds its fair share of drawbacks. Friederike Moltmann, in her 2019 paper &ldquo;Ontological Dependence, Spatial Location, and Part Structure,&rdquo; shows that disturbances have a peculiar feature, being that they do not inherit spatial location from their hosts in the expected way. She claims that &quot;if the hole is in the bag and the bag is in the drawer, it does not follow that the hole is in the drawer,&quot; a feature which can be likewise applied to folds. This is because disturbances possess only host-relative location; they lack independent spatial coordinates. This also has implications for the movement of disturbances, as it means that when we move the host, we are not simultaneously moving the disturbance. An example of this counterintuitive feature would be my <em>pass&eacute;</em> pleated pants. When I walk down the street, it appears as though the fold is also moving down the street. After all, the spatiotemporal region the fold occupies is certainly changing. However, Moltmann claims that due to the fold&rsquo;s lack of non-relative spatial location, we cannot rely on our linguistic intuitions and say that the fold is moving. Whether this constitutes a genuine problem or an insight into the nature of folds is not immediately clear. It could be that our intuition that folds move with their hosts is simply confused: what moves are the pants themselves, and their fold remains in the same relative position within them. While Moltmann is able to provide a tentative remedy to this conundrum, the core critique exposes some uneasy conclusions resulting from the disturbance view.</p>
+      <p>Regardless, the disturbance view is indisputably in its infancy, especially regarding folds. The topographic element of folds can be easily ascribed to a disturbance, as angle and other shape predicates can be applied to material particulars. However, a rigorous geometrical definition is likely necessary to address other important questions, such as those about <em>where</em> exactly in its host a disturbance begins and ends, <em>when </em>a disturbance begins or ceases its existence, and <em>how many</em> disturbances are truly in a material. It also provides no helpful account of persistence through time, other than the pre-existing, more general theories, such as three- or four-dimensionalism. Whereas in the eliminativist account, many of these questions could be disregarded or abstracted away, a disturbance theory is burdened with many of the tough metaphysical questions that have burdened realists for decades.</p>
+      <p>In terms of parsimony, disturbance theory fares decently well when placed in the context of a greater ontology. As long as one accepts that the independently motivated category of disturbances is necessary to account for paradigm examples such as streams, waves, knots, and similar phenomena, folds can be subsumed at a relatively minor additional cost. While not a paradigm of ontological frugality, the disturbance theory is significantly more economical in comparison to the eliminativist&#39;s trouble with infinite compound qualifiers. Overall, the disturbance theory represents a substantial improvement over some major categories that eliminativism fails to account for, especially individuation/comparability and causal efficacy. And, the challenges it faces&mdash;particularly regarding spatial location and individuation&mdash;are genuine, but they are challenges that any realist account of folds must confront.</p>
+
+      <h2 class="section">Conclusion</h2>
+      <p>This paper has attempted to take the first steps toward a systematic metaphysical treatment of folds, peculiarities conspicuously absent from the philosophical literature despite their ubiquity in prosaic comings-and-goings. They resist easy categorization, despite sharing features with other minor entities that have received extensive philosophical attention. I have begun movement towards rectifying the situation by articulating a set of desiderata, running from fundamental to flexible, drawing from extensive literature on the persistent metaphysical questions associated with lesser things, along with the unique problems that folds offer us.</p>
+      <p>The eliminativist account, drawing on the strategy employed by Lewis and Lewis in their treatment of holes, offers an appealingly austere metaphysics. By treating fold-talk as merely predicating geometrical properties of host objects, eliminativism dissolves a good few pernicious and stubborn metaphysical questions, yet this comes at the cost of many of our folk intuitions and linguistic conventions about causal efficacy, countability, and comparability, ultimately resulting in an unwieldy ontology. Meanwhile, the disturbance account, developed from Karmo&#39;s work, offers a possibly more robust, definitely more real, alternative. By treating folds as concrete particulars that exist &quot;in&quot; their host materials (in a non-spatial-containment sense), disturbance theory reifies the genuine ontological status of folds while maintaining their dependent relationship to their hosts. On this view, folds are real, material entities that can account for many of the shortcomings of the eliminativists, yet on the flip side, they also inherit all the standard metaphysical burdens that realists must bear. This is not to mention Moltmann&#39;s observations about the unintuitive spatial properties of disturbances, which, while not fatal, undermine (to a degree) the folk narrative that makes it enticing <em>prima facie</em>.</p>
+      <p>In comparison, neither emerges as decisively superior, and this surface-level examination reveals much work that remains to be done. While an individual&rsquo;s interim theory of choice (naturally, every self-respecting metaphysicist needs a coherent account of folds) will likely be contingent on their greater metaphysical commitments, disturbance theory shows the potential to surpass the eliminativists&rsquo; alluring simplicity. By working towards a more rigorous criterion for the topographical nature of folds, along with committing to a strong, more general metaphysics, disturbance theorists can whittle away at the hard questions of persistence through time, creation, destruction, individuation, and localization. This, coupled with its ability to preserve causal efficacy and the (majority of) folk intuitions regarding how we interact with folds in our daily lives, could bring us as close to a unified theory of folds as the current state of metaphysics might allow us.</p>
+      <p>The stakes of this inquiry might even reach beyond the provincial walls of theoretical metaphysics. Equipped with a better understanding of the ontology of folds, scientists might be better equipped to tackle fold-related problems in their field, such as protein folding, mountain folds, or material science, where folds are institutionalized features that play a manifest role in shaping our lives. Conceptual clarity about the underlying entities in our society is never without value. Unfortunately, however, it turns out that folds are not so easily folded into our existing metaphysical framework.</p>
+
+      <h2 class="section refs-head">Bibliography</h2>
+      <p class="ref">Casati, Roberto, and Achille Varzi. &ldquo;Holes.&rdquo; <em>The Stanford Encyclopedia of Philosophy</em>, edited by Edward N. Zalta, 12 May 2025,<a href="https://plato.stanford.edu/entries/holes/">https://plato.stanford.edu/entries/holes/</a>.</p>
+      <p class="ref">Karmo, Toomas. &ldquo;Disturbances.&rdquo; <em>Analysis</em>, vol. 37, no. 3, 1977, pp. 147&ndash;148.</p>
+      <p class="ref">Lewis, David K., and Stephanie R. Lewis. &ldquo;Holes.&rdquo; <em>Australasian Journal of Philosophy</em>, vol. 48, 1970, pp. 206&ndash;212.</p>
+      <p class="ref">Moltmann, Friederike. &ldquo;Ontological Dependence, Spatial Location, and Part Structure.&rdquo; <em>Ontology Makes Sense: Essays in Honor of Nicola Guarino</em>, edited by Stefano Borgo et al., IOS Press, 2019, pp. 211&ndash;220.</p>
+    </article>
+
+    <footer>
+      &copy; <span id="year"></span> Elliot Gross
+    </footer>
+
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
