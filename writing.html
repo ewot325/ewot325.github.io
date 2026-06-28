@@ -188,13 +188,24 @@
         <p class="piece-note">Short fiction about a boy on his birthday.</p>
       </article>
 
+      <article class="piece">
+        <div class="piece-head">
+          <h2 class="piece-title"><a href="punch.html">Punch</a></h2>
+          <span class="piece-meta">Feb 2026</span>
+        </div>
+        <p class="piece-note">Short fiction about a boy and his mother.</p>
+      </article>
+
     </div>
 
     <footer>
-      Made by hand in New York.
+      &copy; <span id="year"></span> Elliot Gross
     </footer>
 
   </main>
 
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Punch — Elliot Gross</title>
+  <meta name="description" content="A short story by Elliot Gross.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..500;1,6..72,200..500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --paper:  #FBFAF6;
+      --ink:    #20211F;
+      --muted:  #6F6C66;
+      --rule:   #E5E1D8;
+      --accent: #3E5A6E;
+
+      --measure: 33rem;
+      --pad: clamp(1.5rem, 5vw, 3rem);
+    }
+
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Newsreader", Georgia, "Times New Roman", serif;
+      font-optical-sizing: auto;
+      line-height: 1.7;
+      font-size: 1.18rem;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    .page {
+      min-height: 100vh;
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      max-width: calc(var(--measure) + var(--pad) * 2);
+      margin: 0 auto;
+      padding: clamp(3.5rem, 12vh, 7rem) var(--pad) 2.5rem;
+    }
+
+    .back {
+      font-size: 0.82rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      margin: 0 0 3rem;
+      display: inline-block;
+    }
+    .back:hover { color: var(--accent); }
+    .back:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 1px; }
+
+    .title {
+      font-size: clamp(2rem, 5.5vw, 2.9rem);
+      font-weight: 300;
+      letter-spacing: -0.015em;
+      line-height: 1.08;
+      margin: 0 0 0.6rem;
+    }
+    .meta {
+      color: var(--muted);
+      font-style: italic;
+      font-size: 1rem;
+      margin: 0 0 3rem;
+    }
+
+    /* the prose itself */
+    .prose p {
+      margin: 0 0 1.4rem;
+    }
+    .prose p:first-of-type { margin-top: 0; }
+
+    /* scene break — centered divider */
+    .prose hr {
+      border: 0;
+      text-align: center;
+      margin: 2.4rem 0;
+    }
+    .prose hr::before {
+      content: "\00A7";
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .prose em { font-style: italic; }
+    .prose a { color: var(--accent); }
+
+    footer {
+      margin-top: auto;
+      padding-top: 4rem;
+      font-size: 0.82rem;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(0.6rem);
+      animation: rise 0.7s cubic-bezier(0.2, 0.65, 0.3, 1) forwards;
+    }
+    .reveal:nth-child(1) { animation-delay: 0.05s; }
+    .reveal:nth-child(2) { animation-delay: 0.16s; }
+    .reveal:nth-child(3) { animation-delay: 0.27s; }
+    .reveal:nth-child(4) { animation-delay: 0.38s; }
+
+    @keyframes rise { to { opacity: 1; transform: none; } }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { animation: none; opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+
+    <a class="back reveal" href="writing.html">&larr; Writing</a>
+
+    <h1 class="title reveal">Punch</h1>
+
+    <p class="meta reveal">Short fiction about a boy and his mother &middot; February 2026</p>
+
+    <article class="prose reveal">
+      <p>She asks me if I can hear her. I recognize the voice immediately, but I ask who it is anyway. Jeanette. She says her hands are shaking. She says she needs me to come over right now. She can barely finish a thought. Her voice is trembling. She calls me her baby.</p>
+
+      <p>The voice on the other end of the line gets quieter, then inaudible. The thick, slurred words seep into my mind. It almost sounds like she&rsquo;s drunk, but she and I both know that&rsquo;s impossible. There hasn&rsquo;t been liquor in her house for years now&mdash;or any drink other than water, for that matter. Or at least there shouldn&rsquo;t have been.</p>
+
+      <p>Could she have picked a worse time to pull this stunt again? Probably. I can&rsquo;t help myself from thinking back to just last week, when she had done this exact same thing, only that time had been early in the morning, before school. Not just a normal day, either, the day of the ACT. This had been quite a dilemma, as two meaningless posters on the school counselor&rsquo;s wall&mdash;my main source of moral guidance&mdash;had come into conflict: &ldquo;Honor thy father and thy mother&rdquo; versus &ldquo;Don&rsquo;t wait for opportunity, create it!&rdquo; With school, working part-time at the local gas station, and the occasional attempt at social interaction, my tolerance for Jeanette&rsquo;s antics has been steadily decreasing. In her words, I&rsquo;m busier than &ldquo;a one-legged man in an ass-kicking contest.&rdquo; So recently, I&rsquo;ve been letting the phone ring a couple times longer before inevitably grabbing the beat-up old receiver and answering it like the good boy that I am, or at least should be.</p>
+
+      <p>Tonight, at least, I was only going to miss out on a date. Only a date! It sounded ridiculous even without saying it out loud. When was the last time I went on a date? Probably middle school, when I followed my playground crush under the torn-up chain link fence near the power plant and romantically watched the smoke stacks laze into the already gray sky. Of course, this was before she realized that I was lower-middle tier popularity, and moved on to a classmate who was better at four-square and had more friends.</p>
+
+      <p>My date tonight was far from the prettiest girl in class, but when I look in the mirror, I&rsquo;m not exactly thrilled with what I see either, and I can&rsquo;t see much without my &ldquo;birth control&rdquo; glasses on anyway. The one thing I prided myself on was my weight. Perfectly unremarkable: not too thick, not too thin. Nobody ever said anything about my weight. Not like I care much about how my date looks in the first place. She seems tidy and doesn&rsquo;t smell like cat piss, which meets the threshold. The fact that her dark brown eyes linger on my own for half a second when she scans the room is an added bonus.</p>
+
+      <p>I&rsquo;m hoping she&rsquo;ll give me a second chance, when a meek but impatient voice interrupts, asking whether I&rsquo;m still there. My bedside Casio tells me a few minutes have passed since I had last said something, but I don&rsquo;t trust it&mdash;it always seems to run a little fast.</p>
+
+      <p>She reminds me that she needs me to come over. I know what she needs. I tell her that. She tells me she loves me. She calls me &ldquo;honey.&rdquo; She apologizes. I tell her I love her. She tells me she loves me too.</p>
+
+      <p>I put the phone down as if I hadn&rsquo;t known exactly what was going to happen when I picked it up in the first place. I stare gloweringly at the bottle of glucose tablets on my dresser, a piece of dark oak that had been chipped from multiple voyages. The spots of scraped-up white adhesive, immediately identifiable as sticker residue, were the only reminder of the dresser&rsquo;s first home, when I still lived with Jeanette. Back then, the best part of my day was waiting on steps for her green Volkswagen Jetta to pull up the driveway from her job at the clinic, hands full of stickers reading &ldquo;Get well soon!&rdquo; and &ldquo;Don&rsquo;t forget to eat your veggies!&rdquo;&mdash;stickers that would ultimately get placed haphazardly on my furniture, no regard to symmetry or angle. The dresser was my crown jewel, a kaleidoscopic and luminously colorful beacon in my otherwise austere room.</p>
+
+      <p>That was, until I moved out a couple years ago, and decided that the stickers were too &ldquo;childish&rdquo; for what would be my &ldquo;mature&rdquo; bedroom. I took my overgrown fingernails to the stickers, digging into each, desperately trying to scrape each off, getting frustrated by the contrast of the white skid marks on the deep-stained wood. The more aggravated I got, the harder I scratched, the harder I scratched, the bloodier my nails became. When the pain became unbearable, I resigned myself to a wooden dresser in purgatory.</p>
+
+      <p>I pocket the bottle of tablets and look remorsefully at the polo shirt I had ironed on my bed for tonight, before walking out to the driveway. It was hard to be too upset&mdash;I only had myself to blame, really. <em>I</em> had been the one to take the glucose tablets out of her house in the first place, along with anything else that could be used to the same effect. It wasn&rsquo;t that I didn&rsquo;t trust her, I just saw how she got beady-eyed when she sat across from them at the kitchen table. Like a scene from an old medieval movie, the queen sitting obediently across from her exalted king, patiently awaiting her orders.</p>
+
+      <p>The inside of the car is silent as I back down the driveway. Driving in silence is always a little awkward, but it felt wrong to play the radio in situations like these. What was the appropriate soundtrack for a drive to give glucose pills to an estranged diabetic? Any suggestion seemed absurd. At least I can roll down the windows. The rush of the wind and hum of the engine my two buddies accompanying me on my ride, easing the weight of the thick and humid summer evening. I gaze more at the sky than the road in front of me, the color reflecting off the creek outside the passenger window, the same color as my truck: &ldquo;redder than an opossum&rsquo;s ass in poke berry season,&rdquo; as Jeanette used to say. The truck was a hand-me-down Ford pickup. She wasn&rsquo;t as shiny as she used to be, but reliable enough, at least to get me between the few places I ever really went: school, work, the store, Jeannette&rsquo;s, and back home.</p>
+
+      <p>The sun was barely visible by the time I got to the mobile home. The ramshackle old thing had obviously been designed with more grandiose places in mind, its sagging gutters an indicator of the disappointment it felt sitting in this unkempt lot, consumed by the kudzu that had already conquered the forest behind it. The vines were just now making their way up the trunk of the heirloom oak tree that shaded the house. The highest branches were three stories tall, and their leaves quivered in the warm breeze, as if trying to escape before they, too, were strangled. Beneath the canopy lay shingles the mobile home had shed through the years, outnumbered only by cicada shells, the same ones I used to collect during my summer vacations. I&rsquo;d hide them around the house and shriek with laughter at the yelp Jeannette would let out after finding one while cooking or doing laundry. The cicadas themselves welcome me as I walk to the front door, preparing their voices for what ought to be an all-night performance.</p>
+
+      <p>As usual, Huckleberry is perched in the window, unperturbed by God knows what is going on inside. Her gray fur blends in with the faded white blinds, the only contrast her sharp yellow eyes (&ldquo;like two piss holes in the snow&rdquo;), which stare off into the distance. She isn&rsquo;t looking at anything in particular, just looking for the sake of looking, maybe because she doesn&rsquo;t know any different or maybe because she&rsquo;s waiting for something to finally happen. There&rsquo;s a dancing in those eyes, but a slower one, not like the Friday night square. Her tail sweeps once across the windowsill as I shake the key into the handle. I&rsquo;ve always found a little humor in Jeanette&rsquo;s insistence on the lock, as if there was anyone around to try and break in, or there was anything worth breaking in for in the first place, or there was anything she could do to stop them if they tried even <em>a little</em> to get through the flimsy plastic door. That was also her convenient excuse for keeping Huckleberry in the first place. Not companionship&mdash;&ldquo;guard cat.&rdquo;</p>
+
+      <p>I hear her breathing pick up as I open the door; her gasps were loud enough to hear before I even came inside, but now she&rsquo;s practically gulping for air every few seconds. Had she been telling the truth? In times past the act had dropped pretty quickly once she found out I actually showed up, so the fact that she was still under duress made my chest tighten a bit. I rush over to the maroon plaid couch where she lies. The few steps I have to take to traverse the room are muted by the shag carpet, the only evidence of my progress across the room the chatter of crumbs and plastic wrappers beneath my boots, underwritten by the soft drum of an infomercial on TV. I can smell her perfume&mdash;a sample I had gotten her at Walmart, a scent reminiscent of an cheap diner and breezy fall morning. She had liked it so much, I picked it up every time I went. Despite its strength, it was still barely recognizable through the room&rsquo;s own perfume, <em>eau de</em> kitty litter <em>et</em> rotten produce.</p>
+
+      <p>A couple of tablets tumble out from the bottle into my hand, which I hold in front of her quivering lips like a mother trying to spoon-feed her toddler on the verge of a temper tantrum. She doesn&rsquo;t move, so I dump them into her mouth and reach over into the kitchen, letting the cloudy tap water cascade through the pile of dishes before it looks clear enough to fill what looks to be the cleanest glass available.</p>
+
+      <p>I lower the glass and look into her eyes, lethargic, but staring back into my own. It feels like there&rsquo;s barely anyone there. I&rsquo;m reminded of when she would spank me as a child after I had cursed or refused to eat my dinner&mdash;I could tell she didn&rsquo;t want to, but she had to. With the glucose in her system, she sits up almost immediately, like she&rsquo;s been hit with a shot of Narcan. I look away and shuffle over to the corner of the room, where I bend down and fill Huckleberry&rsquo;s kibble and water, then start sifting the litter box.</p>
+
+      <p>She begins apologizing. She calls me &ldquo;honey&rdquo; and she calls me &ldquo;baby.&rdquo; She tells me she knew I&rsquo;d come for her, that she knew she could count on me. She asks for a hug.</p>
+
+      <p>I scold her. I tell her this is the third time this month already. I tell her that she needs to listen to me and listen to the doctor and change her habits. It&rsquo;s a starting place. That she&rsquo;ll die if she keeps living like this.</p>
+
+      <p>Her soft smile begins to fade.</p>
+
+      <p>She interrupts me before I can tell her that I missed a date to be here with her tonight. She tells me to settle down and that I shouldn&rsquo;t talk to her with that tone of voice. As she does, her tone gets more vicious.</p>
+
+      <p>I sit on the carpet, one hand picking at the loose threads, the other stroking Huckleberry&rsquo;s soft fur as she makes biscuits on my Wrangler boot-cut jeans I got on clearance. I look up at Jeanette, glowering down at me from her perch on the couch, head propped up on multiple pillows on one end, feet kicked up at the other. Her stomach blocks the cushions behind her from sight. She continues her speech, becoming more irritated by the second, reminding me who I am, and what she&rsquo;s done for me, until now she&rsquo;s in full-blown attack mode. I can tell because she&rsquo;s struggling to adjust herself, the couch creaks as she moves her legs to the floor. She stays sitting down. I can see the imprint from where she was lying, the cross pattern inverted like a science teacher&rsquo;s demonstration of Einstein&rsquo;s theory of relativity.</p>
+
+      <p>She blames me. It&rsquo;s not clear exactly for what. She escalates to practically a yell now, drops of spittle erupting from her mouth every few seconds and landing on the carpet between us. I stand up to avoid the splash zone. She tells me to sit back down. I don&rsquo;t. She asks me why I don&rsquo;t listen to her. Why I don&rsquo;t bring her what she asks me to. Why I bring her &ldquo;shit.&rdquo; She asks if I want her to starve. She deals in generalities, but I know the specifics. I know what she wants. Punch.</p>
+
+      <p>I stay still. I&rsquo;ve been in this situation plenty of times before. That doesn&rsquo;t change anything. I want to jump on her and hit her. I want to smack her across the face then shake her then scream and ask why she won&rsquo;t change. Why she won&rsquo;t change for me. Why she can&rsquo;t make the smallest effort for herself and an even smaller effort for me. I want to shake her and shake her and scream at her for everything she&rsquo;s put us through. My feet stay planted. Huckleberry makes figure eights through my legs, fur-to-denim. My mouth stays closed. I want to grab a knife from the kitchen and cut her open, a big gash, right down the middle, and dig around in there. I know there&rsquo;s got to be something left for me to salvage, I&rsquo;ll take anything, really. Hard to imagine I&rsquo;d do more damage than has already been done. I pick at the dead skin on my thumb, and it starts to bleed a little. I want to pick up the trash from the floor, placing wrapper after wrapper on top of her, burying her beneath her own waste, knowing she&rsquo;s too paralyzed to lift an arm and do something about it. I want her to suffocate in the life she&rsquo;s given herself. I see her mouth moving, face deep red with rage. I only hear a ringing in my ear that gets louder by the second.</p>
+
+      <p>I blink and I&rsquo;m back outside. I don&rsquo;t look back at the window, where Huckleberry stares out as I speed off the lot.</p>
+
+      <p>The night is cooler now, but somehow more humid and heavy. The cicadas are out in full force now, joined by a backup of crickets, the chorus punctuated by a bullfrog and its mate. I fly down the road, stereo still silent. The wind pushes a tear laterally across my cheek, but no sound can be heard over the deafening world around me. I am surrounded by life, but the only sign of humanity is a truck that passes me on the other side of the road, its lights so bright I can barely see through my wet eyes. I swerve off the road, nearly avoiding a ditch.</p>
+
+      <hr>
+
+      <p>The sun streams through the slats in the blinds, illuminating jail bars across the bed. My neck aches as I lean forward, and the light stings my eyes, which are still raw from last night. I ask myself &ldquo;why&rdquo; every morning, and I&rsquo;m less convinced than ever today. No time to think this morning, though, just gonna brush my teeth with Folgers and grab a prepackaged muffin before I start up the truck.</p>
+
+      <p>The bright yellow sign is one of the few landmarks on the road to Jeanette&rsquo;s. It calls to the locals, myself part of the masses, like the beacon from a lighthouse, beckoning us with the allure of groceries that don&rsquo;t account for half your paycheck and the numbness of not having to really think about how things ended up in your cart in the first place. It&rsquo;s an oasis of pure sterility, so long as you ignore the communal needle garden planted in the parking lot. Not even a bell rings when you open the door; your only trace is a couple of digits on some ledger somewhere. The items practically fall into your cart from the aisles, and I mean, who can blame them, with the shelves so close together and the prices so low? Seriously? 79 cents for a pack of Ding Dongs, Ho Hos, and Donettes? With the price of hydros and oxys these days, it&rsquo;s no wonder they can&rsquo;t keep these things on the shelves! Jeanette sure couldn&rsquo;t resist. From one drug to the next. Makes you wonder why one&rsquo;s subsidized and the other&rsquo;s punishable with jail.</p>
+
+      <p>I somehow evade the trans fats and processed sugars and emerge relatively unscathed in the secluded back corner, where they hide the two-week-old bananas wrapped in Saran and the cereal with <em>only</em> 45 percent of your daily sugar. I throw in a couple of individually packaged bags of fruit snacks even though the doctor said not to&mdash;they&rsquo;re small, and maybe they could help avoid situations like last night. Plus, I&rsquo;m desperate to see the genuine smile on her face when she sees them.</p>
+
+      <p>The punch glares down at me menacingly from the shelf as I&rsquo;m checking out.</p>
+
+      <p>Maybe I should just give Jeanette the drugs back.</p>
+
+      <p>I finally make it to her place. I stand outside the door for a moment. I know so well what I&rsquo;m about to walk into. The house looks the same as it did the night before, only the morning hue is a little more sympathetic to the fading white plastic. My key hovers in front of the lock, waiting for permission to dock. Huckleberry doesn&rsquo;t look at me, just into the soft blue sky, like usual. Must be a bird out there, or something.</p>
+
+      <p>She tells me she&rsquo;s happy to see me. She calls me &ldquo;baby.&rdquo;</p>
+
+      <p>She does <em>look</em> happy to see me.</p>
+
+      <p>She apologizes. Again. Says she didn&rsquo;t mean it. She tells me she feels bad. She was worried I wouldn&rsquo;t come back. She makes a forced one-liner. &ldquo;You had me nervous as a long-tailed cat at a rocking chair convention.&rdquo;</p>
+
+      <p>I was worried about the same thing. Just instinct, I guess. Old habits die hard.</p>
+
+      <p>She tells me she cleaned the place. Ate good like I told her. She&rsquo;s going to get herself together now.</p>
+
+      <p>She promises.</p>
+
+      <p>But, she&rsquo;s not totally wrong. The worst piles of trash have been relocated to some invisible third location, the dishes in the sink are now partially clean instead of filthy, and some of the wilted vegetables are missing from the normal stack. This, of course, does nothing about the smell, or the crumbs in the carpet, or the stains in the couch.</p>
+
+      <p>I tell her I brought her more groceries. It&rsquo;ll keep her kitchen stocked for the next couple days.</p>
+
+      <p>She notices the fruit snacks. Her face lights up. She tells me she loves me. She asks me for a hug.</p>
+
+      <p>I still can&rsquo;t hug her. It just makes me too depressed. I mean, I can&rsquo;t even fit my arms around her anymore. When she started to gain weight, the anticipation always made it worse, not knowing whether today would be the day that her body was officially too large for my hands to grab each other on her back. There was a time during the transition where it was actually comforting, feeling like there was some real substance to her after she had been on the verge of vanishing from life altogether, eyes sunken and skin taut around collapsed veins. That milestone had long since passed.</p>
+
+      <p>Her eyes are the only thing that haven&rsquo;t grown. She uses them to stare at me, and I stare back just as intently. Maybe there&rsquo;s something there, a glimmer starting to form, maybe she&rsquo;s actually <em>in there</em> somewhere, and this maintenance is starting to pay off. Maybe <em>all</em> hope isn&rsquo;t lost, maybe people really <em>can</em> change, and maybe she <em>is</em> strong, and maybe she can be helped. I want to hug her. I want to cry. I want to curl up in a ball and lie in her lap, I want her to hold me and stroke my hair and tell me what a good boy I am, crying like I&rsquo;ve never cried before. I want to tell her I love her, tell her I love her no matter what she&rsquo;s done to me, and what she&rsquo;s done to herself. But I don&rsquo;t want to lie to her. I want to sit in her lap while she bounces me on her knee, playing &ldquo;horsey,&rdquo; like we used to after school. I want her skin to be comforting again, to feel the warmth between us and not be repulsed by its leathery texture. I want her to tell me she loves me, and mean it, and to not use me, and to hug me and squeeze me and tell me everything will be okay, that she&rsquo;ll love me forever and always. <em>I&rsquo;ll love you forever and always</em>, she&rsquo;d say before she tucked me into bed, leaving the hallway light on so I wouldn&rsquo;t get scared, and promising that she&rsquo;d come back to check on me in the middle of the night. I want to hold her in my own arms and tell her the same thing. I want her to get old, old enough to where I can cradle her in my arms and nurture her like she did for me when I was too young to care for myself. I want to introduce her to my wife and her grandchildren. I want her to be who I know she can be, who I know she <em>is</em>. I want to see her smile, a real, genuine smile, one that says, &ldquo;I&rsquo;m proud of you. I love you.&rdquo;</p>
+
+      <p>I tell her I should get going. School.</p>
+
+      <p>She&rsquo;s still looking at me with a grin on her face.</p>
+
+      <p>She asks me for one small favor. Just one <em>tiny</em> favor. Then that&rsquo;s it.</p>
+
+      <p>Punch.</p>
+
+      <p>I stare at her. Nobody stares back at me.</p>
+
+      <p>I drive back down the road I&rsquo;ve driven so many times, guided by nothing but the lighthouse.</p>
+
+      <p>There he is. Sitting smugly on the shelf. No violence in his eyes, it&rsquo;s not necessary anymore. He knows that victory is his at last. The surfer. He looks down at me with contempt, shaming me for having resisted him, his hand held high in victory. He&rsquo;s precariously standing on his surfboard, his cartoonishly-proportioned body an implicit warning, in case you manage to miss the state-sanctioned nutritional facts on the back label. 224 grams of sugar, not the watered-down stuff you get if you buy off-brand. Naturally, there&rsquo;s some beautiful, ripe fruit cresting with the wave, fruit which our surfer has generously condensed into an &ldquo;artificial fruit-flavored juice drink.&rdquo; You can only wonder what the geniuses in the legal department discussed to end up with that one. Artificial fruit-flavored juice drink masquerading as &ldquo;Hawaiian Punch,&rdquo; you have won.</p>
+
+      <p>I blink, and there he is. The biohazard red makes a strikingly brilliant contrast to the dank gray door and dark green forest. Even Huckleberry looks down to inquire about the foreign substance that has appeared at the front door.</p>
+
+      <p>I blink, and I&rsquo;m at school.</p>
+
+      <p>I blink, and I&rsquo;m at work.</p>
+
+      <p>I blink, and I&rsquo;m asleep.</p>
+
+      <p>I blink, and I&rsquo;m awake.</p>
+
+      <p>I blink, and I&rsquo;m sitting in front of her house again. Huckleberry isn&rsquo;t in the window.</p>
+
+      <p>The door is ajar. I walk in. The surfer is on his side.</p>
+
+      <p>Huckleberry is on the ground, paws firmly planted, lapping at what&rsquo;s left of the vivid, radioactive red stain in the carpet.</p>
+
+      <p>I stare at Jeanette. Nobody stares back at me.</p>
+    </article>
+
+    <footer>
+      &copy; <span id="year"></span> Elliot Gross
+    </footer>
+
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
