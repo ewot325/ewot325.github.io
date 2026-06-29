@@ -132,43 +132,29 @@
       .reveal { animation: none; opacity: 1; transform: none; }
     }
 
-    /* scroll-driven origami fold in the corner */
+    /* an origami swan that draws itself as you scroll */
     .origami {
       position: fixed;
       left: 1.5rem;
       bottom: 1.5rem;
-      width: 66px;
-      height: 66px;
+      width: 96px;
+      height: 86px;
       z-index: 40;
-      perspective: 340px;
       pointer-events: none;
     }
-    .origami .sheet { position: absolute; inset: 0; transform-style: preserve-3d; }
-    .origami .crease {
-      position: absolute;
-      left: 0; right: 0; top: 50%;
-      border-top: 1px dashed rgba(120, 110, 90, 0.5);
+    .origami svg { width: 100%; height: 100%; overflow: visible; display: block; }
+    .origami .swan-fill { fill: var(--ink); opacity: 0; }
+    .origami .swan-line,
+    .origami .swan-crease {
+      fill: none;
+      stroke: var(--ink);
+      stroke-width: 1.7;
+      stroke-linejoin: round;
+      stroke-linecap: round;
+      vector-effect: non-scaling-stroke;
     }
-    .origami .half {
-      position: absolute;
-      left: 0; width: 100%; height: 50%;
-      box-sizing: border-box;
-      border: 1px solid var(--rule);
-      backface-visibility: hidden;
-    }
-    .origami .half.top {
-      top: 0;
-      border-bottom: none;
-      background: linear-gradient(160deg, #ffffff, #efece4);
-    }
-    .origami .half.bottom {
-      top: 50%;
-      transform-origin: top center;
-      transform: rotateX(var(--fold, 0deg));
-      background: linear-gradient(20deg, #ffffff, #e8e4da);
-      box-shadow: 0 -3px 8px rgba(0, 0, 0, 0.10);
-    }
-    @media (max-width: 620px) { .origami { width: 52px; height: 52px; left: 1rem; bottom: 1rem; } }
+    .origami .swan-crease { stroke: var(--paper); stroke-width: 1; opacity: 0.75; }
+    @media (max-width: 620px) { .origami { width: 76px; height: 68px; left: 1rem; bottom: 1rem; } }
   </style>
   <link rel="stylesheet" href="theme.css">
   <script src="theme.js"></script>
@@ -240,36 +226,50 @@
 
   </main>
 
-  <div class="origami" aria-hidden="true" title="Fold this paper in half.">
-    <div class="sheet">
-      <div class="half top"></div>
-      <div class="half bottom"></div>
-      <div class="crease"></div>
-    </div>
+  <div class="origami" aria-hidden="true" title="An origami swan, folded as you read.">
+    <svg viewBox="0 0 100 90">
+      <path class="swan-fill" d="M10 48 Q24 40 42 46 Q54 50 64 52 Q54 36 58 24 Q61 14 70 12 Q78 11 80 16 L88 16 L80 20 Q74 22 72 30 Q70 40 74 48 Q80 58 66 64 Q44 70 28 64 Q14 58 10 48 Z" />
+      <path class="swan-line" d="M10 48 Q24 40 42 46 Q54 50 64 52 Q54 36 58 24 Q61 14 70 12 Q78 11 80 16 L88 16 L80 20 Q74 22 72 30 Q70 40 74 48 Q80 58 66 64 Q44 70 28 64 Q14 58 10 48 Z" />
+      <path class="swan-crease" d="M42 46 L66 64 M28 62 L64 52 M62 50 L70 22" />
+    </svg>
   </div>
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    /* fold the little paper in half as you scroll through the essay */
+    /* fold an origami swan into being as you scroll through the essay */
     (function () {
-      var bottom = document.querySelector(".origami .half.bottom");
-      if (!bottom) return;
+      var origami = document.querySelector(".origami");
+      if (!origami) return;
+      var line = origami.querySelector(".swan-line");
+      var crease = origami.querySelector(".swan-crease");
+      var fill = origami.querySelector(".swan-fill");
       var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      var ticking = false;
+
+      [line, crease].forEach(function (p) {
+        var len = p.getTotalLength();
+        p.dataset.len = len;
+        p.style.strokeDasharray = len;
+        p.style.strokeDashoffset = len;
+      });
+
+      function draw(p, start, end) {
+        // fraction of [start,end] completed, clamped 0..1
+        return Math.min(1, Math.max(0, (p - start) / (end - start)));
+      }
+      function setOffset(path, frac) {
+        path.style.strokeDashoffset = (path.dataset.len * (1 - frac)).toFixed(1);
+      }
+
       function update() {
-        ticking = false;
         var max = document.documentElement.scrollHeight - window.innerHeight;
-        var p = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0;
-        bottom.style.setProperty("--fold", (-172 * p).toFixed(1) + "deg");
+        var p = reduce ? 1 : (max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0);
+        setOffset(line, draw(p, 0, 0.62));      // outline traces the swan first
+        fill.style.opacity = (draw(p, 0.5, 1) * 0.88).toFixed(3); // then it fills in solid
+        setOffset(crease, draw(p, 0.72, 1));    // fold lines etch in last
       }
-      function onScroll() {
-        if (reduce || ticking) return;
-        ticking = true;
-        requestAnimationFrame(update);
-      }
-      window.addEventListener("scroll", onScroll, { passive: true });
-      window.addEventListener("resize", onScroll);
+      window.addEventListener("scroll", update, { passive: true });
+      window.addEventListener("resize", update);
       update();
     })();
   </script>
