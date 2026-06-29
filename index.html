@@ -113,17 +113,27 @@
     .bio p { margin: 0 0 1.1rem; }
     .bio p:last-child { margin-bottom: 0; }
 
-    /* top nav */
+    /* top nav — top right */
     .nav {
       display: flex;
-      gap: 1.8rem;
-      font-size: 0.82rem;
-      letter-spacing: 0.14em;
+      justify-content: flex-end;
+      gap: 2.2rem;
+      font-size: 1.05rem;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
     }
-    .nav a { color: var(--muted); text-decoration: none; }
+    .nav a {
+      color: var(--ink);
+      text-decoration: none;
+      padding-bottom: 3px;
+      border-bottom: 1px solid transparent;
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
     .nav a:hover { color: var(--accent); }
-    .nav a[aria-current="page"] { color: var(--ink); }
+    .nav a[aria-current="page"] {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
     .nav a:focus-visible {
       outline: 2px solid var(--accent);
       outline-offset: 3px;
@@ -133,23 +143,23 @@
     /* social icons */
     .social {
       display: flex;
-      gap: 1.5rem;
-      margin: 0 0 1rem;
+      gap: 1.9rem;
+      margin: 0 0 1.2rem;
       padding: 0;
       list-style: none;
     }
     .social a {
-      color: var(--muted);
+      color: var(--ink);
       display: inline-flex;
-      transition: color 0.2s ease;
+      transition: color 0.2s ease, transform 0.2s ease;
     }
-    .social a:hover { color: var(--accent); }
+    .social a:hover { color: var(--accent); transform: translateY(-2px); }
     .social a:focus-visible {
       outline: 2px solid var(--accent);
       outline-offset: 4px;
       border-radius: 3px;
     }
-    .social svg { width: 22px; height: 22px; display: block; fill: currentColor; }
+    .social svg { width: 32px; height: 32px; display: block; fill: currentColor; }
 
     footer {
       margin-top: auto;

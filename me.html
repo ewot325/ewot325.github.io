@@ -49,18 +49,28 @@
       padding: clamp(4rem, 14vh, 9rem) var(--pad) 2.5rem;
     }
 
-    /* top nav */
+    /* top nav — top right */
     .nav {
       display: flex;
-      gap: 1.8rem;
+      justify-content: flex-end;
+      gap: 2.2rem;
       margin: 0 0 2.4rem;
-      font-size: 0.82rem;
-      letter-spacing: 0.14em;
+      font-size: 1.05rem;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
     }
-    .nav a { color: var(--muted); text-decoration: none; }
+    .nav a {
+      color: var(--ink);
+      text-decoration: none;
+      padding-bottom: 3px;
+      border-bottom: 1px solid transparent;
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
     .nav a:hover { color: var(--accent); }
-    .nav a[aria-current="page"] { color: var(--ink); }
+    .nav a[aria-current="page"] {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
     .nav a:focus-visible {
       outline: 2px solid var(--accent);
       outline-offset: 3px;
