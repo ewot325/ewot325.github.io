@@ -56,9 +56,8 @@
     /* photo beside text on wider screens, stacked on phones */
     .content {
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       gap: clamp(1.8rem, 4vw, 3.2rem);
-      margin-top: auto;
     }
 
     .portrait-col { flex: 0 0 auto; }
@@ -118,6 +117,7 @@
       display: flex;
       justify-content: flex-end;
       gap: 2.2rem;
+      margin: 0 0 3rem;
       font-size: 1.05rem;
       letter-spacing: 0.1em;
       text-transform: uppercase;
