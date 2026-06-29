@@ -55,36 +55,48 @@ except Exception as e:
     data["music"] = None
     print("music error:", e)
 
-# ---- Book: Goodreads "read" shelf RSS (most recent item) ----
-try:
-    xml = fetch(GOODREADS_RSS)
+# ---- Book: Goodreads currently-reading shelf, falling back to most recent read ----
+def parse_book(xml):
     m = re.search(r"<item>(.*?)</item>", xml, re.S)
-    book = None
-    if m:
-        it = m.group(1)
-        def g(tag):
-            mm = re.search(r"<%s>(.*?)</%s>" % (tag, tag), it, re.S)
-            return strip_cdata(html.unescape(mm.group(1))) if mm else ""
-        rating = g("user_rating")
-        book = {"title": g("title"),
-                "author": g("author_name"),
-                "cover": g("book_large_image_url") or g("book_image_url"),
-                "rating": int(rating) if rating.isdigit() else 0}
+    if not m:
+        return None
+    it = m.group(1)
+    def g(tag):
+        mm = re.search(r"<%s>(.*?)</%s>" % (tag, tag), it, re.S)
+        return strip_cdata(html.unescape(mm.group(1))) if mm else ""
+    if not g("title"):
+        return None
+    rating = g("user_rating")
+    return {"title": g("title"),
+            "author": g("author_name"),
+            "cover": g("book_large_image_url") or g("book_image_url"),
+            "rating": int(rating) if rating.isdigit() else 0}
+
+try:
+    read_url = GOODREADS_RSS
+    cr_url = re.sub(r"shelf=[^&]+", "shelf=currently-reading", read_url)
+    book = parse_book(fetch(cr_url))
+    if book:
+        book["status"] = "reading"
+    else:  # nothing in progress — show the most recently finished book instead
+        book = parse_book(fetch(read_url))
+        if book:
+            book["status"] = "read"
     data["book"] = book
 except Exception as e:
     data["book"] = None
     print("book error:", e)
 
-# ---- Film: Letterboxd RSS (most recent watched film, no review text) ----
+# ---- Film: Letterboxd RSS (up to 4 most recent films, no review text) ----
 try:
     xml = fetch(f"https://letterboxd.com/{LETTERBOXD_USER}/rss/")
-    film = None
+    films = []
     for it in re.findall(r"<item>(.*?)</item>", xml, re.S):
         ft = re.search(r"<letterboxd:filmTitle>(.*?)</letterboxd:filmTitle>", it, re.S)
         if not ft:
             continue  # skip lists / non-film entries
-        def g2(tag):
-            mm = re.search(r"<letterboxd:%s>(.*?)</letterboxd:%s>" % (tag, tag), it, re.S)
+        def g2(tag, _it=it):
+            mm = re.search(r"<letterboxd:%s>(.*?)</letterboxd:%s>" % (tag, tag), _it, re.S)
             return html.unescape(mm.group(1).strip()) if mm else ""
         poster = ""
         desc = re.search(r"<description>(.*?)</description>", it, re.S)
@@ -92,14 +104,15 @@ try:
             im = re.search(r'<img src="([^"]+)"', desc.group(1))
             poster = im.group(1) if im else ""
         rating = g2("memberRating")
-        film = {"title": html.unescape(ft.group(1).strip()),
-                "year": g2("filmYear"),
-                "rating": float(rating) if rating else None,
-                "poster": poster}
-        break  # only the most recent film — review text is intentionally dropped
-    data["film"] = film
+        films.append({"title": html.unescape(ft.group(1).strip()),
+                      "year": g2("filmYear"),
+                      "rating": float(rating) if rating else None,
+                      "poster": poster})  # review text intentionally dropped
+        if len(films) >= 4:
+            break
+    data["films"] = films
 except Exception as e:
-    data["film"] = None
+    data["films"] = None
     print("film error:", e)
 
 with open("me-data.json", "w", encoding="utf-8") as f:

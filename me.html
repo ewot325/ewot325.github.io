@@ -123,6 +123,18 @@
     .now-title em { font-style: italic; }
     .now-sub { color: var(--muted); margin-top: 0.15rem; }
     .now-stars { color: var(--accent); letter-spacing: 0.06em; margin-top: 0.3rem; }
+    /* film poster row */
+    .films { display: flex; flex-wrap: wrap; gap: 1.1rem; }
+    .film { width: 102px; margin: 0; }
+    .film img {
+      width: 100%;
+      aspect-ratio: 2 / 3;
+      object-fit: cover;
+      border: 1px solid var(--rule);
+      background: #fff;
+      display: block;
+    }
+    .film .now-stars { margin-top: 0.35rem; font-size: 0.82rem; text-align: center; }
     /* songs (text only) */
     .songs { list-style: none; margin: 0; padding: 0; }
     .songs li { margin: 0; }
@@ -247,7 +259,8 @@
           var html = "";
 
           if (d.book && d.book.title) {
-            html += item("Reading", mediaBody(
+            var bookLabel = d.book.status === "read" ? "Last read" : "Reading";
+            html += item(bookLabel, mediaBody(
               d.book.cover,
               esc(d.book.title),
               "by " + esc(d.book.author),
@@ -261,13 +274,16 @@
             html += item("Listening", '<ul class="songs">' + lis + "</ul>");
           }
 
-          if (d.film && d.film.title) {
-            var sub = d.film.year ? esc(d.film.year) : "";
-            html += item("Watching", mediaBody(
-              d.film.poster,
-              esc(d.film.title),
-              sub,
-              stars(d.film.rating)));
+          if (d.films && d.films.length) {
+            var posters = d.films.map(function (f) {
+              var st = stars(f.rating);
+              var cap = esc(f.title) + (f.year ? " (" + esc(f.year) + ")" : "");
+              return '<figure class="film">' +
+                (f.poster ? '<img src="' + esc(f.poster) + '" alt="' + esc(f.title) + '" title="' + cap + '" loading="lazy">' : "") +
+                (st ? '<figcaption class="now-stars">' + st + "</figcaption>" : "") +
+                "</figure>";
+            }).join("");
+            html += item("Watching", '<div class="films">' + posters + "</div>");
           }
 
           if (!html) {
