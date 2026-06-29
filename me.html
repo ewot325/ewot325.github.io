@@ -263,6 +263,13 @@
         .then(function (d) {
           var html = "";
 
+          if (d.music && (d.music.week || d.music.month)) {
+            var lis = "";
+            if (d.music.week)  lis += '<li><span class="song-when">This week</span>'  + song(d.music.week)  + "</li>";
+            if (d.music.month) lis += '<li><span class="song-when">This month</span>' + song(d.music.month) + "</li>";
+            html += item("Listening", '<ul class="songs">' + lis + "</ul>");
+          }
+
           if (d.books && d.books.items && d.books.items.length) {
             var bookLabel = d.books.status === "read" ? "Last read" : "Reading";
             var bookShelf = d.books.items.map(function (b) {
@@ -275,13 +282,6 @@
               return posterItem(b.cover, b.url, b.title + (b.author ? " — " + b.author : ""), cap);
             }).join("");
             html += item(bookLabel, '<div class="shelf">' + bookShelf + "</div>");
-          }
-
-          if (d.music && (d.music.week || d.music.month)) {
-            var lis = "";
-            if (d.music.week)  lis += '<li><span class="song-when">This week</span>'  + song(d.music.week)  + "</li>";
-            if (d.music.month) lis += '<li><span class="song-when">This month</span>' + song(d.music.month) + "</li>";
-            html += item("Listening", '<ul class="songs">' + lis + "</ul>");
           }
 
           if (d.films && d.films.length) {
