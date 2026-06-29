@@ -131,35 +131,6 @@
     @media (prefers-reduced-motion: reduce) {
       .reveal { animation: none; opacity: 1; transform: none; }
     }
-
-    /* a sheet of paper that folds, stage by stage, into a swan as you scroll */
-    .origami {
-      position: fixed;
-      left: 1.5rem;
-      bottom: 1.5rem;
-      width: 96px;
-      height: 96px;
-      z-index: 40;
-      pointer-events: none;
-    }
-    .origami svg { width: 100%; height: 100%; overflow: visible; display: block; }
-    .origami .frame { opacity: 0; }
-    .origami .pp {
-      fill: #efe9dd;
-      stroke: #b1a78d;
-      stroke-width: 1.4;
-      stroke-linejoin: round;
-      vector-effect: non-scaling-stroke;
-      filter: drop-shadow(0 1px 1.5px rgba(0, 0, 0, 0.2));
-    }
-    .origami .pc {
-      fill: none;
-      stroke: #c7bca2;
-      stroke-width: 0.9;
-      stroke-linejoin: round;
-      vector-effect: non-scaling-stroke;
-    }
-    @media (max-width: 620px) { .origami { width: 78px; height: 78px; left: 1rem; bottom: 1rem; } }
   </style>
   <link rel="stylesheet" href="theme.css">
   <script src="theme.js"></script>
@@ -231,59 +202,8 @@
 
   </main>
 
-  <div class="origami" aria-hidden="true" title="A sheet of paper, folded into a swan as you read.">
-    <svg viewBox="0 0 100 100">
-      <!-- 0: flat sheet -->
-      <g class="frame">
-        <polygon class="pp" points="24,24 76,24 76,76 24,76" />
-      </g>
-      <!-- 1: first crease marked -->
-      <g class="frame">
-        <polygon class="pp" points="24,24 76,24 76,76 24,76" />
-        <line class="pc" x1="24" y1="76" x2="76" y2="24" />
-      </g>
-      <!-- 2: folded in half — a triangle -->
-      <g class="frame">
-        <polygon class="pp" points="76,24 76,76 24,76" />
-        <line class="pc" x1="76" y1="76" x2="50" y2="50" />
-        <line class="pc" x1="50" y1="50" x2="76" y2="24" />
-      </g>
-      <!-- 3: folded again — a kite / bird base -->
-      <g class="frame">
-        <polygon class="pp" points="50,22 71,54 50,86 29,54" />
-        <line class="pc" x1="50" y1="22" x2="50" y2="86" />
-        <line class="pc" x1="29" y1="54" x2="71" y2="54" />
-      </g>
-      <!-- 4: the swan -->
-      <g class="frame">
-        <path class="pp" d="M10 48 Q24 40 42 46 Q54 50 64 52 Q54 36 58 24 Q61 14 70 12 Q78 11 80 16 L88 16 L80 20 Q74 22 72 30 Q70 40 74 48 Q80 58 66 64 Q44 70 28 64 Q14 58 10 48 Z" />
-        <path class="pc" d="M42 46 L66 64 M28 62 L64 52 M62 50 L70 22" />
-      </g>
-    </svg>
-  </div>
-
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
-
-    /* scrub a sheet of paper through its fold stages into a swan as you scroll */
-    (function () {
-      var frames = [].slice.call(document.querySelectorAll(".origami .frame"));
-      if (!frames.length) return;
-      var last = frames.length - 1;
-      var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-      function update() {
-        var max = document.documentElement.scrollHeight - window.innerHeight;
-        var p = reduce ? 1 : (max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0);
-        var pos = p * last;                       // 0 → flat sheet, last → swan
-        frames.forEach(function (f, i) {
-          f.style.opacity = Math.max(0, 1 - Math.abs(pos - i)).toFixed(3); // crossfade adjacent stages
-        });
-      }
-      window.addEventListener("scroll", update, { passive: true });
-      window.addEventListener("resize", update);
-      update();
-    })();
   </script>
 </body>
 </html>
