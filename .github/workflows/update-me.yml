@@ -1,0 +1,43 @@
+name: Update Me page
+
+on:
+  schedule:
+    - cron: "17 */6 * * *"   # every 6 hours
+  workflow_dispatch:           # lets you run it manually from the Actions tab
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-me
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Fetch latest book / songs / film
+        env:
+          LASTFM_KEY: ${{ secrets.LASTFM_KEY }}
+          LASTFM_USER: ${{ secrets.LASTFM_USER }}
+          GOODREADS_RSS: ${{ secrets.GOODREADS_RSS }}
+          LETTERBOXD_USER: ${{ secrets.LETTERBOXD_USER }}
+        run: python3 .github/scripts/update_me.py
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add me-data.json
+          if git diff --staged --quiet; then
+            echo "No changes."
+          else
+            git commit -m "Update me-data.json [skip ci]"
+            git push
+          fi

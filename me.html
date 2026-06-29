@@ -89,8 +89,62 @@
       color: var(--muted);
       font-weight: 300;
       font-size: 1.2rem;
-      margin: 0;
-      max-width: 28rem;
+      margin: 0 0 2.6rem;
+      max-width: 32rem;
+    }
+
+    /* "currently into" list */
+    .now { margin: 0; }
+    .now-item {
+      display: flex;
+      gap: clamp(1.2rem, 4vw, 2.6rem);
+      padding: 1.7rem 0;
+      border-top: 1px solid var(--rule);
+    }
+    .now-item:last-child { border-bottom: 1px solid var(--rule); }
+    .now-label {
+      flex: 0 0 7.5rem;
+      font-style: italic;
+      color: var(--muted);
+      font-size: 1.05rem;
+      padding-top: 0.2rem;
+    }
+    .now-body { flex: 1 1 0; min-width: 0; display: flex; gap: 1.1rem; align-items: flex-start; }
+    .now-thumb {
+      flex: 0 0 auto;
+      height: 104px;
+      width: auto;
+      border: 1px solid var(--rule);
+      background: #fff;
+      display: block;
+    }
+    .now-text { min-width: 0; }
+    .now-title { font-size: 1.25rem; line-height: 1.25; }
+    .now-title em { font-style: italic; }
+    .now-sub { color: var(--muted); margin-top: 0.15rem; }
+    .now-stars { color: var(--accent); letter-spacing: 0.06em; margin-top: 0.3rem; }
+    /* songs (text only) */
+    .songs { list-style: none; margin: 0; padding: 0; }
+    .songs li { margin: 0; }
+    .songs li + li { margin-top: 0.7rem; }
+    .song-when {
+      display: inline-block;
+      min-width: 7rem;
+      padding-right: 0.7rem;
+      font-size: 0.82rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .song-title { font-size: 1.12rem; }
+    .song-title .sub { color: var(--muted); font-size: 1rem; }
+    .now-foot { margin: 1.6rem 0 0; font-size: 0.85rem; color: var(--muted); font-style: italic; }
+    .now-msg { color: var(--muted); }
+
+    @media (max-width: 620px) {
+      .now-item { flex-direction: column; gap: 0.5rem; }
+      .now-label { flex-basis: auto; padding-top: 0; }
+      .song-when { display: block; min-width: 0; margin-bottom: 0.1rem; }
     }
 
     footer {
@@ -128,8 +182,11 @@
 
     <h1 class="reveal">Me</h1>
 
-    <!-- EDIT: this page is a placeholder — add whatever you like here later. -->
-    <p class="lede reveal">More soon.</p>
+    <p class="lede reveal">A little of what I&rsquo;m into lately &mdash; pulled in automatically.</p>
+
+    <section class="now reveal" id="now" aria-live="polite">
+      <p class="now-msg">Loading&hellip;</p>
+    </section>
 
     <footer>
       &copy; <span id="year"></span> Elliot Gross
@@ -139,6 +196,91 @@
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    (function () {
+      var now = document.getElementById("now");
+
+      function esc(s) {
+        return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) {
+          return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c];
+        });
+      }
+
+      function stars(r) {
+        if (!r || r <= 0) return "";
+        var full = Math.floor(r), half = (r - full) >= 0.5;
+        return "★".repeat(full) + (half ? "½" : "");
+      }
+
+      function ago(iso) {
+        var d = new Date(iso);
+        if (isNaN(d)) return "";
+        var days = Math.floor((Date.now() - d) / 86400000);
+        if (days <= 0) return "updated today";
+        if (days === 1) return "updated yesterday";
+        return "updated " + days + " days ago";
+      }
+
+      function item(label, body) {
+        return '<article class="now-item"><div class="now-label">' + label +
+               '</div><div class="now-body">' + body + '</div></article>';
+      }
+
+      function mediaBody(img, title, sub, st) {
+        var thumb = img ? '<img class="now-thumb" src="' + esc(img) + '" alt="" loading="lazy">' : "";
+        var t = '<div class="now-text"><div class="now-title">' + title + '</div>';
+        if (sub) t += '<div class="now-sub">' + sub + "</div>";
+        if (st) t += '<div class="now-stars">' + st + "</div>";
+        t += "</div>";
+        return thumb + t;
+      }
+
+      function song(track) {
+        if (!track || !track.name) return '<span class="sub">&mdash;</span>';
+        return '<span class="song-title">' + esc(track.name) +
+               ' <span class="sub">&middot; ' + esc(track.artist) + "</span></span>";
+      }
+
+      fetch("me-data.json?_=" + Date.now())
+        .then(function (r) { return r.json(); })
+        .then(function (d) {
+          var html = "";
+
+          if (d.book && d.book.title) {
+            html += item("Reading", mediaBody(
+              d.book.cover,
+              esc(d.book.title),
+              "by " + esc(d.book.author),
+              stars(d.book.rating)));
+          }
+
+          if (d.music && (d.music.week || d.music.month)) {
+            var lis = "";
+            if (d.music.week)  lis += '<li><span class="song-when">This week</span>'  + song(d.music.week)  + "</li>";
+            if (d.music.month) lis += '<li><span class="song-when">This month</span>' + song(d.music.month) + "</li>";
+            html += item("Listening", '<ul class="songs">' + lis + "</ul>");
+          }
+
+          if (d.film && d.film.title) {
+            var sub = d.film.year ? esc(d.film.year) : "";
+            html += item("Watching", mediaBody(
+              d.film.poster,
+              esc(d.film.title),
+              sub,
+              stars(d.film.rating)));
+          }
+
+          if (!html) {
+            now.innerHTML = '<p class="now-msg">Nothing to show right now &mdash; check back soon.</p>';
+            return;
+          }
+          if (d.updated) html += '<p class="now-foot">' + ago(d.updated) + "</p>";
+          now.innerHTML = html;
+        })
+        .catch(function () {
+          now.innerHTML = '<p class="now-msg">Couldn&rsquo;t load this right now.</p>';
+        });
+    })();
   </script>
 </body>
 </html>

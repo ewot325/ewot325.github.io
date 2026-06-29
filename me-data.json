@@ -1,0 +1,29 @@
+{
+  "updated": "2026-06-29T05:56:35.439397+00:00",
+  "music": {
+    "week": {
+      "name": "Melodía Del Río",
+      "artist": "Rubén González",
+      "image": "",
+      "plays": 3
+    },
+    "month": {
+      "name": "Young Hearts Run Free",
+      "artist": "Candi Staton",
+      "image": "",
+      "plays": 8
+    }
+  },
+  "book": {
+    "title": "By Night in Chile",
+    "author": "Roberto Bolaño",
+    "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1364676984l/63031.jpg",
+    "rating": 0
+  },
+  "film": {
+    "title": "Harold & Kumar Go to White Castle",
+    "year": "2004",
+    "rating": 3.5,
+    "poster": "https://a.ltrbxd.com/resized/sm/upload/s3/5n/kl/xp/wmLW4WTxXTTzD3nruLVWTl3m55b-0-600-0-900-crop.jpg?v=520e8fefe2"
+  }
+}
