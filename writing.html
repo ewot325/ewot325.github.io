@@ -49,18 +49,19 @@
       padding: clamp(4rem, 14vh, 9rem) var(--pad) 2.5rem;
     }
 
-    /* back link to home */
-    .back {
+    /* top nav */
+    .nav {
+      display: flex;
+      gap: 1.8rem;
+      margin: 0 0 2.4rem;
       font-size: 0.82rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--muted);
-      text-decoration: none;
-      margin: 0 0 2.4rem;
-      display: inline-block;
     }
-    .back:hover { color: var(--accent); }
-    .back:focus-visible {
+    .nav a { color: var(--muted); text-decoration: none; }
+    .nav a:hover { color: var(--accent); }
+    .nav a[aria-current="page"] { color: var(--ink); }
+    .nav a:focus-visible {
       outline: 2px solid var(--accent);
       outline-offset: 3px;
       border-radius: 1px;
@@ -168,7 +169,11 @@
 <body>
   <main class="page">
 
-    <a class="back reveal" href="index.html">&larr; Elliot Gross</a>
+    <nav class="nav reveal">
+      <a href="index.html">Home</a>
+      <a href="writing.html" aria-current="page">Writing</a>
+      <a href="me.html">Me</a>
+    </nav>
 
     <h1 class="reveal">Writing</h1>
 

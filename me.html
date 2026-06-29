@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Me — Elliot Gross</title>
+  <meta name="description" content="More about Elliot Gross.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..500;1,6..72,200..500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --paper:  #FBFAF6;
+      --ink:    #20211F;
+      --muted:  #6F6C66;
+      --rule:   #E5E1D8;
+      --accent: #3E5A6E;
+
+      --measure: 34rem;
+      --pad: clamp(1.5rem, 5vw, 3rem);
+    }
+
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Newsreader", Georgia, "Times New Roman", serif;
+      font-optical-sizing: auto;
+      font-weight: 400;
+      line-height: 1.6;
+      font-size: 1.125rem;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    .page {
+      min-height: 100vh;
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      max-width: calc(var(--measure) + var(--pad) * 2);
+      margin: 0 auto;
+      padding: clamp(4rem, 14vh, 9rem) var(--pad) 2.5rem;
+    }
+
+    /* top nav */
+    .nav {
+      display: flex;
+      gap: 1.8rem;
+      margin: 0 0 2.4rem;
+      font-size: 0.82rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+    .nav a { color: var(--muted); text-decoration: none; }
+    .nav a:hover { color: var(--accent); }
+    .nav a[aria-current="page"] { color: var(--ink); }
+    .nav a:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+      border-radius: 1px;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 6vw, 3rem);
+      font-weight: 300;
+      letter-spacing: -0.015em;
+      line-height: 1.05;
+      margin: 0 0 0.8rem;
+    }
+
+    .lede {
+      color: var(--muted);
+      font-weight: 300;
+      font-size: 1.2rem;
+      margin: 0;
+      max-width: 28rem;
+    }
+
+    footer {
+      margin-top: auto;
+      padding-top: 4rem;
+      font-size: 0.82rem;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(0.6rem);
+      animation: rise 0.7s cubic-bezier(0.2, 0.65, 0.3, 1) forwards;
+    }
+    .reveal:nth-child(1) { animation-delay: 0.05s; }
+    .reveal:nth-child(2) { animation-delay: 0.16s; }
+    .reveal:nth-child(3) { animation-delay: 0.27s; }
+
+    @keyframes rise { to { opacity: 1; transform: none; } }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { animation: none; opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="nav reveal">
+      <a href="index.html">Home</a>
+      <a href="writing.html">Writing</a>
+      <a href="me.html" aria-current="page">Me</a>
+    </nav>
+
+    <h1 class="reveal">Me</h1>
+
+    <!-- EDIT: this page is a placeholder — add whatever you like here later. -->
+    <p class="lede reveal">More soon.</p>
+
+    <footer>
+      &copy; <span id="year"></span> Elliot Gross
+    </footer>
+
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
