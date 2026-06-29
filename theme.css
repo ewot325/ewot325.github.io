@@ -1,0 +1,35 @@
+/* Dark theme — warm variant of the paper palette. Applied when <html data-theme="dark">. */
+html[data-theme="dark"] {
+  --paper:  #1A1916;
+  --ink:    #E9E6DD;
+  --muted:  #9C978B;
+  --rule:   #34322C;
+  --accent: #8FB2CA;
+}
+
+/* gentle cross-fade when toggling (added by theme.js after first paint) */
+html.theme-ready body,
+html.theme-ready .theme-toggle { transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; }
+
+/* floating light/dark toggle, injected on every page by theme.js */
+.theme-toggle {
+  position: fixed;
+  bottom: 1.1rem;
+  right: 1.1rem;
+  z-index: 80;
+  width: 42px;
+  height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--rule);
+  border-radius: 50%;
+  background: var(--paper);
+  color: var(--muted);
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.theme-toggle:hover { color: var(--accent); border-color: var(--accent); }
+.theme-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.theme-toggle svg { width: 20px; height: 20px; display: block; fill: currentColor; }

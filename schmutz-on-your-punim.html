@@ -152,7 +152,31 @@
     @media (prefers-reduced-motion: reduce) {
       .reveal { animation: none; opacity: 1; transform: none; }
     }
+
+    /* hover footnotes */
+    sup.fn a { cursor: help; }
+    .fn-tooltip {
+      position: absolute;
+      z-index: 60;
+      max-width: min(24rem, calc(100vw - 2rem));
+      background: var(--ink);
+      color: var(--paper);
+      font-size: 0.92rem;
+      line-height: 1.5;
+      padding: 0.75rem 0.95rem;
+      border-radius: 5px;
+      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.22);
+      opacity: 0;
+      transform: translateY(4px);
+      transition: opacity 0.16s ease, transform 0.16s ease;
+      pointer-events: none;
+    }
+    .fn-tooltip.show { opacity: 1; transform: none; }
+    .fn-tooltip em { font-style: italic; }
+    .fn-tooltip a { color: inherit; text-decoration: underline; }
   </style>
+  <link rel="stylesheet" href="theme.css">
+  <script src="theme.js"></script>
 </head>
 <body>
   <main class="page">
@@ -282,6 +306,55 @@
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    /* hover footnotes — pop up each note's text on hover/focus (click still jumps) */
+    (function () {
+      var refs = document.querySelectorAll("sup.fn > a");
+      if (!refs.length) return;
+      var tip = document.createElement("div");
+      tip.className = "fn-tooltip";
+      document.body.appendChild(tip);
+      var hideTimer;
+
+      function noteHtml(id) {
+        var note = document.getElementById(id);
+        if (!note) return "";
+        var clone = note.cloneNode(true);
+        var back = clone.querySelector(".fn-back");
+        if (back) back.remove();
+        return clone.innerHTML.trim();
+      }
+
+      function show(a) {
+        var html = noteHtml((a.getAttribute("href") || "").slice(1));
+        if (!html) return;
+        clearTimeout(hideTimer);
+        tip.innerHTML = html;
+        var r = a.getBoundingClientRect();
+        var tr = tip.getBoundingClientRect();
+        var sx = window.scrollX, sy = window.scrollY;
+        var pad = 8;
+        var left = sx + r.left + r.width / 2 - tr.width / 2;
+        var maxLeft = sx + document.documentElement.clientWidth - tr.width - pad;
+        left = Math.max(sx + pad, Math.min(left, maxLeft));
+        var top = sy + r.top - tr.height - pad;
+        if (top < sy + pad) top = sy + r.bottom + pad; // flip below if no room above
+        tip.style.left = left + "px";
+        tip.style.top = top + "px";
+        tip.classList.add("show");
+      }
+      function hide() {
+        hideTimer = setTimeout(function () { tip.classList.remove("show"); }, 80);
+      }
+
+      refs.forEach(function (a) {
+        a.addEventListener("mouseenter", function () { show(a); });
+        a.addEventListener("mouseleave", hide);
+        a.addEventListener("focus", function () { show(a); });
+        a.addEventListener("blur", hide);
+      });
+      window.addEventListener("scroll", function () { tip.classList.remove("show"); }, { passive: true });
+    })();
   </script>
 </body>
 </html>
