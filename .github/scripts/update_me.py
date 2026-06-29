@@ -55,37 +55,38 @@ except Exception as e:
     data["music"] = None
     print("music error:", e)
 
-# ---- Book: Goodreads currently-reading shelf, falling back to most recent read ----
-def parse_book(xml):
-    m = re.search(r"<item>(.*?)</item>", xml, re.S)
-    if not m:
-        return None
-    it = m.group(1)
-    def g(tag):
-        mm = re.search(r"<%s>(.*?)</%s>" % (tag, tag), it, re.S)
-        return strip_cdata(html.unescape(mm.group(1))) if mm else ""
-    if not g("title"):
-        return None
-    rating = g("user_rating")
-    return {"title": g("title"),
-            "author": g("author_name"),
-            "cover": g("book_large_image_url") or g("book_image_url"),
-            "rating": int(rating) if rating.isdigit() else 0}
+# ---- Books: all currently-reading; fall back to most recently finished ----
+def parse_books(xml, limit=None):
+    out = []
+    for it in re.findall(r"<item>(.*?)</item>", xml, re.S):
+        def g(tag, _it=it):
+            mm = re.search(r"<%s>(.*?)</%s>" % (tag, tag), _it, re.S)
+            return strip_cdata(html.unescape(mm.group(1))) if mm else ""
+        if not g("title"):
+            continue
+        bid = g("book_id")
+        rating = g("user_rating")
+        out.append({"title": g("title"),
+                    "author": g("author_name"),
+                    "cover": g("book_large_image_url") or g("book_image_url"),
+                    "rating": int(rating) if rating.isdigit() else 0,
+                    "url": ("https://www.goodreads.com/book/show/" + bid) if bid else ""})
+        if limit and len(out) >= limit:
+            break
+    return out
 
 try:
     read_url = GOODREADS_RSS
     cr_url = re.sub(r"shelf=[^&]+", "shelf=currently-reading", read_url)
-    book = parse_book(fetch(cr_url))
-    if book:
-        book["status"] = "reading"
+    items = parse_books(fetch(cr_url))
+    if items:
+        data["books"] = {"status": "reading", "items": items}
     else:  # nothing in progress — show the most recently finished book instead
-        book = parse_book(fetch(read_url))
-        if book:
-            book["status"] = "read"
-    data["book"] = book
+        items = parse_books(fetch(read_url), limit=1)
+        data["books"] = {"status": "read", "items": items} if items else None
 except Exception as e:
-    data["book"] = None
-    print("book error:", e)
+    data["books"] = None
+    print("books error:", e)
 
 # ---- Film: Letterboxd RSS (up to 4 most recent films, no review text) ----
 try:
@@ -103,11 +104,19 @@ try:
         if desc:
             im = re.search(r'<img src="([^"]+)"', desc.group(1))
             poster = im.group(1) if im else ""
+        # link to the film's public Letterboxd page (not the user's review)
+        url = ""
+        link = re.search(r"<link>(.*?)</link>", it, re.S)
+        if link:
+            sm = re.search(r"/film/([^/]+)/", link.group(1))
+            if sm:
+                url = "https://letterboxd.com/film/%s/" % sm.group(1)
         rating = g2("memberRating")
         films.append({"title": html.unescape(ft.group(1).strip()),
                       "year": g2("filmYear"),
                       "rating": float(rating) if rating else None,
-                      "poster": poster})  # review text intentionally dropped
+                      "poster": poster,
+                      "url": url})  # review text intentionally dropped
         if len(films) >= 4:
             break
     data["films"] = films

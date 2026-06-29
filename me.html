@@ -110,23 +110,11 @@
       padding-top: 0.2rem;
     }
     .now-body { flex: 1 1 0; min-width: 0; display: flex; gap: 1.1rem; align-items: flex-start; }
-    .now-thumb {
-      flex: 0 0 auto;
-      height: 104px;
-      width: auto;
-      border: 1px solid var(--rule);
-      background: #fff;
-      display: block;
-    }
-    .now-text { min-width: 0; }
-    .now-title { font-size: 1.25rem; line-height: 1.25; }
-    .now-title em { font-style: italic; }
-    .now-sub { color: var(--muted); margin-top: 0.15rem; }
-    .now-stars { color: var(--accent); letter-spacing: 0.06em; margin-top: 0.3rem; }
-    /* film poster row */
-    .films { display: flex; flex-wrap: wrap; gap: 1.1rem; }
-    .film { width: 102px; margin: 0; }
-    .film img {
+    .now-stars { color: var(--accent); letter-spacing: 0.06em; }
+    /* shelf: a row of covers / posters — books and films share one size */
+    .shelf { display: flex; flex-wrap: wrap; gap: 1.3rem; }
+    .shelf-item { width: 104px; margin: 0; }
+    .shelf-item img {
       width: 100%;
       aspect-ratio: 2 / 3;
       object-fit: cover;
@@ -134,7 +122,15 @@
       background: #fff;
       display: block;
     }
-    .film .now-stars { margin-top: 0.35rem; font-size: 0.82rem; text-align: center; }
+    .poster-link { display: block; }
+    .poster-link img { transition: opacity 0.2s ease; }
+    .poster-link:hover img { opacity: 0.8; }
+    .cap { margin-top: 0.45rem; }
+    .cap-title { font-size: 0.92rem; line-height: 1.25; }
+    .cap-title a { color: var(--ink); text-decoration: none; }
+    .cap-title a:hover { color: var(--accent); }
+    .cap-sub { font-size: 0.8rem; color: var(--muted); margin-top: 0.08rem; }
+    .cap .now-stars { display: block; margin-top: 0.3rem; font-size: 0.82rem; }
     /* songs (text only) */
     .songs { list-style: none; margin: 0; padding: 0; }
     .songs li { margin: 0; }
@@ -150,6 +146,8 @@
     }
     .song-title { font-size: 1.12rem; }
     .song-title .sub { color: var(--muted); font-size: 1rem; }
+    .song-link { color: inherit; text-decoration: none; }
+    .song-link:hover .song-title, .song-link:hover .song-title .sub { color: var(--accent); }
     .now-foot { margin: 1.6rem 0 0; font-size: 0.85rem; color: var(--muted); font-style: italic; }
     .now-msg { color: var(--muted); }
 
@@ -238,19 +236,26 @@
                '</div><div class="now-body">' + body + '</div></article>';
       }
 
-      function mediaBody(img, title, sub, st) {
-        var thumb = img ? '<img class="now-thumb" src="' + esc(img) + '" alt="" loading="lazy">' : "";
-        var t = '<div class="now-text"><div class="now-title">' + title + '</div>';
-        if (sub) t += '<div class="now-sub">' + sub + "</div>";
-        if (st) t += '<div class="now-stars">' + st + "</div>";
-        t += "</div>";
-        return thumb + t;
+      function posterItem(img, href, title, capHtml) {
+        var imgTag = img
+          ? '<img src="' + esc(img) + '" alt="' + esc(title || "") + '" title="' + esc(title || "") + '" loading="lazy">'
+          : "";
+        var media = href
+          ? '<a class="poster-link" href="' + esc(href) + '" target="_blank" rel="noopener">' + imgTag + "</a>"
+          : imgTag;
+        return '<div class="shelf-item">' + media + (capHtml ? '<div class="cap">' + capHtml + "</div>" : "") + "</div>";
+      }
+
+      function spotifyUrl(t) {
+        return "https://open.spotify.com/search/" + encodeURIComponent(t.name + " " + t.artist);
       }
 
       function song(track) {
         if (!track || !track.name) return '<span class="sub">&mdash;</span>';
-        return '<span class="song-title">' + esc(track.name) +
-               ' <span class="sub">&middot; ' + esc(track.artist) + "</span></span>";
+        var inner = '<span class="song-title">' + esc(track.name) +
+                    ' <span class="sub">&middot; ' + esc(track.artist) + "</span></span>";
+        return '<a class="song-link" href="' + esc(spotifyUrl(track)) +
+               '" target="_blank" rel="noopener">' + inner + "</a>";
       }
 
       fetch("me-data.json?_=" + Date.now())
@@ -258,13 +263,18 @@
         .then(function (d) {
           var html = "";
 
-          if (d.book && d.book.title) {
-            var bookLabel = d.book.status === "read" ? "Last read" : "Reading";
-            html += item(bookLabel, mediaBody(
-              d.book.cover,
-              esc(d.book.title),
-              "by " + esc(d.book.author),
-              stars(d.book.rating)));
+          if (d.books && d.books.items && d.books.items.length) {
+            var bookLabel = d.books.status === "read" ? "Last read" : "Reading";
+            var bookShelf = d.books.items.map(function (b) {
+              var titleHtml = b.url
+                ? '<a href="' + esc(b.url) + '" target="_blank" rel="noopener">' + esc(b.title) + "</a>"
+                : esc(b.title);
+              var cap = '<div class="cap-title">' + titleHtml + "</div>";
+              if (b.author) cap += '<div class="cap-sub">' + esc(b.author) + "</div>";
+              if (stars(b.rating)) cap += '<span class="now-stars">' + stars(b.rating) + "</span>";
+              return posterItem(b.cover, b.url, b.title + (b.author ? " — " + b.author : ""), cap);
+            }).join("");
+            html += item(bookLabel, '<div class="shelf">' + bookShelf + "</div>");
           }
 
           if (d.music && (d.music.week || d.music.month)) {
@@ -275,15 +285,11 @@
           }
 
           if (d.films && d.films.length) {
-            var posters = d.films.map(function (f) {
-              var st = stars(f.rating);
-              var cap = esc(f.title) + (f.year ? " (" + esc(f.year) + ")" : "");
-              return '<figure class="film">' +
-                (f.poster ? '<img src="' + esc(f.poster) + '" alt="' + esc(f.title) + '" title="' + cap + '" loading="lazy">' : "") +
-                (st ? '<figcaption class="now-stars">' + st + "</figcaption>" : "") +
-                "</figure>";
+            var filmShelf = d.films.map(function (f) {
+              var cap = stars(f.rating) ? '<span class="now-stars">' + stars(f.rating) + "</span>" : "";
+              return posterItem(f.poster, f.url, f.title + (f.year ? " (" + f.year + ")" : ""), cap);
             }).join("");
-            html += item("Watching", '<div class="films">' + posters + "</div>");
+            html += item("Watching", '<div class="shelf">' + filmShelf + "</div>");
           }
 
           if (!html) {

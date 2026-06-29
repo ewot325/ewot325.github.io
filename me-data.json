@@ -1,9 +1,9 @@
 {
-  "updated": "2026-06-29T06:10:35.032481+00:00",
+  "updated": "2026-06-29T06:16:38.364666+00:00",
   "music": {
     "week": {
-      "name": "Melodía Del Río",
-      "artist": "Rubén González",
+      "name": "Young Hearts Run Free",
+      "artist": "Candi Staton",
       "image": "",
       "plays": 3
     },
@@ -11,40 +11,56 @@
       "name": "Young Hearts Run Free",
       "artist": "Candi Staton",
       "image": "",
-      "plays": 8
+      "plays": 9
     }
   },
-  "book": {
-    "title": "Oblivion",
-    "author": "David Foster Wallace",
-    "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1311905400l/6749.jpg",
-    "rating": 0,
-    "status": "reading"
+  "books": {
+    "status": "reading",
+    "items": [
+      {
+        "title": "Oblivion",
+        "author": "David Foster Wallace",
+        "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1311905400l/6749.jpg",
+        "rating": 0,
+        "url": "https://www.goodreads.com/book/show/6749"
+      },
+      {
+        "title": "The Things They Carried",
+        "author": "Tim O'Brien",
+        "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1424663847l/133518.jpg",
+        "rating": 0,
+        "url": "https://www.goodreads.com/book/show/133518"
+      }
+    ]
   },
   "films": [
     {
       "title": "Harold & Kumar Go to White Castle",
       "year": "2004",
       "rating": 3.5,
-      "poster": "https://a.ltrbxd.com/resized/sm/upload/s3/5n/kl/xp/wmLW4WTxXTTzD3nruLVWTl3m55b-0-600-0-900-crop.jpg?v=520e8fefe2"
+      "poster": "https://a.ltrbxd.com/resized/sm/upload/s3/5n/kl/xp/wmLW4WTxXTTzD3nruLVWTl3m55b-0-600-0-900-crop.jpg?v=520e8fefe2",
+      "url": "https://letterboxd.com/film/harold-kumar-go-to-white-castle/"
     },
     {
       "title": "Shiva Baby",
       "year": "2020",
       "rating": 3.0,
-      "poster": "https://a.ltrbxd.com/resized/film-poster/5/8/9/0/9/3/589093-shiva-baby-0-600-0-900-crop.jpg?v=a258215f88"
+      "poster": "https://a.ltrbxd.com/resized/film-poster/5/8/9/0/9/3/589093-shiva-baby-0-600-0-900-crop.jpg?v=a258215f88",
+      "url": "https://letterboxd.com/film/shiva-baby-2020/"
     },
     {
       "title": "A Serious Man",
       "year": "2009",
       "rating": 5.0,
-      "poster": "https://a.ltrbxd.com/resized/sm/upload/2u/48/o1/04/kCl9WXR7LOqDTEU3XUX8ssUETQR-0-600-0-900-crop.jpg?v=c73ded0855"
+      "poster": "https://a.ltrbxd.com/resized/sm/upload/2u/48/o1/04/kCl9WXR7LOqDTEU3XUX8ssUETQR-0-600-0-900-crop.jpg?v=c73ded0855",
+      "url": "https://letterboxd.com/film/a-serious-man/"
     },
     {
       "title": "The Royal Tenenbaums",
       "year": "2001",
       "rating": 4.0,
-      "poster": "https://a.ltrbxd.com/resized/sm/upload/sf/k0/qu/5o/5xw30y0pSaMtTcuZW5VaQPiR8qb-0-600-0-900-crop.jpg?v=b945b566a6"
+      "poster": "https://a.ltrbxd.com/resized/sm/upload/sf/k0/qu/5o/5xw30y0pSaMtTcuZW5VaQPiR8qb-0-600-0-900-crop.jpg?v=b945b566a6",
+      "url": "https://letterboxd.com/film/the-royal-tenenbaums/"
     }
   ]
 }
