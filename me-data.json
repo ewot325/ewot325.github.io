@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-01T10:15:33.493792+00:00",
+  "updated": "2026-07-01T15:13:03.233960+00:00",
   "music": {
     "week": {
       "name": "Young Hearts Run Free",
@@ -35,6 +35,13 @@
   },
   "films": [
     {
+      "title": "Marty Supreme",
+      "year": "2025",
+      "rating": 4.0,
+      "poster": "https://a.ltrbxd.com/resized/film-poster/1/1/9/7/4/9/9/1197499-marty-supreme-0-600-0-900-crop.jpg?v=b14a26bb43",
+      "url": "https://letterboxd.com/film/marty-supreme/"
+    },
+    {
       "title": "Harold & Kumar Go to White Castle",
       "year": "2004",
       "rating": 3.5,
@@ -54,13 +61,6 @@
       "rating": 5.0,
       "poster": "https://a.ltrbxd.com/resized/sm/upload/2u/48/o1/04/kCl9WXR7LOqDTEU3XUX8ssUETQR-0-600-0-900-crop.jpg?v=c73ded0855",
       "url": "https://letterboxd.com/film/a-serious-man/"
-    },
-    {
-      "title": "The Royal Tenenbaums",
-      "year": "2001",
-      "rating": 4.0,
-      "poster": "https://a.ltrbxd.com/resized/sm/upload/sf/k0/qu/5o/5xw30y0pSaMtTcuZW5VaQPiR8qb-0-600-0-900-crop.jpg?v=b945b566a6",
-      "url": "https://letterboxd.com/film/the-royal-tenenbaums/"
     }
   ]
 }
