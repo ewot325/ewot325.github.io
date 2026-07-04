@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-04T13:59:29.118682+00:00",
+  "updated": "2026-07-04T19:38:17.897526+00:00",
   "music": {
     "week": {
       "name": "Song On The Beach",
@@ -35,6 +35,13 @@
   },
   "films": [
     {
+      "title": "Obsession",
+      "year": "2025",
+      "rating": 4.5,
+      "poster": "https://a.ltrbxd.com/resized/film-poster/1/2/3/4/4/7/2/1234472-obsession-2025-2-0-600-0-900-crop.jpg?v=cff6fc00b6",
+      "url": "https://letterboxd.com/film/obsession-2025/"
+    },
+    {
       "title": "Taste of Cherry",
       "year": "1997",
       "rating": 4.0,
@@ -54,13 +61,6 @@
       "rating": 4.0,
       "poster": "https://a.ltrbxd.com/resized/film-poster/1/1/9/7/4/9/9/1197499-marty-supreme-0-600-0-900-crop.jpg?v=b14a26bb43",
       "url": "https://letterboxd.com/film/marty-supreme/"
-    },
-    {
-      "title": "Harold & Kumar Go to White Castle",
-      "year": "2004",
-      "rating": 3.5,
-      "poster": "https://a.ltrbxd.com/resized/sm/upload/s3/5n/kl/xp/wmLW4WTxXTTzD3nruLVWTl3m55b-0-600-0-900-crop.jpg?v=520e8fefe2",
-      "url": "https://letterboxd.com/film/harold-kumar-go-to-white-castle/"
     }
   ]
 }
