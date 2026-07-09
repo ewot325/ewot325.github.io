@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-09T15:34:09.704759+00:00",
+  "updated": "2026-07-09T20:04:48.626809+00:00",
   "music": {
     "week": {
       "name": "Helicopter",
@@ -35,6 +35,13 @@
   },
   "films": [
     {
+      "title": "Harry Potter and the Philosopher's Stone",
+      "year": "2001",
+      "rating": 4.0,
+      "poster": "https://a.ltrbxd.com/resized/sm/upload/5t/cj/6w/6e/harrypotter2-0-600-0-900-crop.jpg?v=0053b4ed93",
+      "url": "https://letterboxd.com/film/harry-potter-and-the-philosophers-stone/"
+    },
+    {
       "title": "Persona",
       "year": "1966",
       "rating": 4.0,
@@ -54,13 +61,6 @@
       "rating": 4.0,
       "poster": "https://a.ltrbxd.com/resized/film-poster/3/2/3/4/5/32345-taste-of-cherry-0-600-0-900-crop.jpg?v=64fada0a9a",
       "url": "https://letterboxd.com/film/taste-of-cherry/"
-    },
-    {
-      "title": "Chungking Express",
-      "year": "1994",
-      "rating": 4.5,
-      "poster": "https://a.ltrbxd.com/resized/film-poster/4/5/6/0/2/45602-chungking-express-0-600-0-900-crop.jpg?v=9475abb05b",
-      "url": "https://letterboxd.com/film/chungking-express/"
     }
   ]
 }
