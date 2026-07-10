@@ -1,9 +1,9 @@
 {
-  "updated": "2026-07-10T15:02:20.742403+00:00",
+  "updated": "2026-07-10T19:53:04.982659+00:00",
   "music": {
     "week": {
-      "name": "Helicopter",
-      "artist": "Bloc Party",
+      "name": "Thankful For You",
+      "artist": "Andre Gibson",
       "image": "",
       "plays": 1
     },
@@ -35,6 +35,13 @@
   },
   "films": [
     {
+      "title": "Harry Potter and the Chamber of Secrets",
+      "year": "2002",
+      "rating": 3.5,
+      "poster": "https://a.ltrbxd.com/resized/sm/upload/rj/yc/zl/ex/g8IQhqYYLERU0UxjVaySP46PFEZ-0-600-0-900-crop.jpg?v=d867145245",
+      "url": "https://letterboxd.com/film/harry-potter-and-the-chamber-of-secrets/"
+    },
+    {
       "title": "Harry Potter and the Philosopher's Stone",
       "year": "2001",
       "rating": 4.0,
@@ -54,13 +61,6 @@
       "rating": 4.5,
       "poster": "https://a.ltrbxd.com/resized/film-poster/1/2/3/4/4/7/2/1234472-obsession-2025-2-0-600-0-900-crop.jpg?v=cff6fc00b6",
       "url": "https://letterboxd.com/film/obsession-2025/"
-    },
-    {
-      "title": "Taste of Cherry",
-      "year": "1997",
-      "rating": 4.0,
-      "poster": "https://a.ltrbxd.com/resized/film-poster/3/2/3/4/5/32345-taste-of-cherry-0-600-0-900-crop.jpg?v=64fada0a9a",
-      "url": "https://letterboxd.com/film/taste-of-cherry/"
     }
   ]
 }
