@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-15T03:36:12.640172+00:00",
+  "updated": "2026-07-15T08:36:23.330500+00:00",
   "music": {
     "week": {
       "name": "Blue Bossa",
@@ -35,6 +35,13 @@
   },
   "films": [
     {
+      "title": "The Matrix",
+      "year": "1999",
+      "rating": 2.5,
+      "poster": "https://a.ltrbxd.com/resized/film-poster/5/1/5/1/8/51518-the-matrix-0-600-0-900-crop.jpg?v=fc7c366afe",
+      "url": "https://letterboxd.com/film/the-matrix/"
+    },
+    {
       "title": "Airplane!",
       "year": "1980",
       "rating": 5.0,
@@ -54,13 +61,6 @@
       "rating": 4.5,
       "poster": "https://a.ltrbxd.com/resized/sm/upload/a3/0q/kf/h8/jUFjMoLh8T2CWzHUSjKCojI5SHu-0-600-0-900-crop.jpg?v=6285ee260e",
       "url": "https://letterboxd.com/film/harry-potter-and-the-prisoner-of-azkaban/"
-    },
-    {
-      "title": "Harry Potter and the Chamber of Secrets",
-      "year": "2002",
-      "rating": 3.5,
-      "poster": "https://a.ltrbxd.com/resized/sm/upload/rj/yc/zl/ex/g8IQhqYYLERU0UxjVaySP46PFEZ-0-600-0-900-crop.jpg?v=d867145245",
-      "url": "https://letterboxd.com/film/harry-potter-and-the-chamber-of-secrets/"
     }
   ]
 }
