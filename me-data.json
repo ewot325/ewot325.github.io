@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-18T08:09:44.429050+00:00",
+  "updated": "2026-07-18T13:50:39.193296+00:00",
   "music": {
     "week": {
       "name": "Blue Bossa",
@@ -8,10 +8,10 @@
       "plays": 4
     },
     "month": {
-      "name": "Young Hearts Run Free",
-      "artist": "Candi Staton",
+      "name": "Blue Bossa",
+      "artist": "Wolfgang Lackerschmid",
       "image": "",
-      "plays": 9
+      "plays": 7
     }
   },
   "books": {
