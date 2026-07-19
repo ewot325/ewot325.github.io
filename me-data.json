@@ -1,15 +1,15 @@
 {
-  "updated": "2026-07-18T19:32:27.961879+00:00",
+  "updated": "2026-07-19T03:55:50.215092+00:00",
   "music": {
     "week": {
-      "name": "Blue Bossa",
-      "artist": "Wolfgang Lackerschmid",
+      "name": "Tapestry from an Asteroid",
+      "artist": "Sun Ra",
       "image": "",
       "plays": 4
     },
     "month": {
-      "name": "Blue Bossa",
-      "artist": "Wolfgang Lackerschmid",
+      "name": "Tapestry from an Asteroid",
+      "artist": "Sun Ra",
       "image": "",
       "plays": 7
     }
@@ -35,6 +35,13 @@
   },
   "films": [
     {
+      "title": "My Neighbor Totoro",
+      "year": "1988",
+      "rating": 3.5,
+      "poster": "https://a.ltrbxd.com/resized/film-poster/4/7/7/5/6/47756-my-neighbor-totoro-0-600-0-900-crop.jpg?v=749abe71ad",
+      "url": "https://letterboxd.com/film/my-neighbor-totoro/"
+    },
+    {
       "title": "The Matrix",
       "year": "1999",
       "rating": 2.5,
@@ -54,13 +61,6 @@
       "rating": 4.5,
       "poster": "https://a.ltrbxd.com/resized/film-poster/5/1/4/8/4/51484-catch-me-if-you-can-0-600-0-900-crop.jpg?v=942d676423",
       "url": "https://letterboxd.com/film/catch-me-if-you-can-2002/"
-    },
-    {
-      "title": "Harry Potter and the Prisoner of Azkaban",
-      "year": "2004",
-      "rating": 4.5,
-      "poster": "https://a.ltrbxd.com/resized/sm/upload/a3/0q/kf/h8/jUFjMoLh8T2CWzHUSjKCojI5SHu-0-600-0-900-crop.jpg?v=6285ee260e",
-      "url": "https://letterboxd.com/film/harry-potter-and-the-prisoner-of-azkaban/"
     }
   ]
 }
