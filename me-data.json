@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-20T19:57:10.936868+00:00",
+  "updated": "2026-07-21T03:46:22.358066+00:00",
   "music": {
     "week": {
       "name": "Tapestry from an Asteroid",
@@ -35,6 +35,20 @@
   },
   "films": [
     {
+      "title": "Perfect Blue",
+      "year": "1997",
+      "rating": 4.0,
+      "poster": "https://a.ltrbxd.com/resized/film-poster/4/6/1/7/5/46175-perfect-blue-0-600-0-900-crop.jpg?v=1ed5878cce",
+      "url": "https://letterboxd.com/film/perfect-blue/"
+    },
+    {
+      "title": "In the Mood for Love",
+      "year": "2000",
+      "rating": 3.0,
+      "poster": "https://a.ltrbxd.com/resized/sm/upload/g1/7l/2j/qk/tSRdvZY1waXrTeMqeLBmq9IRs08-0-600-0-900-crop.jpg?v=938633fc19",
+      "url": "https://letterboxd.com/film/in-the-mood-for-love/"
+    },
+    {
       "title": "Nathan for You: Finding Frances",
       "year": "2017",
       "rating": 5.0,
@@ -47,20 +61,6 @@
       "rating": 3.5,
       "poster": "https://a.ltrbxd.com/resized/film-poster/4/7/7/5/6/47756-my-neighbor-totoro-0-600-0-900-crop.jpg?v=749abe71ad",
       "url": "https://letterboxd.com/film/my-neighbor-totoro/"
-    },
-    {
-      "title": "The Matrix",
-      "year": "1999",
-      "rating": 2.5,
-      "poster": "https://a.ltrbxd.com/resized/film-poster/5/1/5/1/8/51518-the-matrix-0-600-0-900-crop.jpg?v=fc7c366afe",
-      "url": "https://letterboxd.com/film/the-matrix/"
-    },
-    {
-      "title": "Airplane!",
-      "year": "1980",
-      "rating": 5.0,
-      "poster": "https://a.ltrbxd.com/resized/film-poster/5/1/3/3/9/51339-airplane--0-600-0-900-crop.jpg?v=a8e9ea3a39",
-      "url": "https://letterboxd.com/film/airplane/"
     }
   ]
 }
