@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-22T14:23:09.542225+00:00",
+  "updated": "2026-07-22T19:45:08.531593+00:00",
   "music": {
     "week": {
       "name": "Gungala serenata - Colonna sonora del film \"Gungala la pantera nuda\"",
@@ -35,6 +35,13 @@
   },
   "films": [
     {
+      "title": "Harry Potter and the Goblet of Fire",
+      "year": "2005",
+      "rating": 3.5,
+      "poster": "https://a.ltrbxd.com/resized/film-poster/5/1/4/5/0/51450-harry-potter-and-the-goblet-of-fire-0-600-0-900-crop.jpg?v=6b5c9896c9",
+      "url": "https://letterboxd.com/film/harry-potter-and-the-goblet-of-fire/"
+    },
+    {
       "title": "Perfect Blue",
       "year": "1997",
       "rating": 4.0,
@@ -54,13 +61,6 @@
       "rating": 5.0,
       "poster": "https://a.ltrbxd.com/resized/film-poster/4/1/6/7/8/6/416786-nathan-for-you-finding-frances-0-600-0-900-crop.jpg?v=4868090c74",
       "url": "https://letterboxd.com/film/nathan-for-you-finding-frances/"
-    },
-    {
-      "title": "My Neighbor Totoro",
-      "year": "1988",
-      "rating": 3.5,
-      "poster": "https://a.ltrbxd.com/resized/film-poster/4/7/7/5/6/47756-my-neighbor-totoro-0-600-0-900-crop.jpg?v=749abe71ad",
-      "url": "https://letterboxd.com/film/my-neighbor-totoro/"
     }
   ]
 }
