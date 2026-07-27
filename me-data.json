@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-27T15:14:15.783888+00:00",
+  "updated": "2026-07-27T19:56:20.648504+00:00",
   "music": {
     "week": {
       "name": "How Great Thou Art",
@@ -35,6 +35,13 @@
   },
   "films": [
     {
+      "title": "Harry Potter and the Order of the Phoenix",
+      "year": "2007",
+      "rating": 3.0,
+      "poster": "https://a.ltrbxd.com/resized/sm/upload/wd/w4/n0/yj/g6n8G0xPnBVUIKKK41sNmbZB5h4-0-600-0-900-crop.jpg?v=57af08b652",
+      "url": "https://letterboxd.com/film/harry-potter-and-the-order-of-the-phoenix/"
+    },
+    {
       "title": "Harry Potter and the Goblet of Fire",
       "year": "2005",
       "rating": 3.5,
@@ -54,13 +61,6 @@
       "rating": 3.0,
       "poster": "https://a.ltrbxd.com/resized/sm/upload/g1/7l/2j/qk/tSRdvZY1waXrTeMqeLBmq9IRs08-0-600-0-900-crop.jpg?v=938633fc19",
       "url": "https://letterboxd.com/film/in-the-mood-for-love/"
-    },
-    {
-      "title": "Nathan for You: Finding Frances",
-      "year": "2017",
-      "rating": 5.0,
-      "poster": "https://a.ltrbxd.com/resized/film-poster/4/1/6/7/8/6/416786-nathan-for-you-finding-frances-0-600-0-900-crop.jpg?v=4868090c74",
-      "url": "https://letterboxd.com/film/nathan-for-you-finding-frances/"
     }
   ]
 }
