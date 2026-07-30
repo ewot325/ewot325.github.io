@@ -1,15 +1,10 @@
 {
-  "updated": "2026-07-30T03:30:13.916882+00:00",
+  "updated": "2026-07-30T09:03:08.272635+00:00",
   "music": {
-    "week": {
-      "name": "Soma",
-      "artist": "The Strokes",
-      "image": "",
-      "plays": 1
-    },
+    "week": null,
     "month": {
-      "name": "Song On The Beach",
-      "artist": "Arcade Fire",
+      "name": "Blue Bossa",
+      "artist": "Wolfgang Lackerschmid",
       "image": "",
       "plays": 5
     }
