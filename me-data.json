@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-03T19:58:58.534028+00:00",
+  "updated": "2026-08-04T03:38:17.033710+00:00",
   "music": {
     "week": null,
     "month": {
@@ -30,6 +30,13 @@
   },
   "films": [
     {
+      "title": "Harry Potter and the Half-Blood Prince",
+      "year": "2009",
+      "rating": 3.5,
+      "poster": "https://a.ltrbxd.com/resized/film-poster/5/1/3/8/5/51385-harry-potter-and-the-half-blood-prince-0-600-0-900-crop.jpg?v=789e7859c8",
+      "url": "https://letterboxd.com/film/harry-potter-and-the-half-blood-prince/"
+    },
+    {
       "title": "La Haine",
       "year": "1995",
       "rating": 5.0,
@@ -49,13 +56,6 @@
       "rating": 3.0,
       "poster": "https://a.ltrbxd.com/resized/sm/upload/wd/w4/n0/yj/g6n8G0xPnBVUIKKK41sNmbZB5h4-0-600-0-900-crop.jpg?v=57af08b652",
       "url": "https://letterboxd.com/film/harry-potter-and-the-order-of-the-phoenix/"
-    },
-    {
-      "title": "Harry Potter and the Goblet of Fire",
-      "year": "2005",
-      "rating": 3.5,
-      "poster": "https://a.ltrbxd.com/resized/film-poster/5/1/4/5/0/51450-harry-potter-and-the-goblet-of-fire-0-600-0-900-crop.jpg?v=6b5c9896c9",
-      "url": "https://letterboxd.com/film/harry-potter-and-the-goblet-of-fire/"
     }
   ]
 }
