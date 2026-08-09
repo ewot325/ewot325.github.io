@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-09T13:15:47.071662+00:00",
+  "updated": "2026-08-09T19:01:26.615431+00:00",
   "music": {
     "week": null,
     "month": {
@@ -13,18 +13,18 @@
     "status": "reading",
     "items": [
       {
+        "title": "A Walk in the Woods: Rediscovering America on the Appalachian Trail",
+        "author": "Bill Bryson",
+        "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1388189974l/9791.jpg",
+        "rating": 0,
+        "url": "https://www.goodreads.com/book/show/9791"
+      },
+      {
         "title": "Oblivion",
         "author": "David Foster Wallace",
         "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1311905400l/6749.jpg",
         "rating": 0,
         "url": "https://www.goodreads.com/book/show/6749"
-      },
-      {
-        "title": "The Things They Carried",
-        "author": "Tim O'Brien",
-        "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1424663847l/133518.jpg",
-        "rating": 0,
-        "url": "https://www.goodreads.com/book/show/133518"
       }
     ]
   },
