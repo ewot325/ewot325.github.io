@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-10T02:35:06.288639+00:00",
+  "updated": "2026-08-10T08:04:49.312267+00:00",
   "music": {
     "week": null,
     "month": {
@@ -30,6 +30,13 @@
   },
   "films": [
     {
+      "title": "Hoop Dreams",
+      "year": "1994",
+      "rating": 5.0,
+      "poster": "https://a.ltrbxd.com/resized/film-poster/4/3/2/0/9/43209-hoop-dreams-0-600-0-900-crop.jpg?v=2018b7ebdd",
+      "url": "https://letterboxd.com/film/hoop-dreams/"
+    },
+    {
       "title": "The Intouchables",
       "year": "2011",
       "rating": 4.5,
@@ -49,13 +56,6 @@
       "rating": 5.0,
       "poster": "https://a.ltrbxd.com/resized/film-poster/5/1/6/8/4/51684-la-haine-0-600-0-900-crop.jpg?v=b6677cc136",
       "url": "https://letterboxd.com/film/la-haine/"
-    },
-    {
-      "title": "Dead Poets Society",
-      "year": "1989",
-      "rating": 4.0,
-      "poster": "https://a.ltrbxd.com/resized/film-poster/5/1/8/4/6/51846-dead-poets-society-0-600-0-900-crop.jpg?v=9273e8acf7",
-      "url": "https://letterboxd.com/film/dead-poets-society/"
     }
   ]
 }
