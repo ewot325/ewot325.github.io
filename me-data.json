@@ -1,14 +1,6 @@
 {
-  "updated": "2026-08-11T13:43:12.532587+00:00",
-  "music": {
-    "week": null,
-    "month": {
-      "name": "Blue Bossa",
-      "artist": "Wolfgang Lackerschmid",
-      "image": "",
-      "plays": 5
-    }
-  },
+  "updated": "2026-08-11T19:24:50.560729+00:00",
+  "music": null,
   "books": {
     "status": "reading",
     "items": [
