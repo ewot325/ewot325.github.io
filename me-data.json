@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-15T12:59:23.819649+00:00",
+  "updated": "2026-08-15T18:47:45.305660+00:00",
   "music": {
     "week": null,
     "month": {
@@ -30,6 +30,13 @@
   },
   "films": [
     {
+      "title": "Streetwise",
+      "year": "1984",
+      "rating": 5.0,
+      "poster": "https://a.ltrbxd.com/resized/film-poster/2/2/9/6/8/22968-streetwise-0-600-0-900-crop.jpg?v=6a68d2fe05",
+      "url": "https://letterboxd.com/film/streetwise/"
+    },
+    {
       "title": "Hoop Dreams",
       "year": "1994",
       "rating": 5.0,
@@ -49,13 +56,6 @@
       "rating": 3.5,
       "poster": "https://a.ltrbxd.com/resized/film-poster/5/1/3/8/5/51385-harry-potter-and-the-half-blood-prince-0-600-0-900-crop.jpg?v=789e7859c8",
       "url": "https://letterboxd.com/film/harry-potter-and-the-half-blood-prince/"
-    },
-    {
-      "title": "La Haine",
-      "year": "1995",
-      "rating": 5.0,
-      "poster": "https://a.ltrbxd.com/resized/film-poster/5/1/6/8/4/51684-la-haine-0-600-0-900-crop.jpg?v=b6677cc136",
-      "url": "https://letterboxd.com/film/la-haine/"
     }
   ]
 }
