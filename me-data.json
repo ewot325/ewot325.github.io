@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-21T01:57:55.931203+00:00",
+  "updated": "2026-08-21T07:08:13.830786+00:00",
   "music": {
     "week": null,
     "month": {
@@ -30,6 +30,13 @@
   },
   "films": [
     {
+      "title": "Paris Is Burning",
+      "year": "1990",
+      "rating": 4.0,
+      "poster": "https://a.ltrbxd.com/resized/film-poster/3/1/3/5/5/31355-paris-is-burning-0-600-0-900-crop.jpg?v=5f4fd6ecd0",
+      "url": "https://letterboxd.com/film/paris-is-burning/"
+    },
+    {
       "title": "Grey Gardens",
       "year": "1975",
       "rating": 2.0,
@@ -49,13 +56,6 @@
       "rating": 5.0,
       "poster": "https://a.ltrbxd.com/resized/film-poster/4/3/2/0/9/43209-hoop-dreams-0-600-0-900-crop.jpg?v=2018b7ebdd",
       "url": "https://letterboxd.com/film/hoop-dreams/"
-    },
-    {
-      "title": "The Intouchables",
-      "year": "2011",
-      "rating": 4.5,
-      "poster": "https://a.ltrbxd.com/resized/sm/upload/6d/b1/v2/4j/intouchables-0-600-0-900-crop.jpg?v=98a4b40496",
-      "url": "https://letterboxd.com/film/the-intouchables/"
     }
   ]
 }
