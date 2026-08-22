@@ -1,13 +1,8 @@
 {
-  "updated": "2026-08-22T01:50:43.237810+00:00",
+  "updated": "2026-08-22T06:59:39.372159+00:00",
   "music": {
     "week": null,
-    "month": {
-      "name": "Soma",
-      "artist": "The Strokes",
-      "image": "",
-      "plays": 1
-    }
+    "month": null
   },
   "books": {
     "status": "reading",
