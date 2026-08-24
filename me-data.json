@@ -1,6 +1,9 @@
 {
-  "updated": "2026-08-23T18:48:49.188584+00:00",
-  "music": null,
+  "updated": "2026-08-24T01:58:01.818216+00:00",
+  "music": {
+    "week": null,
+    "month": null
+  },
   "books": {
     "status": "reading",
     "items": [
