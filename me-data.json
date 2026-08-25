@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-25T13:11:46.608176+00:00",
+  "updated": "2026-08-25T18:57:36.684310+00:00",
   "music": {
     "week": null,
     "month": null
@@ -25,6 +25,13 @@
   },
   "films": [
     {
+      "title": "F for Fake",
+      "year": "1973",
+      "rating": 2.5,
+      "poster": "https://a.ltrbxd.com/resized/film-poster/2/2/1/1/9/22119-f-for-fake-0-600-0-900-crop.jpg?v=618578d2e6",
+      "url": "https://letterboxd.com/film/f-for-fake/"
+    },
+    {
       "title": "Paris Is Burning",
       "year": "1990",
       "rating": 4.0,
@@ -44,13 +51,6 @@
       "rating": 5.0,
       "poster": "https://a.ltrbxd.com/resized/film-poster/2/2/9/6/8/22968-streetwise-0-600-0-900-crop.jpg?v=6a68d2fe05",
       "url": "https://letterboxd.com/film/streetwise/"
-    },
-    {
-      "title": "Hoop Dreams",
-      "year": "1994",
-      "rating": 5.0,
-      "poster": "https://a.ltrbxd.com/resized/film-poster/4/3/2/0/9/43209-hoop-dreams-0-600-0-900-crop.jpg?v=2018b7ebdd",
-      "url": "https://letterboxd.com/film/hoop-dreams/"
     }
   ]
 }
