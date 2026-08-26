@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-26T01:58:56.789144+00:00",
+  "updated": "2026-08-26T07:09:20.914382+00:00",
   "music": {
     "week": null,
     "month": null
@@ -25,6 +25,20 @@
   },
   "films": [
     {
+      "title": "Z",
+      "year": "1969",
+      "rating": 4.0,
+      "poster": "https://a.ltrbxd.com/resized/film-poster/5/0/1/3/3/50133-z-0-600-0-900-crop.jpg?v=a8ce74ae82",
+      "url": "https://letterboxd.com/film/z/"
+    },
+    {
+      "title": "Ocean's Eleven",
+      "year": "2001",
+      "rating": 3.5,
+      "poster": "https://a.ltrbxd.com/resized/film-poster/5/1/8/9/0/51890-oceans-eleven-2001-0-600-0-900-crop.jpg?v=9986b9227a",
+      "url": "https://letterboxd.com/film/oceans-eleven-2001/"
+    },
+    {
       "title": "F for Fake",
       "year": "1973",
       "rating": 2.5,
@@ -37,20 +51,6 @@
       "rating": 4.0,
       "poster": "https://a.ltrbxd.com/resized/film-poster/3/1/3/5/5/31355-paris-is-burning-0-600-0-900-crop.jpg?v=5f4fd6ecd0",
       "url": "https://letterboxd.com/film/paris-is-burning/"
-    },
-    {
-      "title": "Grey Gardens",
-      "year": "1975",
-      "rating": 2.0,
-      "poster": "https://a.ltrbxd.com/resized/sm/upload/ub/e7/ey/op/jw1qTQX8pWUM8XFGbhM7A5mpmG9-0-600-0-900-crop.jpg?v=f33d832843",
-      "url": "https://letterboxd.com/film/grey-gardens/"
-    },
-    {
-      "title": "Streetwise",
-      "year": "1984",
-      "rating": 5.0,
-      "poster": "https://a.ltrbxd.com/resized/film-poster/2/2/9/6/8/22968-streetwise-0-600-0-900-crop.jpg?v=6a68d2fe05",
-      "url": "https://letterboxd.com/film/streetwise/"
     }
   ]
 }
