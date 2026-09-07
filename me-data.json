@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-06T20:25:28.610199+00:00",
+  "updated": "2026-09-07T04:44:20.534819+00:00",
   "music": {
     "week": null,
     "month": null
@@ -25,6 +25,13 @@
   },
   "films": [
     {
+      "title": "Africa Blood and Guts",
+      "year": "1966",
+      "rating": null,
+      "poster": "https://a.ltrbxd.com/resized/film-poster/2/3/7/5/5/23755-africa-blood-and-guts-0-600-0-900-crop.jpg?v=6e439c30a5",
+      "url": "https://letterboxd.com/film/africa-blood-and-guts/"
+    },
+    {
       "title": "Titicut Follies",
       "year": "1967",
       "rating": 4.0,
@@ -44,13 +51,6 @@
       "rating": 5.0,
       "poster": "https://a.ltrbxd.com/resized/film-poster/5/1/6/8/4/51684-la-haine-0-600-0-900-crop.jpg?v=b6677cc136",
       "url": "https://letterboxd.com/film/la-haine/"
-    },
-    {
-      "title": "Z",
-      "year": "1969",
-      "rating": 4.0,
-      "poster": "https://a.ltrbxd.com/resized/film-poster/5/0/1/3/3/50133-z-0-600-0-900-crop.jpg?v=a8ce74ae82",
-      "url": "https://letterboxd.com/film/z/"
     }
   ]
 }
