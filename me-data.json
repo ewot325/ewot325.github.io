@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-07T04:44:20.534819+00:00",
+  "updated": "2026-09-07T12:35:50.479703+00:00",
   "music": {
     "week": null,
     "month": null
@@ -25,6 +25,13 @@
   },
   "films": [
     {
+      "title": "12 Angry Men",
+      "year": "1957",
+      "rating": 4.5,
+      "poster": "https://a.ltrbxd.com/resized/film-poster/5/1/7/0/0/51700-12-angry-men-0-600-0-900-crop.jpg?v=b8aaf291a9",
+      "url": "https://letterboxd.com/film/12-angry-men/"
+    },
+    {
       "title": "Africa Blood and Guts",
       "year": "1966",
       "rating": null,
@@ -44,13 +51,6 @@
       "rating": 3.0,
       "poster": "https://a.ltrbxd.com/resized/film-poster/5/1/1/4/7/51147-the-prestige-0-600-0-900-crop.jpg?v=ad7e891177",
       "url": "https://letterboxd.com/film/the-prestige/"
-    },
-    {
-      "title": "La Haine",
-      "year": "1995",
-      "rating": 5.0,
-      "poster": "https://a.ltrbxd.com/resized/film-poster/5/1/6/8/4/51684-la-haine-0-600-0-900-crop.jpg?v=b6677cc136",
-      "url": "https://letterboxd.com/film/la-haine/"
     }
   ]
 }
