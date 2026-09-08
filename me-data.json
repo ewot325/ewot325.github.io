@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-08T04:38:59.533490+00:00",
+  "updated": "2026-09-08T11:21:04.445490+00:00",
   "music": {
     "week": null,
     "month": null
@@ -25,6 +25,13 @@
   },
   "films": [
     {
+      "title": "Fire of Love",
+      "year": "2022",
+      "rating": 4.5,
+      "poster": "https://a.ltrbxd.com/resized/film-poster/8/1/9/8/6/3/819863-fire-of-love-0-600-0-900-crop.jpg?v=d79f69426b",
+      "url": "https://letterboxd.com/film/fire-of-love-2022/"
+    },
+    {
       "title": "12 Angry Men",
       "year": "1957",
       "rating": 4.5,
@@ -44,13 +51,6 @@
       "rating": 4.0,
       "poster": "https://a.ltrbxd.com/resized/film-poster/2/3/8/0/3/23803-titicut-follies-0-600-0-900-crop.jpg?v=15349e543d",
       "url": "https://letterboxd.com/film/titicut-follies/"
-    },
-    {
-      "title": "The Prestige",
-      "year": "2006",
-      "rating": 3.0,
-      "poster": "https://a.ltrbxd.com/resized/film-poster/5/1/1/4/7/51147-the-prestige-0-600-0-900-crop.jpg?v=ad7e891177",
-      "url": "https://letterboxd.com/film/the-prestige/"
     }
   ]
 }
