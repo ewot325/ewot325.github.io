@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-15T21:22:22.620616+00:00",
+  "updated": "2026-09-16T04:51:11.871411+00:00",
   "music": {
     "week": null,
     "month": null
@@ -25,6 +25,13 @@
   },
   "films": [
     {
+      "title": "Nightcrawler",
+      "year": "2014",
+      "rating": 4.0,
+      "poster": "https://a.ltrbxd.com/resized/sm/upload/g7/2e/vi/vy/A9ANrAWlmIovxzjAIiOgseSLNc9-0-600-0-900-crop.jpg?v=6bcb14c88c",
+      "url": "https://letterboxd.com/film/nightcrawler/"
+    },
+    {
       "title": "Fire of Love",
       "year": "2022",
       "rating": 4.5,
@@ -44,13 +51,6 @@
       "rating": null,
       "poster": "https://a.ltrbxd.com/resized/film-poster/2/3/7/5/5/23755-africa-blood-and-guts-0-600-0-900-crop.jpg?v=6e439c30a5",
       "url": "https://letterboxd.com/film/africa-blood-and-guts/"
-    },
-    {
-      "title": "Titicut Follies",
-      "year": "1967",
-      "rating": 4.0,
-      "poster": "https://a.ltrbxd.com/resized/film-poster/2/3/8/0/3/23803-titicut-follies-0-600-0-900-crop.jpg?v=15349e543d",
-      "url": "https://letterboxd.com/film/titicut-follies/"
     }
   ]
 }
