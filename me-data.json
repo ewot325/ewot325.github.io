@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-19T04:39:29.716531+00:00",
+  "updated": "2026-09-19T11:01:41.067604+00:00",
   "music": {
     "week": null,
     "month": null
@@ -23,5 +23,34 @@
       }
     ]
   },
-  "films": null
+  "films": [
+    {
+      "title": "Nightcrawler",
+      "year": "2014",
+      "rating": 4.0,
+      "poster": "https://a.ltrbxd.com/resized/sm/upload/g7/2e/vi/vy/A9ANrAWlmIovxzjAIiOgseSLNc9-0-600-0-900-crop.jpg?v=6bcb14c88c",
+      "url": "https://letterboxd.com/film/nightcrawler/"
+    },
+    {
+      "title": "Fire of Love",
+      "year": "2022",
+      "rating": 4.5,
+      "poster": "https://a.ltrbxd.com/resized/film-poster/8/1/9/8/6/3/819863-fire-of-love-0-600-0-900-crop.jpg?v=d79f69426b",
+      "url": "https://letterboxd.com/film/fire-of-love-2022/"
+    },
+    {
+      "title": "12 Angry Men",
+      "year": "1957",
+      "rating": 4.5,
+      "poster": "https://a.ltrbxd.com/resized/film-poster/5/1/7/0/0/51700-12-angry-men-0-600-0-900-crop.jpg?v=b8aaf291a9",
+      "url": "https://letterboxd.com/film/12-angry-men/"
+    },
+    {
+      "title": "Africa Blood and Guts",
+      "year": "1966",
+      "rating": null,
+      "poster": "https://a.ltrbxd.com/resized/film-poster/2/3/7/5/5/23755-africa-blood-and-guts-0-600-0-900-crop.jpg?v=6e439c30a5",
+      "url": "https://letterboxd.com/film/africa-blood-and-guts/"
+    }
+  ]
 }
