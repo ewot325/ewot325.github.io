@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-01T22:42:17.680476+00:00",
+  "updated": "2026-10-02T05:39:52.796243+00:00",
   "music": {
     "week": null,
     "month": null
@@ -25,6 +25,13 @@
   },
   "films": [
     {
+      "title": "The Odyssey",
+      "year": "2026",
+      "rating": 4.0,
+      "poster": "https://a.ltrbxd.com/resized/film-poster/1/2/5/5/3/9/4/1255394-the-odyssey-2026-0-600-0-900-crop.jpg?v=1eed046d0c",
+      "url": "https://letterboxd.com/film/the-odyssey-2026/"
+    },
+    {
       "title": "Stand by Me",
       "year": "1986",
       "rating": 3.5,
@@ -44,13 +51,6 @@
       "rating": 4.0,
       "poster": "https://a.ltrbxd.com/resized/sm/upload/g7/2e/vi/vy/A9ANrAWlmIovxzjAIiOgseSLNc9-0-600-0-900-crop.jpg?v=6bcb14c88c",
       "url": "https://letterboxd.com/film/nightcrawler/"
-    },
-    {
-      "title": "Fire of Love",
-      "year": "2022",
-      "rating": 4.5,
-      "poster": "https://a.ltrbxd.com/resized/film-poster/8/1/9/8/6/3/819863-fire-of-love-0-600-0-900-crop.jpg?v=d79f69426b",
-      "url": "https://letterboxd.com/film/fire-of-love-2022/"
     }
   ]
 }
