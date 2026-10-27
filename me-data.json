@@ -1,28 +1,10 @@
 {
-  "updated": "2026-10-27T18:03:21.037350+00:00",
+  "updated": "2026-10-27T22:15:23.264999+00:00",
   "music": {
     "week": null,
     "month": null
   },
-  "books": {
-    "status": "reading",
-    "items": [
-      {
-        "title": "A Walk in the Woods: Rediscovering America on the Appalachian Trail",
-        "author": "Bill  Bryson",
-        "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1388189974l/9791.jpg",
-        "rating": 0,
-        "url": "https://www.goodreads.com/book/show/9791"
-      },
-      {
-        "title": "Oblivion",
-        "author": "David Foster Wallace",
-        "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1311905400l/6749.jpg",
-        "rating": 0,
-        "url": "https://www.goodreads.com/book/show/6749"
-      }
-    ]
-  },
+  "books": null,
   "films": [
     {
       "title": "The Odyssey",
