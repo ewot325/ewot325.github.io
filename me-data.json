@@ -1,11 +1,18 @@
 {
-  "updated": "2026-10-29T22:46:18.476629+00:00",
+  "updated": "2026-10-30T05:51:29.404290+00:00",
   "music": {
     "week": null,
     "month": null
   },
   "books": null,
   "films": [
+    {
+      "title": "You Can See Everything",
+      "year": "2026",
+      "rating": 3.5,
+      "poster": "https://a.ltrbxd.com/resized/film-poster/1/6/2/9/4/4/3/1629443-you-can-see-everything-0-600-0-900-crop.jpg?v=84f6724d74",
+      "url": "https://letterboxd.com/film/you-can-see-everything/"
+    },
     {
       "title": "The Odyssey",
       "year": "2026",
@@ -26,13 +33,6 @@
       "rating": 3.0,
       "poster": "https://a.ltrbxd.com/resized/film-poster/4/1/8/1/3/5/418135-blackkklansman-0-600-0-900-crop.jpg?v=632af7bfd9",
       "url": "https://letterboxd.com/film/blackkklansman/"
-    },
-    {
-      "title": "Nightcrawler",
-      "year": "2014",
-      "rating": 4.0,
-      "poster": "https://a.ltrbxd.com/resized/sm/upload/g7/2e/vi/vy/A9ANrAWlmIovxzjAIiOgseSLNc9-0-600-0-900-crop.jpg?v=6bcb14c88c",
-      "url": "https://letterboxd.com/film/nightcrawler/"
     }
   ]
 }
