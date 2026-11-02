@@ -1,11 +1,18 @@
 {
-  "updated": "2026-11-01T22:03:09.727229+00:00",
+  "updated": "2026-11-02T06:07:55.010959+00:00",
   "music": {
     "week": null,
     "month": null
   },
   "books": null,
   "films": [
+    {
+      "title": "Hocus Pocus",
+      "year": "1993",
+      "rating": 3.0,
+      "poster": "https://a.ltrbxd.com/resized/sm/upload/43/5h/8q/cg/vgtJwl5rmPyq0JQPNWd4NXbkGmd-0-600-0-900-crop.jpg?v=9e0fc85c24",
+      "url": "https://letterboxd.com/film/hocus-pocus/"
+    },
     {
       "title": "You Can See Everything",
       "year": "2026",
@@ -26,13 +33,6 @@
       "rating": 3.5,
       "poster": "https://a.ltrbxd.com/resized/film-poster/5/1/8/2/1/51821-stand-by-me-0-600-0-900-crop.jpg?v=b3163b5def",
       "url": "https://letterboxd.com/film/stand-by-me/"
-    },
-    {
-      "title": "BlacKkKlansman",
-      "year": "2018",
-      "rating": 3.0,
-      "poster": "https://a.ltrbxd.com/resized/film-poster/4/1/8/1/3/5/418135-blackkklansman-0-600-0-900-crop.jpg?v=632af7bfd9",
-      "url": "https://letterboxd.com/film/blackkklansman/"
     }
   ]
 }
