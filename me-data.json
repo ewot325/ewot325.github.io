@@ -1,11 +1,18 @@
 {
-  "updated": "2026-11-06T19:25:41.939926+00:00",
+  "updated": "2026-11-07T06:00:02.777513+00:00",
   "music": {
     "week": null,
     "month": null
   },
   "books": null,
   "films": [
+    {
+      "title": "Hannah and Her Sisters",
+      "year": "1986",
+      "rating": 4.0,
+      "poster": "https://a.ltrbxd.com/resized/film-poster/4/8/9/4/0/48940-hannah-and-her-sisters-0-600-0-900-crop.jpg?v=d9465ec340",
+      "url": "https://letterboxd.com/film/hannah-and-her-sisters/"
+    },
     {
       "title": "Hocus Pocus",
       "year": "1993",
@@ -26,13 +33,6 @@
       "rating": 4.0,
       "poster": "https://a.ltrbxd.com/resized/film-poster/1/2/5/5/3/9/4/1255394-the-odyssey-2026-0-600-0-900-crop.jpg?v=1eed046d0c",
       "url": "https://letterboxd.com/film/the-odyssey-2026/"
-    },
-    {
-      "title": "Stand by Me",
-      "year": "1986",
-      "rating": 3.5,
-      "poster": "https://a.ltrbxd.com/resized/film-poster/5/1/8/2/1/51821-stand-by-me-0-600-0-900-crop.jpg?v=b3163b5def",
-      "url": "https://letterboxd.com/film/stand-by-me/"
     }
   ]
 }
