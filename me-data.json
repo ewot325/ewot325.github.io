@@ -1,11 +1,18 @@
 {
-  "updated": "2026-11-12T19:55:40.601634+00:00",
+  "updated": "2026-11-13T06:47:36.476388+00:00",
   "music": {
     "week": null,
     "month": null
   },
   "books": null,
   "films": [
+    {
+      "title": "Adaptation.",
+      "year": "2002",
+      "rating": 4.5,
+      "poster": "https://a.ltrbxd.com/resized/film-poster/5/0/1/1/2/50112-adaptation--0-600-0-900-crop.jpg?v=5bf5496cc7",
+      "url": "https://letterboxd.com/film/adaptation/"
+    },
     {
       "title": "Michael Clayton",
       "year": "2007",
@@ -26,13 +33,6 @@
       "rating": 4.0,
       "poster": "https://a.ltrbxd.com/resized/film-poster/4/8/9/4/0/48940-hannah-and-her-sisters-0-600-0-900-crop.jpg?v=d9465ec340",
       "url": "https://letterboxd.com/film/hannah-and-her-sisters/"
-    },
-    {
-      "title": "Hocus Pocus",
-      "year": "1993",
-      "rating": 3.0,
-      "poster": "https://a.ltrbxd.com/resized/sm/upload/43/5h/8q/cg/vgtJwl5rmPyq0JQPNWd4NXbkGmd-0-600-0-900-crop.jpg?v=9e0fc85c24",
-      "url": "https://letterboxd.com/film/hocus-pocus/"
     }
   ]
 }
